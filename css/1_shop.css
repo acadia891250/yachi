@@ -1,0 +1,332 @@
+* {
+	webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+    box-sizing:border-box;
+    margin: 0px;
+    padding: 0px;
+}
+body{
+	font-family:"Source Sans Pro",sans-serif;
+	font-size:15px;
+	font-weight:400;
+	-webkit-font-smoothing:antialiased;
+    -moz-font-smoothing:antialiased;  /* 可以讓字體看起來更特別 */
+    position: relative;
+    /* margin-top: 100px; */
+    
+}
+#all{
+    position: absolute;
+    width: 100%;
+}
+ul{
+	margin:0;
+	padding-left:0;  
+}
+li{
+	list-style-type:none;
+}
+i{
+    cursor: pointer;
+    /* color:#7b886f; */
+}
+i:hover{
+    opacity: 0.5;
+}
+a{
+	color:#333;
+	/* text-transform:uppercase; */
+	text-decoration:none;
+    font-size:13px;
+}
+
+
+/* header */
+header{
+    /* margin-bottom: 10px; */
+}
+.container{
+    padding: 20px 10px;
+    /* display:inline-block; */
+    width:100%;
+    
+    /* border: 1px solid red; */
+    background:rgba(246,174,45,0.3);
+
+    /* position: fixed; */
+    /* top: 0px; */
+
+}
+ /* header 應該要包住全部 ，因為float 緣故，讓外層div 框被擠成一條線*/
+
+.nav{
+    width: 33%;
+    float: left;
+    /* border: 1px solid red; */
+}
+.nav p{
+    margin-top: 10px;
+}
+
+#header_name li{
+    float: left;
+    padding: 7px;
+    /* line-height:55px; */
+}
+#header_name ul a{
+    font-size: 25px;
+    font-weight: bolder;
+    position: relative;
+}
+#header_name a:after{
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0px;
+    width: 0%;
+    border-bottom: 2px solid #d5573b;
+    transition: 0.2s;
+}
+#header_name a:hover:after {
+    width: 100%;
+}
+
+#header_logo{
+    /* margin-left: 20%; */
+    /* margin-top: -15px; */
+    float: left;
+    text-align: center;
+}
+#header_nav li{
+    float: right;
+    line-height: 5px;
+    padding: 5px;
+    
+}
+#header a{
+	color:#333;
+	/* text-transform:uppercase; */
+	text-decoration:none;
+    font-size:13px;
+}
+
+/* slider */
+#sliderContainer{
+    background: #f3f8f2;
+    position: relative;
+}
+.image{
+    width: 100%;
+    height: 500px;
+    /* border: 1px solid #cccccc; */
+}
+#sliderBoard{       /*div*/
+    /* border: 1px solid red; */
+    width: 75%;
+    height: 500px;
+    margin: 0px auto;
+    overflow: hidden;
+    position: relative;
+    /* display: flex; */
+}
+#content{           /*ul*/
+    width: 100%;
+    position: relative;
+    border: none;
+}
+#content img{
+    opacity: 0.8;
+    width: 100%;
+}
+#content li{        /*li*/
+    float: left;
+    /* display: flex; */
+}
+.clearfix{
+    clear: both;
+}
+
+/* button */
+#contentButton{ 
+    position: absolute;   
+    /* border: 1px solid red; */
+    width: 100%;  
+    /* 相對於div的100% */
+    height: 30px;
+    text-align: center;
+    bottom: 3px;
+
+}
+#contentButton li{
+    width: 28px;
+    height: 5px;
+    border-radius: 6px;
+    background: #cccccc;
+    margin: 20px 1px 5px 5px;
+    cursor: pointer;
+    display: inline-block;
+}
+#contentButton li:hover{
+    background:rgba(123,136,111,0.5);
+}
+#contentButton li.clickMe{
+    background: #666666;
+}
+#buttonContent{
+    /* top: -50px; */
+    clear: both;
+}
+
+#sliderLeft{
+    position: absolute;
+    /* border: 1px solid red; */
+    left: 7%;
+    top: 50%;
+    color:rgba(123,136,111,0.2);
+}
+#sliderLeft:hover{
+    color: rgb(123,136,111);
+    /* border-radius: 50%; */
+}
+#sliderRight{
+    position: absolute;
+    color:rgba(123,136,111,0.2);
+    /* border: 1px solid red; */
+    /* display: flex; */
+    right: 7%;
+    top:50%;
+}
+#sliderRight:hover{
+    color: rgb(123,136,111);
+}
+
+/* sessionLeft */
+#secondContainer{
+    position: relative;
+    margin-top: 2%;
+    padding: 0 12%;
+    /* width: 100%; */
+    /* padding-left: 142px; */
+    /* float: left; */
+}
+#sectionLeft{
+    width: 70%;
+    /* margin-left: 145px; */
+}
+.addCoupon{
+    display: flex;
+}
+.addCoupon div{
+    padding: 10px;
+}
+.couponInfo h3{
+    color:#F26419 ;
+}
+.couponInfo h4{
+    color: #F6AE2D;
+}
+.couponInfo{
+    width: 60%;
+    border: 1px solid #cccccc;
+    margin: 5px 0px;
+    border-radius: 8px;
+    /* color: #d5573b; */
+}
+#shopInfo{
+    /* border: 3px solid #cccccc; */
+    width: 70%;
+    margin-left: 12px;
+    margin-bottom: 15px;
+    margin-top: 10px;
+    border-radius: 5px;
+    /* text-align: center; */
+}
+.fa-star{
+    color:#F6AE2D;
+}
+#comment{
+    margin-top: 20px;
+}
+
+/* fixedRight */
+#RightBorder{
+    position: absolute;
+    height: 1500px;
+    right: 13%;
+    /* right: 0; */
+    top: 0px;
+    /* background: rgb(207, 255, 207); */
+    
+}
+#shopPhone{
+    border-radius: 8px;
+    /* position: sticky;
+    position: -webkit-sticky;
+    right: 60px;
+    top:0px;
+    background: pink;
+    width: 230px;
+    padding: 10px; */
+    position: sticky;
+    position: -webkit-sticky;
+    /* border: 1px solid #cccccc; */
+    background: rgba(123,136,111,0.1);
+    top: 0px;
+    width: 300px;
+    height: 350px;
+    padding: 30px;
+    
+}
+
+#shopPhone .item{
+    /* background: green; */
+    margin-bottom: 10px;
+    display: flex;
+    text-align: left;
+}
+
+#shopPhone .item .item-left{
+    /* height: 30px; */
+    /* background: green; */
+    width: 20%;
+    padding: 10px 0;
+    /* color: #7b886f; */
+    font-size: 20px;
+}
+#shopPhone .item .item-right{
+    /* height: 30px; */
+    width: 80%;
+    /* background: red; */
+    padding: 10px 0;
+    text-align: left;
+    font-size: 16px;
+    color: #d5573b;
+}
+#shopPhone .item .item-right a{
+    font-size: 16px;
+    color: #d5573b;
+
+}
+#shopPhone .item .item-right a:hover{
+    opacity: 0.5;
+}
+
+
+#go-top {
+	position: fixed;  /* 畫面滾動時一直出現 */
+    right: 20px;
+    bottom: 35px;
+    width: 40px;
+    height: 40px;
+    background:rgba(123,136,111,0.3);
+    color:#fff;
+    text-align: center;  /* 左右置中 */
+    line-height: 40px;   /* 上下置中 */
+    text-decoration: none;
+    border-radius: 50%;
+}
+#go-top:hover{
+    background:rgba(123,136,111,1);
+
+}
+
