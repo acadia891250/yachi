@@ -16,6 +16,8 @@ $(document).ready(function(){
     // 當要往左邊推跟index有關 (第三章就是往前推兩張) 是ul要往左邊推
     $('#content').width(divWidth * imgCount);
 
+    setAutoPlay();
+
     let index = 0;
     $('#contentButton li').click(function(){
         // alert($(this).index());
@@ -47,8 +49,11 @@ $(document).ready(function(){
     
             //點到的每一個都變顏色(加上class=clickMe)
             $('#contentButton li').slice(index,index + 1).addClass('clickMe');
+            // $('#contentButton li').eq(index).addClass('clickMe');
+
             //其他的移除class=clickMe
             $('#contentButton li').not($('#contentButton li').slice(index, index + 1)).removeClass('clickMe');
+            // $('#contentButton li').not($('#contentButton li').eq(index)).removeClass('clickMe');
         }
     });
 
@@ -69,6 +74,23 @@ $(document).ready(function(){
             return;
         }
     });
+    function setAutoPlay(){
+        return setInterval(() => {
 
-
+                index = index + 1;
+                if(index > $('#contentButton li').length -1){
+                    index = 0;
+                }
+                $('#content').animate({
+                    left: divWidth * index * -1,
+                });
+        
+                //點到的每一個都變顏色(加上class=clickMe)
+                $('#contentButton li').slice(index,index + 1).addClass('clickMe');
+                //其他的移除class=clickMe
+                $('#contentButton li').not($('#contentButton li').slice(index, index + 1)).removeClass('clickMe');
+            
+        },3000);
+    }
+    
 });
