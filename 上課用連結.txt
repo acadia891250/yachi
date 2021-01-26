@@ -53,3 +53,22 @@ Map
 https://openlayers.org/
 https://osm.tw/
 https://leafletjs.com/
+
+
+
+解決 git push 上傳檔案出現 error: failed to push some refs to 'https://github.com/user/xxx.git' 的問題
+
+
+問題：git上傳檔案時(指令: git push -u origin master)出現錯誤，畫面如下
+
+要如何解決呢?!
+
+原因：
+依據 git push 動作被 GitHub 拒絕了!!因為不能把兩個完全無關的 Git 版本直接上傳到 GitHub 上的遠端儲存庫...
+
+解決方法：
+
+直接將遠端儲存庫的 master 分支取回，並合併到本地儲存庫的 master 分支，指令如下
+$ git pull origin master
+
+再次執行上傳即可正常操作了，如下圖
