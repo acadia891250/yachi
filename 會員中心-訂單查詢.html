@@ -304,10 +304,35 @@
             font-weight: bold;
             
         }
-       
+
+        /* 跑馬燈 */
+
+        #Marquee{
+            border: 1px solid red;
+            display: flex;
+           
+        }
+        #Marquee h3{
+            border: 1px solid red;
+            padding: 5px;
+        }
+        #Marquee ul{
+            /* border: 1px solid red; */
+            list-style:none;
+            height:25px;
+            overflow:hidden;
+            /* display: flex; */
+            /* flex-direction: column;             */
+            
+        }
+        #Marquee ul li:first-child{
+            /* border: 1px solid red; */
+            margin: 7px 0;
+
+        }
+
     </style>
     <script>
-
         $(function () {
 
             // change這個event只有代表改變，並不代表有檔案
@@ -356,6 +381,19 @@
 
 
             });
+
+             // 每三秒執行一次
+             setInterval(function(){
+                $('#news li:first-child').slideUp(function(){
+
+                    $(this).appendTo($('#news')).slideDown();
+                });
+
+            },3000);
+
+
+
+
         });
 
     </script>
@@ -445,10 +483,15 @@
         </div>
     </header>
 
-
-    <!-- <div class="advertisement">    /*廣告的位子*/
-        <img src="https://picsum.photos/1200/300">
-    </div> -->
+    <div id="Marquee">
+        <h3>最新優惠消息:</h3>
+        <ul id="news">
+            <li>東西很貴不要買 !</li>
+            <li>還沒做完</li>
+            <li>目前網路商店全館免運</li>
+        </ul>
+    </div>
+    
 
     <div class="member">
         <aside>
