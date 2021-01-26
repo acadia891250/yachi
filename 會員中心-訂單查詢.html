@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-    <link rel="stylesheet" href="/reset.css">
+    <link rel="stylesheet" href="reset.css">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="./會員中心-訂單查詢.js"></script>
     
     <style>
@@ -25,7 +26,7 @@
 
         header{
             display: flex;
-            background-color: #eed4d4;   /*#e9ecef*/
+            background-color: #eed4d4;   
             align-items: center;
             height: 100px;
             margin: 0 auto;
@@ -145,10 +146,9 @@
 
 
         aside{
-            /* border: 1px solid red; */
+            border: 1px solid #ccc;
             width: 500px;
             height: 850px;
-            background-color: #ccc;
             text-align: center;
         }
         aside .function{
@@ -225,58 +225,36 @@
             
         }
 
-        form{
+        /* form{
             
-        }
+        } */
         #hcg_tabs {
             width: 100%;
             
         }
-        #tabs-nav {
-            position: relative;
+        #tabs-nav{
+           
             display: flex;
-            justify-content:center;
-            margin-top: 15px;
-            box-sizing: border-box;
-            
-        }
-        #tabs-nav a:nth-child(even) {     /* 偶數子元素*/
-            margin: 0 20px;  
-        }
-        .tabs-menu{
-            /* display: inline-block; */
-            background-color: #f1d3d3;
-            font-size: 20px;
-            color: rgb(8, 8, 8);
-            padding: 10px 10px;
-            font-weight: bold;
-            text-decoration: none;
-            border-bottom: 0;       /*去除border底線*/
-            border-radius: 5px;
-            
-        }
-        .tabs-menu-active {
-            background-color: #fff;
-            border: solid 3px #f1d3d3;
-            color: #9c1212;
-            border-bottom: 0;
-        }
-        .tabs-content {
-            border: solid 3px #f1d3d3;
-            margin-top: -3px;
-            background-color: #fff;
-            /* overflow: hidden; */
-            /* line-height: 1.5; */
-            /* height: 825px; */
-        }
-        .tabs-panel {                /*空白的內容*/
-            display: none;
-            overflow-x:hidden;      /*可以強制讓 x 軸的 scrollbar 隱藏起來*/
-            overflow-y:auto;        /*只讓 Y 軸有scrollbar*/
-            height: 790px;
-            /* font-size: 25px; */
         }
 
+        #tabs-nav a{
+
+            text-decoration: none;
+            flex-grow: 1;          /*子元素平均寬度*/
+            text-align: center;
+            padding: 10px;
+
+        }
+
+        /* 一開始先讓其他的子元素消失起來  只留下第一個tabs-panel元素 */
+        .tabs-content .tabs-panel{
+            display: none;
+        }
+
+        #tabs-nav .change{
+            background-color: orange;
+            color: white;
+        }
         /************ CSS Animation ***********/
 
         .animated-tabs{
@@ -292,8 +270,6 @@
             100% {opacity: 1;} 
         } 
         
-
-
 
         table{
             width: 100%;
@@ -313,10 +289,10 @@
         .imgTD{
             overflow: hidden; 
         }
-        .imgTD img{
-            /* width: 100%; */
+        /* .imgTD img{
+             width: 100%;
         
-        }
+        } */
 
         .btCancel{
             text-align: right;
@@ -329,11 +305,60 @@
             
         }
        
-        
-
-
-
     </style>
+    <script>
+
+        $(function () {
+
+            // change這個event只有代表改變，並不代表有檔案
+            $('#file').change(function() { 
+                // this代表<input id="file">  
+                // files.length == 1 是長度為一的陣列
+                let file = this.files[0]; 
+                let reader = new FileReader();
+                // new FileReader(); 用途是用來讀取檔案，標準的API
+                // 如果要FileReader去讀檔案，必須給他一個檔案Object。
+                // 它拿到檔案Object後會驅動onload事件
+                // 給它URL的方式就是用 readAsDataURL( /*裡面放檔案Object*/ )
+                // 所以我們才會放入 reader.readAsDataURL(input.files[0]);
+                // onload事件讀出來的會是一個接近二進位檔案，所以可以直接給<img>
+                // 所以這邊直接改變img 的 src 就可以了
+                reader.readAsDataURL(file); 
+
+                reader.onload = function(){     //成功讀取文件
+                    $('#headImg').attr({
+                        
+                        // src = this.result 
+                        // 或者是 src = e.target () 
+                        // 只是function(e) 加上e 事件物件處理函數
+                        src:this.result , 
+                        width:`200px`,
+                        height:`200px`
+                    });
+                }
+            });
+
+
+
+            $('#tabs-nav a').click(function(){ 
+                // 當點擊tabs-nav的元素a時  替當前(this)的a超連結增加.change類  
+                // 其餘兄弟類 siblings() remove .change類
+                $(this).addClass('change').siblings().removeClass('change');
+
+                // 點擊的同時 拿到當前 a 超連結的索引號
+                let index = $(this).index();     //  index有6個
+
+                // 讓下面對應的索引號  .tabs-content 的子元素.tabs-panel[index] 渲染出來  
+                // 其他 子元素 兄弟類 siblings() 隱藏起來   
+                // 用addClass 增加動畫
+                $('.tabs-content .tabs-panel').eq(index)
+                .addClass('fadeIn animated-tabs').show().siblings().hide();
+
+
+            });
+        });
+
+    </script>
 </head>
 <body>
 
@@ -341,7 +366,7 @@
 
         <div class="logo">
             <a href="#">
-                <img src="yachiLogo50.png">
+                <img src="/img/yachiLogo50.png">
             </a>
         </div>
 
@@ -438,7 +463,6 @@
                         編輯頭貼
                         <input type="file" id="file" accept=".jpeg,.png" style="display: none;"
                         >
-                        <!-- onchange="changeImg(this)" -->
                     </i>
                 </label>
 
@@ -485,37 +509,35 @@
             </div>
         </aside>
 
+        <main> 
 
-
-        <main>
             <form action="" method="">
 
                 <div id="hcg_tabs">
-
+    
                     <div id="tabs-nav">
-                       <a href="#" data-target="tab_1" class="tabs-menu tabs-menu-active">購物車</a>
-                       <a href="#" data-target="tab_2" class="tabs-menu">待付款</a>
-                       <a href="#" data-target="tab_3" class="tabs-menu">待出貨</a>
-                       <a href="#" data-target="tab_4" class="tabs-menu">待收貨</a>
-                       <a href="#" data-target="tab_5" class="tabs-menu">訂單詳情</a>
-                       <a href="#" data-target="tab_6" class="tabs-menu">給予評價</a>
+                       <a href="#" class="change">購物車</a>
+                       <a href="#">待付款</a>
+                       <a href="#">待出貨</a>
+                       <a href="#">待收貨</a>
+                       <a href="#">訂單詳情</a>
+                       <a href="#">給予評價</a>
                     </div>
                    
                     <div class="tabs-content">
-                      <div id="tab_1" class="tabs-panel" style="display:block"> 
-                        
+    
+                        <!-- 先讓第一個內容顯示出來 display:block -->
+                      <div class="tabs-panel" style="display:block"> 
                         <table>
-
                             <tr>
                                 <td colspan="2" rowspan="4" class="imgTD">
                                 
                                 </td>
                                 <td colspan="6">商品名稱</td>
                                 
-                                <!-- <img src="./cat.png"> -->
                             </tr>
                             <tr>
-
+    
                                 <td colspan="4" rowspan="3">簡介</td>
                                 <td style="text-align: center;">運費</td>
                                 <td style="text-align: right;">$0</td>
@@ -526,7 +548,7 @@
                                 <td style="text-align: right;">x2</td>
                             </tr>
                             <tr>
-
+    
                                 <td style="text-align: center;">金額</td>
                                 <td style="text-align: right;">$300</td>
                             </tr>
@@ -550,102 +572,41 @@
                                 
                             </tr>
                         </table>
-                        <div class="btCancel">
-                            
-                            <a href="#"><button><i class="fas fa-cart-arrow-down"></i>再買一次</button></a>
-                            <a href="#"><button><i class="fas fa-window-close"></i>取消訂單</button></a>
-                            
-                        </div>
-
+                            <div class="btCancel">
+                                
+                                <a href="#"><button><i class="fas fa-cart-arrow-down"></i>再買一次</button></a>
+                                <a href="#"><button><i class="fas fa-window-close"></i>取消訂單</button></a>
+                                
+                            </div>
                       </div>
                    
-                      <div id="tab_2" class="tabs-panel">
+                      <div class="tabs-panel">
                        測試2
                       </div>
                    
-                      <div id="tab_3" class="tabs-panel">
+                      <div class="tabs-panel">
                        測試3
                       </div>
                    
-                      <div id="tab_4" class="tabs-panel">
+                      <div class="tabs-panel">
                        測試4
                       </div>
                    
-                      <div id="tab_5" class="tabs-panel">
-                        <table>
-
-                            <tr>
-                                <td colspan="2" rowspan="4" class="imgTD">
-                                
-                                </td>
-                                <td colspan="6">商品名稱</td>
-                                
-                                <!-- <img src="./cat.png"> -->
-                            </tr>
-                            <tr>
-
-                                <td colspan="4" rowspan="3">簡介</td>
-                                <td style="text-align: center;">運費</td>
-                                <td style="text-align: right;">$0</td>
-                                
-                            </tr>
-                            <tr>
-                                <td style="text-align: center;">數量</td>
-                                <td style="text-align: right;">x2</td>
-                            </tr>
-                            <tr>
-
-                                <td style="text-align: center;">金額</td>
-                                <td style="text-align: right;">$300</td>
-                            </tr>
-                            <tr>
-                                <td colspan="6">商品小計</td>
-                                <td style="text-align: right;"colspan="2" >$600</td>
-                               
-                            </tr>
-                            <tr>
-                                <td colspan="6">折扣小計</td>
-                                <td style="text-align: right;"colspan="2">-$50</td>
-                            </tr>
-                            <tr>
-                                <td colspan="6">訂單金額</td>
-                                <td style="text-align: right;"colspan="2">$550</td>
-                                
-                            </tr>
-                            <tr>
-                                <td colspan="6">訂單編號</td>
-                                <td style="text-align: right;"colspan="2">AAA5487</td>
-                                
-                            </tr>
-                        </table>
-                        <div class="btCancel">
-                            
-                            <a href="#"><button><i class="fas fa-cart-arrow-down"></i>再買一次</button></a>
-                            <a href="#"><button><i class="fas fa-window-close"></i>取消訂單</button></a>
-                            
-                        </div>
-                       
-
-
-
+                      <div class="tabs-panel">
+                        測試5  
                       </div>
-                   
-                      <div id="tab_6" class="tabs-panel">
-                       測試6
+                
+                      <div class="tabs-panel">
+                        測試6
                       </div>
                    
                     </div>
-                   
+                  
                 </div>
-
             </form>
 
         </main>
     </div>
-    
-
-
-  
     
 </body>
 </html>
