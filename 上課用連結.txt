@@ -1,0 +1,55 @@
+﻿ /* Google fonts：Noto Sans TC (Chinese Traditional) 黑體（思源黑體） */ 
+
+@import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
+
+        body { 
+            font-family: ‘Noto Sans TC’, sans-serif;
+        }
+
+--------------------------------------------------------------------------------
+
+	fontawesome icon
+
+ <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+
+----------------------------------------------------------------------------
+
+假圖產生器
+
+<img src="https://picsum.photos/50/50">
+
+--------------------------------------------------------------
+
+http://127.0.0.1:5500/
+
+---------------------------------------------------
+kuler
+https://color.adobe.com/
+
+coolors
+https://coolors.co/
+
+假圖產生器
+https://fakeimg.pl/
+https://picsum.photos/
+https://loremflickr.com/
+
+easing functions (jQuery UI)
+https://easings.net/
+
+ajax loading image
+https://loading.io/
+http://www.ajaxload.info/
+
+小圖示
+https://fontawesome.com/
+免費+付費 圖庫
+https://www.freepik.com/
+
+https://cdnjs.com/
+
+Map
+https://openlayers.org/
+https://osm.tw/
+https://leafletjs.com/
