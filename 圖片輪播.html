@@ -11,7 +11,7 @@
         div{
             /* border: 1px solid red; */
             width: 500px;
-            height: 200px;
+            height: 300px;
             overflow: hidden;
             margin: 0 auto;             /*置中對齊*/
             position: relative;
@@ -29,14 +29,12 @@
         .nav{
             /* background-color: coral; */
             /* border: 1px solid red; */
-            width: 100px;
-            height: 100px;
+            /* width: 100px;
+            height: 100px; */
             position: absolute;  /* 定位至div父元素*/
             display: flex;       /*使按鈕橫排*/
-            top:50%;
-            right:50%;
-            margin-top: 80px;
-            margin-left: 80px;
+            bottom: 0;
+            left: 45%;
                       
             
             
@@ -46,13 +44,13 @@
             width: 20px;
             height: 20px;
             text-align: center;
-            opacity: 0.5;
+            /* opacity: 0.5; */
         }
 
         /* 當圖片點擊時 (this) 增加css的class 
           .attr('class','active') */
         .active{
-            color: rgb(45, 231, 8);
+            color: rgb(11, 12, 11);
         }
        
 
@@ -65,8 +63,10 @@
             
             // 取得按鈕關聯  
             Btn = $('.nav a'); 
+
             // 取得圖片關聯  
             liImg = $('.ulImg li');
+            
             // 儲存當前圖片的索引
             imgNow = 0;
 
@@ -89,18 +89,17 @@
                 // 當點擊、定時器時間循環的時候
                 // 幫按鈕增加 css的 .active class  eq()選擇帶有指定的imgNow值元素
                 Btn.attr('class','').eq(imgNow).attr('class','active');
-                
-                
-                // 幫包住圖片的 ulImg 每一秒向左邊減去-1700px
+                         
+                // 幫包住圖片的 ulImg 每一秒向左邊減去-500px
                 $('.ulImg').animate({
                     left: -500 * imgNow
-
-                //
-                },2000,function(){
+                
+                },500,function(){
                     //判斷是否為最後一張圖片
-                    if(imgNow == Btn.length){
+                    if(imgNow == Btn.length){   // Btn.length = 4
                         imgNow = 0;
                         $('.ulImg').css('left','0');
+                        $('#first').attr('class','active');
                     }
                   }
                 );
@@ -117,15 +116,17 @@
             <li><img src="https://picsum.photos/500/300?random=2"></li>
             <li><img src="https://picsum.photos/500/300?random=3"></li>
             <li><img src="https://picsum.photos/500/300?random=4"></li>
+            <!-- 可以將第一張圖片 添加到最後一張 當最後一張圖片動畫結束之後 直接切回第一張 -->
+            <li><img src="https://picsum.photos/500/300?random=1"></li>
         </ul>
         <ul class="nav">
-            <a href="#"><i class="far fa-circle"></i></a>
-            <a href="#"><i class="far fa-circle"></i></a>
-            <a href="#"><i class="far fa-circle"></i></a>
-            <a href="#"><i class="far fa-circle"></i></a>
+            <a href="#" id="first"><i class="fas fa-circle"></i></a>
+            <a href="#"><i class="fas fa-circle"></i></a>
+            <a href="#"><i class="fas fa-circle"></i></a>
+            <a href="#"><i class="fas fa-circle"></i></a>
         </ul>
-    </div>
     
+    </div>
     
 </body>
 </html>
