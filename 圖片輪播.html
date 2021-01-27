@@ -9,32 +9,40 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <style>
         div{
-            border: 1px solid red;
-            width: 400px;
+            /* border: 1px solid red; */
+            width: 500px;
             height: 200px;
             overflow: hidden;
-            margin: 0 auto;
+            margin: 0 auto;             /*置中對齊*/
             position: relative;
         }
-        ul{
-            border: 1px solid red;
-            display: flex; 
-            position: absolute;
+        .ulImg{                       /*包住圖片的容器*/
+            /* border: 1px solid red; */
+            display: flex;           /* 使圖片橫排 */
+            position: absolute;      
             
 
         }
-        ul li{
+        .ulImg img{
             
         }
         .nav{
-            background-color: coral;
-            position: absolute;
-            display: flex;
-            bottom: 0;
-            left: 165px;
+            /* background-color: coral; */
+            /* border: 1px solid red; */
+            width: 100px;
+            height: 100px;
+            position: absolute;  /* 定位至div父元素*/
+            display: flex;       /*使按鈕橫排*/
+            top:50%;
+            right:50%;
+            margin-top: 80px;
+            margin-left: 80px;
+                      
+            
             
         }
         .nav a{
+            /* background-color: coral; */
             width: 20px;
             height: 20px;
             text-align: center;
@@ -44,7 +52,7 @@
         /* 當圖片點擊時 (this) 增加css的class 
           .attr('class','active') */
         .active{
-            background-color: black;
+            color: rgb(45, 231, 8);
         }
        
 
@@ -55,60 +63,66 @@
             // 依照圖片的數量來設置ul最大寬度
             $('.ulImg').width(400*$('.ulImg').children('li'));
             
-            
-            // 取得按鈕關聯
-            aBtn = $('.nav a');
+            // 取得按鈕關聯  
+            Btn = $('.nav a'); 
             // 取得圖片關聯  
             liImg = $('.ulImg li');
-            // 顯示當前圖片的索引
+            // 儲存當前圖片的索引
             imgNow = 0;
 
             // 點擊事件處理
-            aBtn.click(function() { 
+            Btn.click(function() { 
                 // 顯示當前點擊圖片的索引編號 
-                // nav 的第幾個子元素 (0,1,2,3)
+                // 用index()元素方法取得
+                // Btn的第幾個子元素 (0,1,2,3)
                 imgNow = $(this).index();
                 addClass();
             });
 
-            // 設置自動定時器事件處理
+            // 設置自動定時器事件處理 每幾秒循環一次
             timexx = setInterval(function(){
                 imgNow++;
                 addClass();
             },2000);
 
             function addClass(){
-                aBtn.attr('class','').eq(imgNow).attr('class','active');
-                       
+                // 當點擊、定時器時間循環的時候
+                // 幫按鈕增加 css的 .active class  eq()選擇帶有指定的imgNow值元素
+                Btn.attr('class','').eq(imgNow).attr('class','active');
+                
+                
+                // 幫包住圖片的 ulImg 每一秒向左邊減去-1700px
                 $('.ulImg').animate({
-                    left: -400 * imgNow  
+                    left: -500 * imgNow
 
-                },500,function(){
+                //
+                },2000,function(){
                     //判斷是否為最後一張圖片
-                    if(imgNow == aBtn.length-1){
+                    if(imgNow == Btn.length){
                         imgNow = 0;
-                        $('.ulImg').css('left',0);
+                        $('.ulImg').css('left','0');
                     }
-                }
-            )}
+                  }
+                );
+            }
 
-        })
+        });
 
     </script>
 </head>
 <body>
     <div>
         <ul class="ulImg">
-            <li><img src="https://picsum.photos/400/200"></li>
-            <li><img src="https://picsum.photos/400/200"></li>
-            <li><img src="https://picsum.photos/400/200"></li>
-            <li><img src="https://picsum.photos/400/200"></li>
+            <li><img src="https://picsum.photos/500/300?random=1"></li>
+            <li><img src="https://picsum.photos/500/300?random=2"></li>
+            <li><img src="https://picsum.photos/500/300?random=3"></li>
+            <li><img src="https://picsum.photos/500/300?random=4"></li>
         </ul>
         <ul class="nav">
-            <a href="#">1</a>
-            <a href="#">2</a>
-            <a href="#">3</a>
-            <a href="#">4</a>
+            <a href="#"><i class="far fa-circle"></i></a>
+            <a href="#"><i class="far fa-circle"></i></a>
+            <a href="#"><i class="far fa-circle"></i></a>
+            <a href="#"><i class="far fa-circle"></i></a>
         </ul>
     </div>
     
