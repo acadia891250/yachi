@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/reset.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        div{
+            border: 1px solid red;
+            width: 400px;
+            height: 200px;
+            /* overflow: hidden; */
+            margin: 0 auto;
+            position: relative;
+        }
+        ul{
+            border: 1px solid red;
+            display: flex; 
+            position: absolute;
+            
+
+        }
+        ul li{
+            
+        }
+        .nav{
+            background-color: coral;
+            position: absolute;
+            display: flex;
+            bottom: 0;
+            left: 165px;
+            
+        }
+        .nav a{
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            opacity: 0.5;
+        }
+
+        /* 當圖片點擊時 (this) 增加css的class 
+          .attr('class','active') */
+        .active{
+            background-color: black;
+        }
+       
+
+    </style>
+    <script>
+        $(function () {
+
+            // 依照圖片的數量來設置ul最大寬度
+            $('.ulImg').width(400*$('.ulImg').children('li'));
+            
+            
+            // 取得按鈕關聯
+            aBtn = $('.nav a');
+            // 取得圖片關聯  
+            liImg = $('.ulImg li');
+            // 顯示當前圖片的索引
+            imgNow = 0;
+
+            // 點擊事件處理
+            aBtn.click(function() { 
+                // 顯示當前點擊圖片的索引編號 
+                // nav 的第幾個子元素 (0,1,2,3)
+                imgNow = $(this).index();
+                addClass();
+            });
+
+            // 設置自動定時器事件處理
+            timexx = setInterval(function(){
+                imgNow++;
+                addClass();
+            },2000);
+
+            function addClass(){
+                aBtn.attr('class','').eq(imgNow).attr('class','active');
+                       
+                $('.ulImg').animate({
+                    left: -400 * imgNow  
+
+                },500,function(){
+                    //判斷是否為最後一張圖片
+                    if(imgNow == aBtn.length-1){
+                        imgNow = 0;
+                        $('.ulImg').css('left',0);
+                    }
+                }
+            )}
+
+        })
+
+    </script>
+</head>
+<body>
+    <div>
+        <ul class="ulImg">
+            <li><img src="https://picsum.photos/400/200"></li>
+            <li><img src="https://picsum.photos/400/200"></li>
+            <li><img src="https://picsum.photos/400/200"></li>
+            <li><img src="https://picsum.photos/400/200"></li>
+        </ul>
+        <ul class="nav">
+            <a href="#">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+        </ul>
+    </div>
+    
+    
+</body>
+</html>
