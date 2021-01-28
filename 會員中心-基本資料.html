@@ -9,16 +9,13 @@
     
     <style>
 
-        html{
-            padding: 0 150px;   /*左右與body各寬100px 留白*/
-        }
-       
         /* Google fonts：Noto Sans TC (Chinese Traditional) 黑體（思源黑體） */
         @import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
 
         body { 
             font-family: ‘Noto Sans TC’, sans-serif;
-            
+            max-width: 1200px;
+            margin: 0 auto;
         }
         
 
@@ -29,18 +26,13 @@
             height: 100px;
             margin: 0 auto;
             position: relative;
+            max-width: 100%;
 
-                       
-            /* position: fixed;
-            top: 0;
-            left: 0;
-            right: 0; */
-                      
         }
+        /* 圖片區 */
         .logo{
-            
-            width: 200px;
-            height: 100px;
+            max-width: 200px;
+            max-height: 100px;
             box-sizing: border-box;
             margin-left: 80px;
         }
@@ -48,8 +40,6 @@
             width: 100%;
             height: 100%;
         }
-
-
 
         .nav{                  
             display: flex;
@@ -89,8 +79,6 @@
             position: absolute;
                        
         }
-
-
 
         .header-search{
             display: flex;
@@ -137,17 +125,15 @@
         } */
 
         .member{
-            
+            max-width: 100%;
             display: flex;
         }
 
-
-
         aside{
-            /* border: 1px solid red; */
+            border: 1px solid #CCC;
             width: 500px;
             height: 850px;
-            background-color: #ccc;
+            /* background-color: #ccc; */
             text-align: center;
         }
         aside .function{
