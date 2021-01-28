@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<style>
+
+    #tabs-nav a{
+        text-decoration: none;
+    }
+
+    /* 一開始先讓其他的子元素消失起來  只留下第一個tabs-panel元素 */
+    .tabs-content .tabs-panel{
+        display: none;
+    }
+
+    #tabs-nav .change{
+        background-color: orange;
+        color: white;
+    }
+
+     /************ CSS Animation ***********/
+
+    .animated-tabs{
+        animation-duration: 1.5s;
+        animation-fill-mode:forwards;   /*forwards 就是動畫結束後保持最後結束的樣子*/
+    }
+    .fadeIn { 
+        animation-name: fadeIn; 
+    }
+
+    @keyframes fadeIn { 
+        0% {opacity: 0;} 
+        100% {opacity: 1;} 
+    } 
+
+</style>
+<script>
+
+   $(function () {
+       $('#tabs-nav a').click(function(){ 
+           // 當點擊tabs-nav的元素a時  替當前(this)的a超連結增加.change類  
+           // 其餘兄弟類 siblings() remove .change類
+           $(this).addClass('change').siblings().removeClass('change');
+
+           // 點擊的同時 拿到當前 a 超連結的索引號
+           let index = $(this).index();     //  index有6個
+
+           // 讓下面對應的索引號  .tabs-content 的子元素.tabs-panel[index] 渲染出來  
+           // 其他 子元素 兄弟類 siblings() 隱藏起來
+           $('.tabs-content .tabs-panel').eq(index)
+           .addClass('fadeIn animated-tabs').show().siblings().hide();
+
+       });
+   });
+
+</script>
+<body>
+    <main>
+        <form action="" method="">
+
+            <div id="hcg_tabs">
+
+                <div id="tabs-nav">
+                   <a href="#" class="change">購物車</a>
+                   <a href="#">待付款</a>
+                   <a href="#">待出貨</a>
+                   <a href="#">待收貨</a>
+                   <a href="#">訂單詳情</a>
+                   <a href="#">給予評價</a>
+                </div>
+               
+                <div class="tabs-content">
+
+                    <!-- 先讓第一個內容顯示出來 display:block -->
+                  <div class="tabs-panel" style="display:block"> 
+                    <table>
+                        <tr>
+                            <td colspan="2" rowspan="4" class="imgTD">
+                            
+                            </td>
+                            <td colspan="6">商品名稱</td>
+                            
+                        </tr>
+                        <tr>
+
+                            <td colspan="4" rowspan="3">簡介</td>
+                            <td style="text-align: center;">運費</td>
+                            <td style="text-align: right;">$0</td>
+                            
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;">數量</td>
+                            <td style="text-align: right;">x2</td>
+                        </tr>
+                        <tr>
+
+                            <td style="text-align: center;">金額</td>
+                            <td style="text-align: right;">$300</td>
+                        </tr>
+                        <tr>
+                            <td colspan="6">商品小計</td>
+                            <td style="text-align: right;"colspan="2" >$600</td>
+                           
+                        </tr>
+                        <tr>
+                            <td colspan="6">折扣小計</td>
+                            <td style="text-align: right;"colspan="2">-$50</td>
+                        </tr>
+                        <tr>
+                            <td colspan="6">訂單金額</td>
+                            <td style="text-align: right;"colspan="2">$550</td>
+                            
+                        </tr>
+                        <tr>
+                            <td colspan="6">訂單編號</td>
+                            <td style="text-align: right;"colspan="2">AAA5487</td>
+                            
+                        </tr>
+                    </table>
+                        <div class="btCancel">
+                            
+                            <a href="#"><button><i class="fas fa-cart-arrow-down"></i>再買一次</button></a>
+                            <a href="#"><button><i class="fas fa-window-close"></i>取消訂單</button></a>
+                            
+                        </div>
+                  </div>
+               
+                  <div class="tabs-panel">
+                   測試2
+                  </div>
+               
+                  <div class="tabs-panel">
+                   測試3
+                  </div>
+               
+                  <div class="tabs-panel">
+                   測試4
+                  </div>
+               
+                  <div class="tabs-panel">
+                    測試5  
+                  </div>
+            
+                  <div class="tabs-panel">
+                    測試6
+                  </div>
+               
+                </div>
+              
+            </div>
+        </form>
+    </main>
+</body>
+</html>
