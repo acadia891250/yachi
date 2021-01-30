@@ -1,0 +1,151 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+ /* Google fonts：Noto Sans TC (Chinese Traditional) 黑體（思源黑體） */
+ @import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
+
+body { 
+     font-family: ‘Noto Sans TC’, sans-serif;
+     max-width: 80%;
+     margin: 0 auto;
+}
+h2{
+    margin: 0;
+}
+.clearfix{
+    clear: both;
+}
+#header_container{
+    max-width: 100%;
+    height: 100px;
+    background: purple;
+}
+.header_image>img{
+    max-width: 100%;
+}
+.new_container{
+    background: #aaaaaa;
+    margin: 50px 0;
+    padding: 10px 0;
+}
+.new_product{
+    padding: 10px 0;
+    text-align: center;
+    background: #cccccc;
+}
+.shoppingArea{
+    position: relative;
+}
+/* 左半邊 */
+aside{
+    background: green;
+    position: absolute;
+    left: 0;
+    width: 20%;
+    float: left;
+   
+}
+.left_container{
+    background: #EDD9D9;
+    padding-top: 15px;
+    height: 400px;
+    
+}
+.onlineShop{
+    text-align: center;
+    background: #C39C9C;
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 5px;
+    color: #ffffff;
+}
+.items{
+    margin:10px 0;
+    padding: 20px 0;
+    margin-left: 20px;
+}
+.items a{
+    color: #333333;
+    text-decoration: none;
+    transition: .3s;
+}
+.items a:hover{
+    background: #ffffff;
+}
+.hr{
+    width: 80%;
+    margin: 0 auto;
+    border-top: 1px solid rgba(255,255,255,.6);
+}
+
+/* 右半邊 */
+.right_container{
+    position: absolute;
+    right: 0;
+    width: 73%;
+    padding-top: 30px;
+    background: #EDD9D9;
+}
+.product_contianer{
+    float: left;
+    height: 480px;
+    padding-left:34px;
+}
+.product_image img{
+    width: 200px;
+}
+.product_name{
+    height: 40px;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+.product_name a{
+    color: #444444;
+    letter-spacing: 3px;
+    font-size: 18px;
+}
+.product_price{
+    text-align: center;
+    margin-bottom: 10px;
+}
+.product_price span{
+    letter-spacing: 2px;
+    color: #BE5555;
+}
+.product_count{
+    padding-bottom: 10px;
+}
+.product_count span{
+    letter-spacing: 3px;
+    color: #555555;
+    font-size: 15px;
+}
+.product_count select{  
+    color: #aaaaaa;
+    border: 1px solid #e2e2e2;
+    border-radius: 5px;
+    width: 154px;
+}
+.product_count select option{
+    color: #aaa;
+}
+.cartBtn{
+    width: 200px;
+    text-align: center;
+    background:rgba(210,179,179,0.6);
+    margin: 0 auto;
+    border-radius: 3px;
+    cursor: pointer;
+    color: #ffffff;
+    letter-spacing: 2px;
+    padding: 5px;
+    transition: .5s;
+}
+.cartBtn:hover{
+    background: #d2b3b3;
+    color: #555555;
+}
