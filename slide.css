@@ -1,0 +1,20 @@
+
+.slider_container {
+    margin: 30px auto;
+    width: 1080px;
+    height: 360px;
+    position: relative;
+    border: 20px solid;    
+    border-color: #fff;
+    border-bottom-width: 100px;
+    background-color: #f5f5f5;
+    box-shadow: #666 0 0 5px;
+}
+
+.slider_container div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}

@@ -1,0 +1,326 @@
+
+
+html{
+    padding: 0 150px;   /*左右與body各寬100px 留白*/
+}
+
+/* Google fonts：Noto Sans TC (Chinese Traditional) 黑體（思源黑體） */
+@import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
+
+body { 
+    font-family: ‘Noto Sans TC’, sans-serif;
+    
+}
+
+
+
+header{
+    display: flex;
+    background-color: #ffffff;   /*#e9ecef*/
+    align-items: center;
+    height: 100px;
+    margin: 0 auto;
+    position: relative;
+    font-weight: bold;
+    font-size: 18px
+
+               
+    /* position: fixed;
+    top: 0;
+    left: 0;
+    right: 0; */
+              
+}
+.logo{
+    
+    width: 200px;
+    height: 100px;
+    box-sizing: border-box;
+    margin-left: 80px;
+}
+.logo img{
+    width: 100%;
+    height: 100%;
+}
+
+.nav{                  
+    display: flex;
+    margin: auto;
+}
+.nav .menu a{
+    text-decoration: none;
+    padding: 5px 1rem;
+    color: white;
+    position: relative;
+    margin: auto;
+    
+}
+.menu:hover{
+    transform: translateY(-10px);
+    transition: .5s;
+    
+}
+.menu a:hover,.menu a:hover i{
+    color:black;
+    transform: scale(1);
+    padding-right: 10px;
+}
+.menu a i{
+    transform: scale(0);
+}
+
+.nav .menu ul{
+    display: none;
+    padding-top: 10px;
+}
+.menu ul li{
+    padding-top: 10px;
+}
+.menu:hover ul{
+    display: block;
+    position: absolute;
+               
+}
+
+
+
+.header-search{
+    display: flex;
+    margin-right: 20px;
+}
+.header-search button,input{
+    border: none;
+    background-color: white;
+    padding: 4px;
+    
+}
+.header-search input{
+    border-radius: 200px 0 0 200px;
+}
+.header-search button{
+    border-radius: 0 200px 200px 0;
+}
+.header-search input:focus{
+    outline: none;
+}
+
+
+.login{
+    margin: 10px;
+    
+}
+.login a{
+    text-decoration: none;
+    font-size: 15px;
+    color: white;
+}
+.icon{
+    position:absolute;
+    top: 10px;
+    right: 20px;
+}
+.icon a{
+    padding: 5px;
+    
+} 
+
+/* .advertisement img{
+    width: 100%;
+} */
+
+.member{
+    
+    display: flex;
+}
+
+
+
+aside{
+    /* border: 1px solid red; */
+    width: 500px;
+    height: 850px;
+    background-color: #ccc;
+    text-align: center;
+}
+aside .function{
+    display: flex;
+    flex-direction: column; 
+}
+.function h3{
+    font-size: 24px;
+    padding: 20px 0;
+    font-weight:bolder;
+}
+.function img{
+    vertical-align: bottom;   /*解決圖片底下留白問題*/
+}
+.function .item img:hover{
+    opacity: 0.5;
+    transition: 0.5s;
+}
+.function label{
+    padding: 10px 0;
+    font-size: 13px;
+    font-weight:bolder;
+    
+}
+.function button{
+    border: 1px solid #ccc;
+    width: 200px;
+    margin: 5px auto;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight:bolder;
+    
+}
+.function .item:last-child{
+    margin-top:125px;
+   
+}
+
+/*按鈕動畫*/
+.function button:focus{
+    outline: none;
+}
+.function button:hover{
+    
+    background-color: rgb(170, 192, 207);
+}
+
+.function button span{
+   
+    position: relative;
+}
+.function button:hover span{
+    padding-right: 25px;
+    transition: 0.5s;
+}
+.function button span:after{
+    content: '➜';
+    opacity: 0;
+    transition: 0.5s;
+    position: absolute;
+    
+    right: -10px;
+    font-weight: bold;
+}
+.function button:hover span:after{
+    opacity: 1;
+}
+
+
+/*表單製作*/
+main{
+    
+    width: 100%;
+    
+}
+
+form{
+    
+}
+#hcg_tabs {
+    width: 100%;
+    
+}
+#tabs-nav {
+    position: relative;
+    display: flex;
+    justify-content:center;
+    margin-top: 15px;
+    box-sizing: border-box;
+    
+}
+#tabs-nav a:nth-child(even) {     /* 偶數子元素*/
+    margin: 0 20px;  
+}
+.tabs-menu{
+    /* display: inline-block; */
+    background-color: #f1d3d3;
+    font-size: 20px;
+    color: rgb(8, 8, 8);
+    padding: 10px 10px;
+    font-weight: bold;
+    text-decoration: none;
+    border-bottom: 0;       /*去除border底線*/
+    border-radius: 5px;
+    
+}
+.tabs-menu-active {
+    background-color: #fff;
+    border: solid 3px #f1d3d3;
+    color: #9c1212;
+    border-bottom: 0;
+}
+.tabs-content {
+    border: solid 3px #f1d3d3;
+    margin-top: -3px;
+    background-color: #fff;
+    /* overflow: hidden; */
+    /* line-height: 1.5; */
+    /* height: 825px; */
+}
+.tabs-panel {                /*空白的內容*/
+    display: none;
+    overflow-x:hidden;      /*可以強制讓 x 軸的 scrollbar 隱藏起來*/
+    overflow-y:auto;        /*只讓 Y 軸有scrollbar*/
+    height: 790px;
+    /* font-size: 25px; */
+}
+
+/************ CSS Animation ***********/
+
+.animated-tabs{
+    animation-duration: 1.5s;
+    animation-fill-mode:forwards;   /*forwards 就是動畫結束後保持最後結束的樣子*/
+}
+.fadeIn { 
+    animation-name: fadeIn; 
+}
+
+@keyframes fadeIn { 
+    0% {opacity: 0;} 
+    100% {opacity: 1;} 
+} 
+
+
+
+
+table{
+    width: 100%;
+    font-weight: bold;
+    table-layout:fixed;
+    word-break:break-all;
+}
+
+tr,td{
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-top: 0;
+    border-left: 0;
+    
+}
+
+.imgTD{
+    overflow: hidden; 
+}
+.imgTD img{
+    /* width: 100%; */
+
+}
+
+.btCancel{
+    text-align: right;
+}
+.btCancel button{
+    border: none;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    
+}
+
+
+
+
+

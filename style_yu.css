@@ -1,0 +1,158 @@
+/* yarong 版本 */
+body{
+	font-family:"Source Sans Pro",sans-serif;
+	font-size:15px;
+	font-weight:400;
+	-webkit-font-smoothing:antialiased;
+    -moz-font-smoothing:antialiased;
+}
+
+/* box */
+#market_box{
+    margin: 0px;
+    padding: 10px;
+    width: 1200px 100%;
+    height: 900px 100%;  
+    display: flex;
+     justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: darkgoldenrod;
+}
+/* 左側box */
+#market_left_box{
+    
+     background-color: rgb(191, 255, 71);
+    width: 650px 100%;
+    height: 900px 100%;  
+    display: flex;
+     justify-content: space-between;
+    flex-direction: column;
+}
+    /* 1. */
+    #market_title{
+    
+        border: 1px solid black;
+        background-color: aqua;
+        width: 600px;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    /* 2.左側innerbox */
+    #market_shop {
+        margin-right: 20px;
+        border: 1px solid black;
+        background-color: violet;
+        width: 600px; height: 400px;
+    }
+    #market_shop_conver{
+        background-color: blue;
+        width: 600px;height: 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    #market_shop_scrollbar{
+        width: 600px;height: 300px;
+        background-color: sienna;
+        overflow: auto;
+    }
+    /* 3. */
+    #market_commend{
+        width: 650px;height: 300px;
+        background-color: slateblue;
+        border-radius: 50px;
+        border: black 1px solid;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    /* 4. */
+    #market_button{
+        width: 650px;height: 30px;
+        background-color: springgreen;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+/* 右側BOX */
+#market_right_box{
+    padding: 10px;
+    width:   500px;
+    height: 900px ;
+    background-color: coral;
+    display: flex;
+     justify-content: space-between;
+    flex-direction: column;
+}
+/* 1. */
+#market_info{
+    width:   500px;
+    height: 300px;
+    background-color: bisque;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+}
+#market_phone{
+    width:   300px;
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+}
+#market_web{
+    width:   300px;
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+}
+#market_time{
+    width:   300px;
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+}
+/* 2. */
+#market_map{
+    width:   500px;
+    height: 200px;
+    background-color: aqua;
+    display : flex;
+    justify-content: space-around;
+    flex-direction: column;
+    /* align-items: center; */
+}
+/* 3. */
+#market_trans{
+    width:   480px;
+    height: 200px;
+    padding: 10px;
+    background-color: rgb(208, 255, 0);
+    display : flex;
+    justify-content: space-around;
+    flex-direction: column;
+    
+    /* align-items: center; */
+}
+/* 4. */
+#market_weather{
+    width:   480px;
+    height: 200px;
+    padding: 10px;
+    background-color: rgb(255, 0, 0);
+    display : flex;
+    justify-content: space-around;
+    flex-direction: column;
+    /* align-items: center; */
+}
+#market_weather_status{
+    width: 480px;
+    height: 150px;
+    background-color: blanchedalmond;
+}
