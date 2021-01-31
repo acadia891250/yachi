@@ -217,9 +217,9 @@ header{
                     font-size: 1rem;
                     text-align: center;
                     color: white;
-                    width: 10rem;
-                    padding: 1rem;
-                    margin: 0 1rem;
+                    width: 11rem;
+                    padding: 1rem 0rem;
+                    // margin: 0 1rem;
                     
                 }
                
@@ -228,10 +228,12 @@ header{
             .tab-content{
                 background-color: white;
                 position: absolute;
-                left: 19.5%;
-                width: 58rem;
+                /* 調整左邊 border線 與導覽列同X軸 */
+                left: 21%;
+                /* 控制右邊 border線 */
+                width: 55rem;
                 .tab-panel{
-                    border: 1px solid #ccc;
+                    border: 2px solid #ccc;
                     padding: 0 1rem;
                     display: none;
                     
