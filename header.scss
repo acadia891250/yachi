@@ -1,0 +1,282 @@
+/* 全域border box  使padding內縮  */
+/* 含偽元素*/
+*,*::before,*::after{
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body{
+    height: 1500px;
+    margin-top: 13rem;
+    font-family:"微軟正黑體";
+   
+}
+
+/* 回到上方的按鈕 */
+.toTop{
+    position: fixed;
+    font-size: 3rem;
+    right: 1rem;
+    bottom: 1rem;
+}
+
+header{
+    // border: 1px solid red;
+    background: #ccc;
+    width: 100%;
+    /* 使頁首定在body上方 */
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    right: 0;
+    nav{
+        background-color: black;
+        .navbar{
+            display: flex;
+            align-items: center;
+            padding: 0.25rem 0.5rem;
+            margin: 0 1rem;
+            .ig-links{
+                // border: 1px solid red;
+                font-size: 0.875rem;
+                a{
+                    padding: 0 0.15rem;
+                    color: white;
+                    &:first-child{
+                        border-right: 1px solid #ccc;
+                        padding-right: 0.5rem;
+                    }
+                    img{
+                        vertical-align: text-bottom;
+                    }
+                    &:hover{
+                        color: orange;
+                    }
+                }
+            }
+            .space{
+                // border: 1px solid red;
+                flex-grow: 1;
+                flex-basis: 0;
+            }
+            .links{
+                // border: 1px solid red;
+                font-size: 0.875rem;
+                display: flex;
+                
+                a{
+                    color: white;
+                    margin: 0 0.3rem;
+                    i{  
+                        margin-right: 0.25rem;
+                    }
+                    &:hover{
+                        color: orange;
+                    }
+                    
+                }
+
+            }
+        }
+    }
+
+    .search{
+        // border: 1px solid red;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        .search-wrap{
+            // border: 1px solid red;
+            display: flex;
+            .logo-wrap{
+                // border: 1px solid red;
+                max-width: 200px;
+                img{
+                    width: 100%;
+                    vertical-align: bottom;
+                }
+            }
+            .search-food{
+                // border: 1px solid red;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                .search-input{
+                    border: 2px solid black;
+                    display: flex;
+                    input,button{
+                        background-color: white;
+                        border: none;
+                        height: 2rem;
+                    }
+                    input{
+                        width: 40rem;
+                    }
+                    input:focus{
+                        outline: none;
+                    }
+                    button:hover{
+                        background-color: rgba(0, 0, 0, 0.1);
+                    }
+                }
+                .food-trending{
+                    // border: 1px solid red;
+                    a{
+                        color: black;
+                        font-size: 0.875rem;
+                        padding: 0 1rem;
+
+                        &:hover{
+                            color: orange;
+                        }
+                    }
+                    
+                }
+                
+            }
+            .search-ticket{
+                // border: 1px solid black;
+                max-width: 200px;
+                position: relative;
+                margin-left: 0.5rem;
+               img{
+                   width: 100%;
+                   vertical-align:bottom;
+               }
+               .txt{
+                   background-color: rgba(0, 0, 0, 0.5);
+                   font-size: 1rem;
+                   position: absolute;
+                   top: 0;
+                   right: 0;
+                   left: 0;
+                   bottom: 0;
+                   /* 使文字垂直居中 */
+                   display: flex;
+                   /* x軸居中對齊 */
+                   justify-content: center;
+                   /* y軸居中對齊 */
+                   align-items: center;
+                   h2{
+                       color: white;
+                       
+                   }
+               }
+               /* 父層被hover 子層做事情*/
+               &:hover .txt{
+                   background-color:#ccc;
+                   opacity: 0.7;
+                   h2{
+                       color: black;
+                   }
+               }
+
+            }
+            .member{
+                // border: 1px solid red;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                a{
+                    // border: 1px solid red;
+                    padding: 0 1rem;
+                    color: black;
+                    &:first-child{
+                        border-right: 1px solid black;
+                    }
+                    &:last-child{
+                        display: block;
+                        i{
+                            font-size: 4rem;
+                        }
+                    }
+                    &:hover{
+                        color: orange;
+                    }
+                }
+            }
+        }
+    }
+
+    .tab{
+        background-color: black;
+        // border: 1px solid red;
+        .tab-warp{
+            position: relative;
+            
+            .tab-list{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                // max-width: 800px;
+                // margin: 0 auto;
+
+                a{
+                    font-size: 1rem;
+                    text-align: center;
+                    color: white;
+                    width: 10rem;
+                    padding: 1rem;
+                    margin: 0 1rem;
+                    
+                }
+               
+            }
+            
+            .tab-content{
+                background-color: white;
+                position: absolute;
+                left: 19.5%;
+                width: 58rem;
+                .tab-panel{
+                    border: 1px solid #ccc;
+                    padding: 0 1rem;
+                    display: none;
+                    
+                }
+
+            }
+        }
+    }
+}
+
+
+/*** addClass 類別使用 ****/
+
+.liColor{
+    background-color: rgba(206, 16, 16, 0.5);
+}
+
+
+
+
+
+/* iPhone XS Max Viewport RWD 414*896 */
+@media(max-width:415px){
+    header{
+
+        nav{
+            .navbar{
+                flex-direction: column;
+            
+                .ig-links{
+                    a{
+                        padding: 0 0.2em; 
+                    }
+                }
+                .space{
+                    color: white;
+                }
+                .links{
+                    
+                    li{
+                        padding: 0 1em;
+                    }
+
+                }
+            }
+        }
+    }
+}
