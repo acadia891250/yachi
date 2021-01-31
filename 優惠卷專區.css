@@ -8,245 +8,146 @@ body{
 .fa-star:hover{
     color: #d5573b;
 }
-/* box */
-#market_box{
-    /* border: 1px solid rgb(205, 228, 5); */
+/* header */
+.shop_content_title{
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 8rem;
+  /* background-color: rgb(0, 162, 255); */
+}
+.shop_content_title_name{
+  margin-left: 5%;
+  font-size: x-large;
+}
+.shop_content_title_list{
+  display: flex;
+  flex-direction: row;
+  width: 15%;
+  /* align-items: center; */
+  justify-content: space-around;
+}
+.shop_content_title_list>*{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.fa-tags:hover{
+  color: rgb(225, 225, 225);
+}
+.fa-shopping-cart:hover{
+  color: rgb(225, 225, 225);
+}
+.fa-user-circle:hover{
+  color: rgb(225, 225, 225);
+}
+/* header end */
+.coupon_main_box{
     margin: 0 auto;
+    /* background-color: #F6AE2D; */
+    margin-top: 16.875rem;
     width: 80rem;
-    display: flex;
-}
-/* 我的視窗15PX=1em */
-/* 左側box */
-#market_left_box{
-
-    /* border: 1px solid red; */
-    width: 53.3em ;
-
-}
-    /* 1. */
-#market_title{
-    /* border: 1px solid red; */
-
-    border-radius: 0.33em;
-    width: 25em;
-    height: 2em;
-    font-size: 2em;
-    padding: 0.5em;
-    display: flex;
-    /* justify-content: center; */
-    align-items: center;
-    justify-content: space-between;
-    /* background-color: brown; */
-}
-#market_title>div{
-    /* border: 1px solid red; */
-    display: flex;
-    align-items: center;
-}
-
-
-    
-/* 2.左側innerbox */
-#market_shop {
-    /* border: 1px solid red; */
-
+    height: 80rem;
     display: flex;
     flex-direction: column;
 }
-#market_shop #shop{
-    
-    /* padding: 0.33em; */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    /* background-color: blue; */
-    height: 3em;
+/* 優惠卷容器 */
+.coupon_search_box{
+  /* margin: 0 auto; */
+  margin-top: 0.33rem;
+  height: 5rem;
+  width: 80rem;
+  /* background-color: blueviolet; */
 }
-#market_shop #shop #shop-img{
+.coupon_search_engine{
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content:space-around;
+  border-radius: 2rem;
+  margin: 0 auto;
+  height: 4rem;
+  width: 78rem;
+  /* background-color: cadetblue; */
+  border: 1px solid black;
+}
+.coupon_search_engine_right{
+  border: 0px solid black;
+  border-radius: 2rem;
+  height: 3.9rem;
+  /* width: 75rem; */
+  flex: 15;
+  /* display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center; */
+}
+.coupon_search_engine .fa-search{
+  /* border: 0px solid black; */
+  /* height: 3.9rem; */
+  /* width: 75rem; */
+  margin-left: 2%;
+  flex: 1;
+}
+.coupon_bottom_box{
+    margin: 0.33rem auto;
+    flex-direction: column;
+    align-items:center;
+    /* justify-content:space-between; */
+    border: black solid 0.1rem;
+    border-radius: 1rem;
+    background-color: rgb(255, 255, 235);
+    width: 78rem;
+    height: 56rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+/* 優惠卷內部區塊 */
+.coupon_box_item{
+    margin: 1rem;
+    /* 些微推擠 */
+    padding: 0.1rem;
+    /* background-color: lawngreen; */
+    /* border: black 1px solid; */
     display: flex;
     flex-direction: row;
     align-items: center;
-    /* background-color: blueviolet; */
-}
-#market_shop #shop #shop-img{
-    color: #d5573b;
-}
-/* 商店推薦列表 */
-#market_shop .market_menu{
-    overflow: auto;
-    border: solid 1px black;
-    border-radius: 10px;
-    height: 23em;
-    /* background-color: sienna; */
-    display: flex;
-    /* justify-content: space-around; */
-    /* width: 52em; */
-    /* justify-items: center; */
-    flex-wrap:wrap;
-
-}
-/* 商店推薦-內部區塊 */
-#market_shop .market_menu>*{
-    margin-top: 1em;
-    width: 12em;
-    height: 11em;
-    display:flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: space-around;
-    line-height: 0.2em;
+    width: 35rem;
+    height: 7rem;
 }
-#market_shop .market_menu>*>img{
-    width: 8em;
-    height: 6em;
+.coupon_img{
+    width: 5rem;
+    height: 5rem;
+    overflow: hidden;
 }
-/* 3. */
-#market_commend{
-    height: 20em;
-    background-color: slateblue;
-    border-radius: 3.3em;
-    border: black 1px solid;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow:3px 3px 12px rgb(96, 0, 175);
+.coupon_content{
+    border: 0.1rem solid black;
+    border-radius: 0.5rem;
+    width: 20rem;
+    height:6.5rem;
+    background-color: lightblue;
+    /* 文字區塊描述 */
+    overflow : hidden;
+    /*  */
 }
-/* 4. */
-#market_button{
-    margin: 1em auto;
-    height: 5em;
-    /* background-color: springgreen; */
-    
-    display: flex;
-    
-    flex-direction: row;
-    justify-content:space-between;
+.fa-plus:hover{
+  color: #a3a3a3;
 }
-#market_button>*{
-    border-radius: 5px;
-border: solid black 0.066em;
-}
-#market_button .textarea{
-    overflow: auto;
-    overflow-wrap: break-word; 
-    max-height: 5em; 
-    flex-grow: 1;
-}
-#market_button .btn{
-    height: 5em;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-/* 右側BOX */
-#market_right_box{
-    /* border: 1px solid red; */
-
-    width: 100%;
-    padding: 0.66em;
-    
-    display: flex;
-     justify-content: space-between;
-    flex-direction: column;
-    align-items: flex-end;
-    
-}
-#market_right_box>*{
-    width: 20em;
-}
-/* 1. */
-#market_info{
-    border-radius: 8px;
-    
-    height: 20em;
-    background-color:rgba(123,136,111,0.1);
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
-    align-items: center;
-}
-#market_info >*{
-    color: #d5573b;
-    width:   20em;
-    height: 3.3em;
-    display: flex;
-    justify-content: space-around;
-    flex-direction: row;
-}
-/* #market_info>#market_time{
-    flex-grow: 1;
-} */
-#market_info >*>*:not(img){
- align-self: center;
- line-height: 0.2em;
-}
-
-/* 2. */
-#market_map{
-    height: 13.33em;
-    /* background-color: aqua; */
-    display : flex;
-    justify-content: space-around;
-    flex-direction: column;
-    /* align-items: center; */
-}
-#market_map .market_maptitle{
-    font-size: larger;
-}
-/* 3. */
-#market_trans{
-    border-radius: 8px;
-    height: 13.33em;
-    background-color:rgba(123,136,111,0.1);
-    display : flex;
-    justify-content: space-around;
-    flex-direction: column;
-}
-#market_trans .market_transtitle{
-    font-size:larger;
-}
-#market_trans .market_trans_1 .market_trans_2{
-    /* >*:not(:first-child) */
-    padding: 0.33em;
-    border: black solid 1px;
-    border-radius: 2px;
-    /* background-color: blanchedalmond; */
-}
-/* 4. */
-#market_weather{
-    height: 13.33em;
-    /* padding: 10px; */
-    /* background-color: rgb(255, 0, 0); */
-    display : flex;
-    justify-content: space-around;
-    flex-direction: column;
-    /* align-items: center; */
-}
-#market_weather .market_weather_title{
-    font-size: larger;
-}
-#market_weather_status{
-    height: 10em;
-    /* background-color: blanchedalmond; */
-}
-
-
-
 /* slider */
 .carousel {
     margin: 0 auto;
-    margin-top: 16.875em;
+    /* margin-top: 16.875em; */
     width: 67.5em;
-    height: 32em;
+    /* height: 32em; */
+    height: 24em;
+    overflow: hidden;
     border: 1em solid;    
     border-color: #fff;
     /* border-bottom-width: 100px; */
@@ -257,6 +158,7 @@ border: solid black 0.066em;
     width: 64em;/*1080px*/
     height: 30em;/*480px*/
 }
+
 /* header */
 @charset "UTF-8";
 /* 全域border box  使padding內縮  */
