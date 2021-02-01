@@ -261,11 +261,13 @@ header{
 
         nav{
             .navbar{
+                display: flex;
                 flex-direction: column;
             
                 .ig-links{
                     a{
                         padding: 0 0.2em; 
+                        font-size: 0.1rem;
                     }
                 }
                 .space{
@@ -280,5 +282,51 @@ header{
                 }
             }
         }
+
+        .search{
+            background-color: white;
+            .search-wrap{
+
+                flex-direction: column;
+                align-items: center;
+                
+                .logo-wrap{
+
+
+                    img{
+
+                    }
+                }
+
+                .search-food{
+
+                    .search-input{
+
+
+                        input{
+                            width: 15rem;
+                        }
+
+                    }
+                    .food-trending{
+                       padding: 0.5rem 0;
+                    }
+                }
+
+                .search-ticket{
+
+
+                }
+
+                .member{
+
+                }
+            }
+        }
+
+
+
+
+
     }
 }
