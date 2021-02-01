@@ -4,238 +4,13 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <link rel="stylesheet" href="/reset.css">
+    <link rel="stylesheet" href="基本資料.css">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     
-    <style>
-
-        /* Google fonts：Noto Sans TC (Chinese Traditional) 黑體（思源黑體） */
-        @import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
-
-        body { 
-            font-family: ‘Noto Sans TC’, sans-serif;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+   
         
-
-        header{
-            display: flex;
-            background-color: #eed4d4;
-            align-items: center;
-            height: 100px;
-            margin: 0 auto;
-            position: relative;
-            max-width: 100%;
-
-        }
-        /* 圖片區 */
-        .logo{
-            max-width: 200px;
-            max-height: 100px;
-            box-sizing: border-box;
-            margin-left: 80px;
-        }
-        .logo img{
-            width: 100%;
-            height: 100%;
-        }
-
-        .nav{                  
-            display: flex;
-            margin: auto;
-        }
-        .nav .menu a{
-            text-decoration: none;
-            padding: 5px 1rem;
-            color: white;
-            position: relative;
-            margin: auto;
-            
-        }
-        .menu:hover{
-            transform: translateY(-10px);
-            transition: .5s;
-            
-        }
-        .menu a:hover,.menu a:hover i{
-            color:black;
-            transform: scale(1);
-            padding-right: 10px;
-        }
-        .menu a i{
-            transform: scale(0);
-        }
-
-        .nav .menu ul{
-            display: none;
-            padding-top: 10px;
-        }
-        .menu ul li{
-            padding-top: 10px;
-        }
-        .menu:hover ul{
-            display: block;
-            position: absolute;
-                       
-        }
-
-        .header-search{
-            display: flex;
-            margin-right: 20px;
-        }
-        .header-search button,input{
-            border: none;
-            background-color: white;
-            padding: 4px;
-            
-        }
-        .header-search input{
-            border-radius: 200px 0 0 200px;
-        }
-        .header-search button{
-            border-radius: 0 200px 200px 0;
-        }
-        .header-search input:focus{
-            outline: none;
-        }
-        
-
-        .login{
-            margin: 10px;
-            
-        }
-        .login a{
-            text-decoration: none;
-            font-size: 15px;
-            color: white;
-        }
-        .icon{
-            position:absolute;
-            top: 10px;
-            right: 20px;
-        }
-        .icon a{
-            padding: 5px;
-            
-        } 
-
-        /* .advertisement img{
-            width: 100%;
-        } */
-
-        .member{
-            max-width: 100%;
-            display: flex;
-        }
-
-        aside{
-            border: 1px solid #CCC;
-            width: 500px;
-            height: 850px;
-            /* background-color: #ccc; */
-            text-align: center;
-        }
-        aside .function{
-            display: flex;
-            flex-direction: column; 
-        }
-        .function h3{
-            font-size: 24px;
-            padding: 20px 0;
-            font-weight:bolder;
-        }
-        .function img{
-            vertical-align: bottom;   /*解決圖片底下留白問題*/
-        }
-        .function .item img:hover{
-            opacity: 0.5;
-            transition: 0.5s;
-        }
-        .function label{
-            padding: 10px 0;
-            font-size: 13px;
-            font-weight:bolder;
-            
-        }
-        .function button{
-            border: 1px solid #ccc;
-            width: 200px;
-            margin: 5px auto;
-            padding: 10px;
-            border-radius: 10px;
-            font-weight:bolder;
-            
-        }
-        .function .item:last-child{
-            margin-top:125px;
-           
-        }
-        
-        /*按鈕動畫*/
-        .function button:focus{
-            outline: none;
-        }
-        .function button:hover{
-            
-            background-color: rgb(170, 192, 207);
-        }
-
-        .function button span{
-           
-            position: relative;
-        }
-        .function button:hover span{
-            padding-right: 25px;
-            transition: 0.5s;
-        }
-        .function button span:after{
-            content: '➜';
-            opacity: 0;
-            transition: 0.5s;
-            position: absolute;
-            
-            right: -10px;
-            font-weight: bold;
-        }
-        .function button:hover span:after{
-            opacity: 1;
-        }
-
-
-        /*表單製作*/
-        main{
-            
-            width: 100%;
-            height: 850px;
-            background:rgb(170, 192, 207);
-        }
-        .info{
-            display: flex;
-            flex-direction: column;
-            margin-top: 50px;
-        }
-       
-        .info div{
-            display: flex;
-            margin: 20px auto;
-            
-        }
-        .info div label{
-           width: 200px;
-        }
-        .info div h3{
-            width: 100px;
-            font-weight: bold;
-            padding: 5px 10px;   
-        }
-        .info div button{
-            background:rgb(170, 192, 207);
-            font-size:50px;
-            border: none;
-        }
-        
-    </style>
+    
     <script>
         $(function () {
              // change這個event只有代表改變，並不代表有檔案
@@ -265,101 +40,155 @@
                     });
                 }
             });
+
+             /* hover事件切換 如果只寫一個方法  
+               那鼠標經過和離開都會觸發這個方法 slideToggle
+            */
+            // $('.menu-box').hover(function(){
+            //     $(this).children('ul').slideToggle();
+            // })
+
+            $('.tab-list a').hover(function(){
+                /* 為匹配的當前元素切換 class css類別 */
+                $(this).toggleClass('liColor');
+                
+                /* 拿到當前(this) a 的索引號 */
+                index = $(this).index();
+
+                /* 讓上面和下面相應的索引號 eq() 顯示內容 
+                    其餘siblings() 隱藏起來 */
+                $('.tab-panel').eq(index).stop().fadeIn('slow').show().siblings().hide();
+
+            },function(){
+                /* 第二個方法處理滑鼠移開事件 */
+                $(this).removeClass('liColor');
+                $('.tab-panel').hide();
+            })
+
+            $('.tab-panel').hover(function(){
+                index = $(this).index();
+                $(this).css('background-color','white').show();
+                $('.tab-list a').eq(index).addClass('liColor');
+            },function(){
+                $(this).hide();
+                $('.tab-list a').eq(index).removeClass('liColor');
+            })
+
         });
+
+
  
     </script>
 </head>
 <body>
-
+    <!-- 回到上方的按鈕 -->
+    <a href="#" class="toTop"><i class="fas fa-arrow-up"></i></a>
     <header>
+        <nav>
+            <div class="navbar">
+                <div class="ig-links">
+                    <a href="#">快速登入</a>
+                    <a href="#"><img src="./img/facebook.png" alt=""></a>
+                    <a href="#"><img src="./img/search.png" alt=""></a>
+                    <a href="#"><img src="./img/instagram.png" alt=""></a>
+                </div>
+                <div class="space">
+                    
+                </div>
+                <div class="links">
+                    <a href="#"><i class="fas fa-user-friends"></i>關於我們</a>
+                    <a href="#"><i class="fas fa-info-circle"></i>最新消息</a>
+                    <a href="#"><i class="far fa-question-circle"></i>幫助中心</a>
+                    <a href="#"><i class="fas fa-comment-dots"></i>意見回應</a>
+                </div>
+            </div>
+        </nav>
 
-        <div class="logo">
-            <a href="#">
-                <img src="./img/yachiLogo50.png">
-            </a>
+
+        <div class="search">
+            <div class="search-wrap">
+                
+                <div class="logo-wrap">
+                    <img src="./img/yachiLogo50.png" alt="" class="logo-wrap-img">
+                </div>
+                
+                <form class="search-food" action="https://www.google.com/">
+                    <div class="search-input">
+                        <input type="search" placeholder="不要來搜尋">
+                        <button><i class="fas fa-search"></i></button>
+
+                    </div>
+                    <div class="food-trending">
+                        <a href="#">大腸包大腸</a>
+                        <a href="#">測試中</a>
+                        <a href="#">優惠券</a>
+                        <a href="#">關鍵字</a>
+                        <a href="#">測試</a>
+                    </div>
+                </form>
+
+                <div class="search-ticket">
+                    <img class="search-ticket-img" src="./img/cat.png" >
+                    <div class="txt">
+                        <a href="#"><h2>優惠券專區</h2></a>
+                    </div>
+                    
+                </div>
+
+                <div class="member">
+                    <a href="#">免費註冊</a>
+                    <a href="#">登入</a>
+                    <a href="#"><i class="fas fa-shopping-cart"></i></a>
+                </div>
+
+            </div>
         </div>
 
-        <div class="nav">
 
-            <div class="menu">
-                <a href="#"><i class="fas fa-search"></i>關於我們</a>
-                <ul>
-                    <li><a href="#"><i class="fas fa-search"></i>測試</a></li>
-                    <li><a href="#"><i class="fas fa-search"></i>測試</a></li>
-                    <li><a href="#"><i class="fas fa-search"></i>測試</a></li>
-                    <li><a href="#"><i class="fas fa-search"></i>測試</a></li>
-                    <li><a href="#"><i class="fas fa-search"></i>測試</a></li>
-                </ul>
+
+        <div class="tab">
+            <div class="tab-warp">
+
+                <div class="tab-list">
+                    <a href="#">夜市簡介</a>
+                    <a href="#">優質商家</a>
+                    <a href="#">美食推薦</a>
+                    <a href="#">購物中心</a>
+                    <a href="#">會員中心</a>
+                </div>
+
+                <div class="tab-content">
+                    <div class="tab-panel">
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed cumque porro nam alias explicabo nihil labore quidem laborum repellat dignissimos. Mollitia sequi, sit facilis magni eveniet culpa eligendi debitis! Aliquid?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui rem a provident vel fugit corrupti placeat! Perferendis, eligendi quo repellat consequatur, dignissimos rerum quibusdam veritatis, voluptates error sint enim explicabo.
+                    </div>
+                    <div class="tab-panel">
+                        <img src="https://picsum.photos/500/200" alt="">
+                    </div>
+                    <div class="tab-panel">
+                        <img src="https://picsum.photos/600/200" alt="">
+                    </div>
+                    <div class="tab-panel">
+                        待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充
+                    </div>
+                    <div class="tab-panel">
+                        <img src="https://picsum.photos/450/200" alt="">
+                    </div>
+                </div>
+
             </div>
-
-            <div class="menu">
-                <a href="#"><i class="fas fa-ticket-alt"></i>優惠券</a>
-                <ul>
-                    <li><a href="#"><i class="fas fa-search"></i>測試</a></li>
-                    <li><a href="#"><i class="fas fa-search"></i>測試</a></li>
-                    <li><a href="#"><i class="fas fa-search"></i>測試</a></li>
-                    <li><a href="#"><i class="fas fa-search"></i>測試</a></li>
-                    <li><a href="#"><i class="fas fa-search"></i>測試</a></li>
-                </ul>
-            </div>
-
-            <div class="menu">
-                <a href="#"><i class="fas fa-store-alt"></i>商城</a>
-                <ul>
-                    <li><a href="#"><i class="fas fa-search"></i>測試</a></li>
-                    <li><a href="#"><i class="fas fa-search"></i>測試</a></li>
-                    <li><a href="#"><i class="fas fa-search"></i>測試</a></li>
-                    <li><a href="#"><i class="fas fa-search"></i>測試</a></li>
-                    <li><a href="#"><i class="fas fa-search"></i>測試</a></li>
-                </ul>
-            </div>
-
-            <div class="menu">
-                <a href="#"><i class="fas fa-shopping-bag"></i>購物車</a>
-                <ul>
-                    <li><a href="#"><i class="fas fa-search"></i>測試</a></li>
-                    <li><a href="#"><i class="fas fa-search"></i>測試</a></li>
-                    <li><a href="#"><i class="fas fa-search"></i>測試</a></li>
-                    <li><a href="#"><i class="fas fa-search"></i>測試</a></li>
-                    <li><a href="#"><i class="fas fa-search"></i>測試</a></li>
-                </ul>
-            </div>
-
-            <div class="menu">
-                <a href="#"><i class="fas fa-users"></i>會員中心</a>
-                <ul>
-                    <li><a href="#"><i class="fas fa-search"></i>測試</a></li>
-                    <li><a href="#"><i class="fas fa-search"></i>測試</a></li>
-                    <li><a href="#"><i class="fas fa-search"></i>測試</a></li>
-                    <li><a href="#"><i class="fas fa-search"></i>測試</a></li>
-                    <li><a href="#"><i class="fas fa-search"></i>測試</a></li>
-                </ul>
-            </div>
-
         </div>
 
-        <div class="login">
-            <a href="#"><i class="fas fa-user-plus"></i>免費註冊</a>
-        </div>
 
-        <form class="header-search" action="https://www.google.com/">
-            <input type="search" placeholder="不要來搜尋">
-            <button><i class="fas fa-search"></i></button>
-        </form>
-
-        <div class="icon">
-            <a href="#"><img src="/img/facebook.png"></a>
-            <a href="#"><img src="/img/instagram.png"></a>
-            <a href="#"><img src="/img/search.png"></a>
-        </div>
     </header>
+    
+
 
 
     <!-- <div class="advertisement">    /*廣告的位子*/
         <img src="https://picsum.photos/1200/300">
     </div> -->
 
-    <div class="member">
+    <div class="main-member">
         <aside>
             <div class="function">
                 <h3>會員中心</h3>
