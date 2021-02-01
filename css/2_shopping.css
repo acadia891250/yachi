@@ -6,15 +6,13 @@
     padding: 0;
     text-decoration: none;
 }
- /* Google fonts：Noto Sans TC (Chinese Traditional) 黑體（思源黑體） */
- @import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
+
 body { 
     background-image: url(../images_2/background_shop.png);
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
     font-family: ‘Noto Sans TC’, sans-serif;
-    max-width: 80%;
     margin: 0 auto;
 }
 /* .clearfix{
@@ -69,6 +67,11 @@ body {
     opacity: 0.5;
 }
 
+#main{
+    margin-top: 500px;
+    width: 80%;
+    margin: 0 auto;
+}
 /* 商品大區塊 */
 .shoppingArea{
     position: relative;
@@ -226,3 +229,4 @@ aside{
     background: #d2b3b3;
     color: #555555;
 }
+

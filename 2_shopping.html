@@ -2,403 +2,543 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shopping</title>
     <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/2_shopping.css">
+    <!-- <link rel="stylesheet" href="css/header.css"> -->
+    <!-- <link rel="stylesheet" href="css/2_shopping.css"> -->
+    <link rel="stylesheet" href="css/mix.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(function () {
+            
+            /* hover事件切換 如果只寫一個方法  
+               那鼠標經過和離開都會觸發這個方法 slideToggle
+            */
+            // $('.menu-box').hover(function(){
+            //     $(this).children('ul').slideToggle();
+            // })
+
+            $('.tab-list a').hover(function(){
+                /* 為匹配的當前元素切換 class css類別 */
+                $(this).toggleClass('liColor');
+                
+                /* 拿到當前(this) a 的索引號 */
+                index = $(this).index();
+
+                /* 讓上面和下面相應的索引號 eq() 顯示內容 
+                    其餘siblings() 隱藏起來 */
+                $('.tab-panel').eq(index).stop().fadeIn('slow').show().siblings().hide();
+
+            },function(){
+                /* 第二個方法處理滑鼠移開事件 */
+                $(this).removeClass('liColor');
+                $('.tab-panel').hide();
+            })
+
+            $('.tab-panel').hover(function(){
+                index = $(this).index();
+                $(this).css('background-color','white').show();
+                $('.tab-list a').eq(index).addClass('liColor');
+            },function(){
+                $(this).hide();
+                $('.tab-list a').eq(index).removeClass('liColor');
+            })
+
+            
+        });
+
+    </script>
 </head>
 <body>
     <!-- Start:header -->
-    <header>
-        <div id="header_container">
-
-        </div>
-    </header>
+    <body>
+        <!-- 回到上方的按鈕 -->
+        <a href="#" class="toTop"><i class="fas fa-arrow-up"></i></a>
+        <header>
+            <nav>
+                <div class="navbar">
+                    <div class="ig-links">
+                        <a href="#">快速登入</a>
+                        <a href="#"><img src="./images_2/facebook.png" alt=""></a>
+                        <a href="#"><img src="./images_2/search.png" alt=""></a>
+                        <a href="#"><img src="./images_2/instagram.png" alt=""></a>
+                    </div>
+                    <div class="space">
+                        
+                    </div>
+                    <div class="links">
+                        <a href="#"><i class="fas fa-user-friends"></i>關於我們</a>
+                        <a href="#"><i class="fas fa-info-circle"></i>最新消息</a>
+                        <a href="#"><i class="far fa-question-circle"></i>幫助中心</a>
+                        <a href="#"><i class="fas fa-comment-dots"></i>意見回應</a>
+                    </div>
+                </div>
+            </nav>
+    
+    
+            <div class="search">
+                <div class="search-wrap">
+                    
+                    <div class="logo-wrap">
+                        <img src="./images_2/yachiLogo50.png" alt="">
+                    </div>
+                    
+                    <form class="search-food" action="https://www.google.com/">
+                        <div class="search-input">
+                            <input type="search" placeholder="不要來搜尋">
+                            <button><i class="fas fa-search"></i></button>
+    
+                        </div>
+                        <div class="food-trending">
+                            <a href="#">大腸包大腸</a>
+                            <a href="#">測試中</a>
+                            <a href="#">優惠券</a>
+                            <a href="#">關鍵字</a>
+                            <a href="#">測試</a>
+                        </div>
+                    </form>
+    
+                    <div class="search-ticket">
+                        <img src="images_2/yachiLogo50.png">
+                        <div class="txt">
+                            <a href="#"><h2>優惠券專區</h2></a>
+                        </div>
+                        
+                    </div>
+    
+                    <div class="member">
+                        <a href="#">免費註冊</a>
+                        <a href="#">登入</a>
+                        <a href="#"><i class="fas fa-shopping-cart"></i></a>
+                    </div>
+    
+                </div>
+            </div>
+    
+    
+    
+            <div class="tab">
+                <div class="tab-warp">
+    
+                    <div class="tab-list">
+                        <a href="#">夜市簡介</a>
+                        <a href="#">優質商家</a>
+                        <a href="#">美食推薦</a>
+                        <a href="#">購物中心</a>
+                        <a href="#">會員中心</a>
+                    </div>
+    
+                    <div class="tab-content">
+                        <div class="tab-panel">
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed cumque porro nam alias explicabo nihil labore quidem laborum repellat dignissimos. Mollitia sequi, sit facilis magni eveniet culpa eligendi debitis! Aliquid?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui rem a provident vel fugit corrupti placeat! Perferendis, eligendi quo repellat consequatur, dignissimos rerum quibusdam veritatis, voluptates error sint enim explicabo.
+                        </div>
+                        <div class="tab-panel">
+                            <img src="https://picsum.photos/500/200" alt="">
+                        </div>
+                        <div class="tab-panel">
+                            <img src="https://picsum.photos/600/200" alt="">
+                        </div>
+                        <div class="tab-panel">
+                            待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充
+                        </div>
+                        <div class="tab-panel">
+                            <img src="https://picsum.photos/450/200" alt="">
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+    
+    
+        </header>
     <!-- End:header -->
 
     <!-- Start：購物車介面 -->
     <!-- End：購物車介面 -->
+    <div id="main">
+        <div class="header_image">
+            <img src="images_2/封面圖.jpg">
+        </div>
 
-    <div class="header_image">
-        <img src="images_2/封面圖.jpg">
-    </div>
+        <div class="new_container">
+            <div class="new_product">
+                <h1>最新商品</h1>
+            </div>
+        </div>
 
-    <div class="new_container">
-        <div class="new_product">
-            <h1>最新商品</h1>
+        <!-- 商品部分 -->
+        <div class="shoppingArea">
+            <!-- leftSide start -->
+            <aside>
+                <div class="left_container">
+                    <div class="onlineShop">
+                        <h3>線上商城</h3>
+                    </div>
+                    <div class="items">
+                        <a href="javascript:;">
+                            <span>最新商品</span>
+                        </a>
+                    </div>
+                    <hr class="hr">
+                
+                    <div class="items">
+                        <a href="#">
+                            <span>商品分類一</span>
+                        </a>
+                    </div>
+                    <hr class="hr">
+
+                    <div class="items">
+                        <a href="#">
+                            <span>商品分類二</span>
+                        </a>
+                    </div>
+                    <hr class="hr">
+
+                    <div class="items">
+                        <a href="#">
+                            <span>商品分類三</span>
+                        </a>
+                    </div>
+                </div>
+            </aside>
+            <!-- leftSide over -->
+
+            <!-- Start:rightSide -->
+            <main>
+                <div class="right_container">
+                    <div class="product_contianer">
+                        <div class="product_items">
+                            <div class="product_image image2">
+                                <img src="images_2/商品照片2.jpg">
+                            </div>
+                            <div class="product_image image1">
+                                <a href="#"><img src="images_2/商品照片1.jpg"></a>
+                            </div>
+                            <div class="product_name">
+                                <a href="#">商品名稱</a>
+                            </div>
+                            <div class="product_price">
+                                <span>售價NT$299</span>
+                            </div>
+                            <div class="product_count">
+                                <span>數量</span>
+                                <select name="count" id="">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="5">6</option>
+                                    <option value="5">7</option>
+                                    <option value="5">8</option>
+                                    <option value="5">9</option>
+                                    <option value="5">10</option>
+
+                                </select>
+                            </div>
+                            <div class="cartBtn">
+                                加入購物車
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <div class="product_contianer">
+                        <div class="product_items">
+                            <div class="product_image image2">
+                                <img src="images_2/商品照片2.jpg">
+                            </div>
+                            <div class="product_image image1">
+                                <a href="#"><img src="images_2/商品照片1.jpg"></a>
+                            </div>
+                            <div class="product_name">
+                                <a href="#">商品名稱</a>
+                            </div>
+                            <div class="product_price">
+                                <span>售價NT$299</span>
+                            </div>
+                            <div class="product_count">
+                                <span>數量</span>
+                                <select name="count" id="">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="5">6</option>
+                                    <option value="5">7</option>
+                                    <option value="5">8</option>
+                                    <option value="5">9</option>
+                                    <option value="5">10</option>
+
+                                </select>
+                            </div>
+                            <div class="cartBtn">
+                                加入購物車
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <div class="product_contianer">
+                        <div class="product_items">
+                            <div class="product_image image2">
+                                <img src="images_2/商品照片2.jpg">
+                            </div>
+                            <div class="product_image image1">
+                                <a href="#"><img src="images_2/商品照片1.jpg"></a>
+                            </div>
+                            <div class="product_name">
+                                <a href="#">商品名稱</a>
+                            </div>
+                            <div class="product_price">
+                                <span>售價NT$299</span>
+                            </div>
+                            <div class="product_count">
+                                <span>數量</span>
+                                <select name="count" id="">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="5">6</option>
+                                    <option value="5">7</option>
+                                    <option value="5">8</option>
+                                    <option value="5">9</option>
+                                    <option value="5">10</option>
+
+                                </select>
+                            </div>
+                            <div class="cartBtn">
+                                加入購物車
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <div class="product_contianer">
+                        <div class="product_items">
+                            <div class="product_image image2">
+                                <img src="images_2/商品照片2.jpg">
+                            </div>
+                            <div class="product_image image1">
+                                <a href="#"><img src="images_2/商品照片1.jpg"></a>
+                            </div>
+                            <div class="product_name">
+                                <a href="#">商品名稱</a>
+                            </div>
+                            <div class="product_price">
+                                <span>售價NT$299</span>
+                            </div>
+                            <div class="product_count">
+                                <span>數量</span>
+                                <select name="count" id="">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="5">6</option>
+                                    <option value="5">7</option>
+                                    <option value="5">8</option>
+                                    <option value="5">9</option>
+                                    <option value="5">10</option>
+
+                                </select>
+                            </div>
+                            <div class="cartBtn">
+                                加入購物車
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <div class="product_contianer">
+                        <div class="product_items">
+                            <div class="product_image image2">
+                                <img src="images_2/商品照片2.jpg">
+                            </div>
+                            <div class="product_image image1">
+                                <a href="#"><img src="images_2/商品照片1.jpg"></a>
+                            </div>
+                            <div class="product_name">
+                                <a href="#">商品名稱</a>
+                            </div>
+                            <div class="product_price">
+                                <span>售價NT$299</span>
+                            </div>
+                            <div class="product_count">
+                                <span>數量</span>
+                                <select name="count" id="">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="5">6</option>
+                                    <option value="5">7</option>
+                                    <option value="5">8</option>
+                                    <option value="5">9</option>
+                                    <option value="5">10</option>
+
+                                </select>
+                            </div>
+                            <div class="cartBtn">
+                                加入購物車
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <div class="product_contianer">
+                        <div class="product_items">
+                            <div class="product_image image2">
+                                <img src="images_2/商品照片2.jpg">
+                            </div>
+                            <div class="product_image image1">
+                                <a href="#"><img src="images_2/商品照片1.jpg"></a>
+                            </div>
+                            <div class="product_name">
+                                <a href="#">商品名稱</a>
+                            </div>
+                            <div class="product_price">
+                                <span>售價NT$299</span>
+                            </div>
+                            <div class="product_count">
+                                <span>數量</span>
+                                <select name="count" id="">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="5">6</option>
+                                    <option value="5">7</option>
+                                    <option value="5">8</option>
+                                    <option value="5">9</option>
+                                    <option value="5">10</option>
+
+                                </select>
+                            </div>
+                            <div class="cartBtn">
+                                加入購物車
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <div class="product_contianer">
+                        <div class="product_items">
+                            <div class="product_image image2">
+                                <img src="images_2/商品照片2.jpg">
+                            </div>
+                            <div class="product_image image1">
+                                <a href="#"><img src="images_2/商品照片1.jpg"></a>
+                            </div>
+                            <div class="product_name">
+                                <a href="#">商品名稱</a>
+                            </div>
+                            <div class="product_price">
+                                <span>售價NT$299</span>
+                            </div>
+                            <div class="product_count">
+                                <span>數量</span>
+                                <select name="count" id="">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="5">6</option>
+                                    <option value="5">7</option>
+                                    <option value="5">8</option>
+                                    <option value="5">9</option>
+                                    <option value="5">10</option>
+
+                                </select>
+                            </div>
+                            <div class="cartBtn">
+                                加入購物車
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <div class="product_contianer">
+                        <div class="product_items">
+                            <div class="product_image image2">
+                                <img src="images_2/商品照片2.jpg">
+                            </div>
+                            <div class="product_image image1">
+                                <a href="#"><img src="images_2/商品照片1.jpg"></a>
+                            </div>
+                            <div class="product_name">
+                                <a href="#">商品名稱</a>
+                            </div>
+                            <div class="product_price">
+                                <span>售價NT$299</span>
+                            </div>
+                            <div class="product_count">
+                                <span>數量</span>
+                                <select name="count" id="">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="5">6</option>
+                                    <option value="5">7</option>
+                                    <option value="5">8</option>
+                                    <option value="5">9</option>
+                                    <option value="5">10</option>
+
+                                </select>
+                            </div>
+                            <div class="cartBtn">
+                                加入購物車
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <div class="product_contianer">
+                        <div class="product_items">
+                            <div class="product_image image2">
+                                <img src="images_2/商品照片2.jpg">
+                            </div>
+                            <div class="product_image image1">
+                                <a href="#"><img src="images_2/商品照片1.jpg"></a>
+                            </div>
+                            <div class="product_name">
+                                <a href="#">商品名稱</a>
+                            </div>
+                            <div class="product_price">
+                                <span>售價NT$299</span>
+                            </div>
+                            <div class="product_count">
+                                <span>數量</span>
+                                <select name="count" id="">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="5">6</option>
+                                    <option value="5">7</option>
+                                    <option value="5">8</option>
+                                    <option value="5">9</option>
+                                    <option value="5">10</option>
+
+                                </select>
+                            </div>
+                            <div class="cartBtn">
+                                加入購物車
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <!-- End:rightSide -->
+            <div class="clearfix"></div>
         </div>
     </div>
-
-    <!-- 商品部分 -->
-    <div class="shoppingArea">
-        <!-- leftSide start -->
-        <aside>
-            <div class="left_container">
-                <div class="onlineShop">
-                    <h3>線上商城</h3>
-                </div>
-                <div class="items">
-                    <a href="#">
-                        <span>最新商品</span>
-                    </a>
-                </div>
-                <hr class="hr">
-            
-                <div class="items">
-                    <a href="#">
-                        <span>商品分類一</span>
-                    </a>
-                </div>
-                <hr class="hr">
-
-                <div class="items">
-                    <a href="#">
-                        <span>商品分類二</span>
-                    </a>
-                </div>
-                <hr class="hr">
-
-                <div class="items">
-                    <a href="#">
-                        <span>商品分類三</span>
-                    </a>
-                </div>
-            </div>
-        </aside>
-        <!-- leftSide over -->
-
-        <!-- Start:rightSide -->
-        <main>
-            <div class="right_container">
-                <div class="product_contianer">
-                    <div class="product_items">
-                        <div class="product_image image2">
-                            <img src="images_2/商品照片2.jpg">
-                        </div>
-                        <div class="product_image image1">
-                            <a href="#"><img src="images_2/商品照片1.jpg"></a>
-                        </div>
-                        <div class="product_name">
-                            <a href="#">商品名稱</a>
-                        </div>
-                        <div class="product_price">
-                            <span>售價NT$299</span>
-                        </div>
-                        <div class="product_count">
-                            <span>數量</span>
-                            <select name="count" id="">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="5">6</option>
-                                <option value="5">7</option>
-                                <option value="5">8</option>
-                                <option value="5">9</option>
-                                <option value="5">10</option>
-
-                            </select>
-                        </div>
-                        <div class="cartBtn">
-                            加入購物車
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                </div>
-                <div class="product_contianer">
-                    <div class="product_items">
-                        <div class="product_image image2">
-                            <img src="images_2/商品照片2.jpg">
-                        </div>
-                        <div class="product_image image1">
-                            <a href="#"><img src="images_2/商品照片1.jpg"></a>
-                        </div>
-                        <div class="product_name">
-                            <a href="#">商品名稱</a>
-                        </div>
-                        <div class="product_price">
-                            <span>售價NT$299</span>
-                        </div>
-                        <div class="product_count">
-                            <span>數量</span>
-                            <select name="count" id="">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="5">6</option>
-                                <option value="5">7</option>
-                                <option value="5">8</option>
-                                <option value="5">9</option>
-                                <option value="5">10</option>
-
-                            </select>
-                        </div>
-                        <div class="cartBtn">
-                            加入購物車
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                </div>
-                <div class="product_contianer">
-                    <div class="product_items">
-                        <div class="product_image image2">
-                            <img src="images_2/商品照片2.jpg">
-                        </div>
-                        <div class="product_image image1">
-                            <a href="#"><img src="images_2/商品照片1.jpg"></a>
-                        </div>
-                        <div class="product_name">
-                            <a href="#">商品名稱</a>
-                        </div>
-                        <div class="product_price">
-                            <span>售價NT$299</span>
-                        </div>
-                        <div class="product_count">
-                            <span>數量</span>
-                            <select name="count" id="">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="5">6</option>
-                                <option value="5">7</option>
-                                <option value="5">8</option>
-                                <option value="5">9</option>
-                                <option value="5">10</option>
-
-                            </select>
-                        </div>
-                        <div class="cartBtn">
-                            加入購物車
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                </div>
-                <div class="product_contianer">
-                    <div class="product_items">
-                        <div class="product_image image2">
-                            <img src="images_2/商品照片2.jpg">
-                        </div>
-                        <div class="product_image image1">
-                            <a href="#"><img src="images_2/商品照片1.jpg"></a>
-                        </div>
-                        <div class="product_name">
-                            <a href="#">商品名稱</a>
-                        </div>
-                        <div class="product_price">
-                            <span>售價NT$299</span>
-                        </div>
-                        <div class="product_count">
-                            <span>數量</span>
-                            <select name="count" id="">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="5">6</option>
-                                <option value="5">7</option>
-                                <option value="5">8</option>
-                                <option value="5">9</option>
-                                <option value="5">10</option>
-
-                            </select>
-                        </div>
-                        <div class="cartBtn">
-                            加入購物車
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                </div>
-                <div class="product_contianer">
-                    <div class="product_items">
-                        <div class="product_image image2">
-                            <img src="images_2/商品照片2.jpg">
-                        </div>
-                        <div class="product_image image1">
-                            <a href="#"><img src="images_2/商品照片1.jpg"></a>
-                        </div>
-                        <div class="product_name">
-                            <a href="#">商品名稱</a>
-                        </div>
-                        <div class="product_price">
-                            <span>售價NT$299</span>
-                        </div>
-                        <div class="product_count">
-                            <span>數量</span>
-                            <select name="count" id="">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="5">6</option>
-                                <option value="5">7</option>
-                                <option value="5">8</option>
-                                <option value="5">9</option>
-                                <option value="5">10</option>
-
-                            </select>
-                        </div>
-                        <div class="cartBtn">
-                            加入購物車
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                </div>
-                <div class="product_contianer">
-                    <div class="product_items">
-                        <div class="product_image image2">
-                            <img src="images_2/商品照片2.jpg">
-                        </div>
-                        <div class="product_image image1">
-                            <a href="#"><img src="images_2/商品照片1.jpg"></a>
-                        </div>
-                        <div class="product_name">
-                            <a href="#">商品名稱</a>
-                        </div>
-                        <div class="product_price">
-                            <span>售價NT$299</span>
-                        </div>
-                        <div class="product_count">
-                            <span>數量</span>
-                            <select name="count" id="">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="5">6</option>
-                                <option value="5">7</option>
-                                <option value="5">8</option>
-                                <option value="5">9</option>
-                                <option value="5">10</option>
-
-                            </select>
-                        </div>
-                        <div class="cartBtn">
-                            加入購物車
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                </div>
-                <div class="product_contianer">
-                    <div class="product_items">
-                        <div class="product_image image2">
-                            <img src="images_2/商品照片2.jpg">
-                        </div>
-                        <div class="product_image image1">
-                            <a href="#"><img src="images_2/商品照片1.jpg"></a>
-                        </div>
-                        <div class="product_name">
-                            <a href="#">商品名稱</a>
-                        </div>
-                        <div class="product_price">
-                            <span>售價NT$299</span>
-                        </div>
-                        <div class="product_count">
-                            <span>數量</span>
-                            <select name="count" id="">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="5">6</option>
-                                <option value="5">7</option>
-                                <option value="5">8</option>
-                                <option value="5">9</option>
-                                <option value="5">10</option>
-
-                            </select>
-                        </div>
-                        <div class="cartBtn">
-                            加入購物車
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                </div>
-                <div class="product_contianer">
-                    <div class="product_items">
-                        <div class="product_image image2">
-                            <img src="images_2/商品照片2.jpg">
-                        </div>
-                        <div class="product_image image1">
-                            <a href="#"><img src="images_2/商品照片1.jpg"></a>
-                        </div>
-                        <div class="product_name">
-                            <a href="#">商品名稱</a>
-                        </div>
-                        <div class="product_price">
-                            <span>售價NT$299</span>
-                        </div>
-                        <div class="product_count">
-                            <span>數量</span>
-                            <select name="count" id="">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="5">6</option>
-                                <option value="5">7</option>
-                                <option value="5">8</option>
-                                <option value="5">9</option>
-                                <option value="5">10</option>
-
-                            </select>
-                        </div>
-                        <div class="cartBtn">
-                            加入購物車
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                </div>
-                <div class="product_contianer">
-                    <div class="product_items">
-                        <div class="product_image image2">
-                            <img src="images_2/商品照片2.jpg">
-                        </div>
-                        <div class="product_image image1">
-                            <a href="#"><img src="images_2/商品照片1.jpg"></a>
-                        </div>
-                        <div class="product_name">
-                            <a href="#">商品名稱</a>
-                        </div>
-                        <div class="product_price">
-                            <span>售價NT$299</span>
-                        </div>
-                        <div class="product_count">
-                            <span>數量</span>
-                            <select name="count" id="">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="5">6</option>
-                                <option value="5">7</option>
-                                <option value="5">8</option>
-                                <option value="5">9</option>
-                                <option value="5">10</option>
-
-                            </select>
-                        </div>
-                        <div class="cartBtn">
-                            加入購物車
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                </div>
-            </div>
-        </main>
-        <!-- End:rightSide -->
-        <div class="clearfix"></div>
-    </div>
-
 
 </body>
 </html>
