@@ -8,18 +8,18 @@
 }
  /* Google fonts：Noto Sans TC (Chinese Traditional) 黑體（思源黑體） */
  @import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
-
 body { 
-     font-family: ‘Noto Sans TC’, sans-serif;
-     max-width: 80%;
-     margin: 0 auto;
+    background-image: url(../images_2/background_shop.png);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: ‘Noto Sans TC’, sans-serif;
+    max-width: 80%;
+    margin: 0 auto;
 }
-h2{
-    margin: 0;
-}
-.clearfix{
+/* .clearfix{
     clear: both;
-}
+} */
 #header_container{
     max-width: 100%;
     height: 100px;
@@ -28,26 +28,60 @@ h2{
 .header_image>img{
     max-width: 100%;
 }
+
+/* 商品標頭 */
 .new_container{
-    background: #aaaaaa;
+    /* background: #aaaaaa; */
     margin: 50px 0;
     padding: 10px 0;
 }
 .new_product{
     padding: 10px 0;
     text-align: center;
-    background: #cccccc;
+    /* background: #cccccc; */
 }
+.new_product h1{
+    position: relative;
+    display: inline-block;
+    letter-spacing: 8px;
+    color: #777777;
+}
+.new_product h1::before{
+    content: "";
+    position: absolute;
+    background: url(../images_2/左邊中括號.png) no-repeat;
+    width: 30px;
+    height: 45px;
+    top: -5px;
+    left: -40px;
+    background-size: contain;
+    opacity: 0.5;
+}
+.new_product h1::after{
+    content: "";
+    position: absolute;
+    background: url(../images_2/右邊中括號.png) no-repeat;
+    width: 30px;
+    height: 45px;
+    top: -5px;
+    right: -40px;
+    background-size: contain;
+    opacity: 0.5;
+}
+
+/* 商品大區塊 */
 .shoppingArea{
     position: relative;
+    display: flex;
 }
+
 /* 左半邊 */
 aside{
     /* background: green; */
     position: absolute;
     left: 0;
     width: 20%;
-    float: left;
+    /* float: left; */
    
 }
 .left_container{
@@ -72,10 +106,13 @@ aside{
 .items a{
     color: #333333;
     text-decoration: none;
-    transition: .3s;
+    letter-spacing: 6px;
+    transition: .5s;
 }
 .items a:hover{
+    border-radius: 5px;
     background: #ffffff;
+    opacity: 0.6;
 }
 .hr{
     width: 80%;
@@ -86,6 +123,8 @@ aside{
 /* 右半邊 */
 .right_container{
     position: absolute;
+    display: flex;
+    flex-wrap: wrap;
     right: 0;
     width: 73%;
     padding-top: 30px;
@@ -93,16 +132,20 @@ aside{
     border-radius: 5px;
 }
 .product_contianer{
-    float: left;
+    display: flex;
+    /* float: left; */
     height: 480px;
     padding-left:34px;
 }
 .product_image{
     width: 200px;
+    /* height: 150px; */
+
 }
 .product_image img{
-    width: 100%;
-    height: auto;
+	display:block ;
+	width:100% ;  /* 寬度跟容器一樣 */
+	height:auto ;  /* 因每個瀏覽器可能都不太一樣，所以高度也需要設定 */
 }
 .product_items{
     position: relative;
@@ -149,6 +192,7 @@ aside{
     color: #BE5555;
 }
 .product_count{
+    text-align: center;
     padding-bottom: 10px;
 }
 .product_count span{
@@ -161,6 +205,7 @@ aside{
     border: 1px solid #e2e2e2;
     border-radius: 5px;
     width: 154px;
+    padding: 2px 0;
 }
 .product_count select option{
     color: #aaa;
@@ -175,7 +220,7 @@ aside{
     color: #ffffff;
     letter-spacing: 2px;
     padding: 5px;
-    transition: .5s;
+    transition: .8s;
 }
 .cartBtn:hover{
     background: #d2b3b3;
