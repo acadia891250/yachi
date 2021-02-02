@@ -107,20 +107,17 @@ header .search {
 }
 
 header .search .search-wrap {
-  border: 1px solid red;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
 header .search .search-wrap .logo-wrap {
-  border: 1px solid red;
   max-width: 200px;
 }
 
 header .search .search-wrap .logo-wrap img {
   /* 圖片調整 */
-  border: 1px solid red;
   width: 100%;
   vertical-align: text-bottom;
 }
