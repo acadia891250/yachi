@@ -60,7 +60,7 @@ header nav .navbar .ig-links a:first-child {
   padding-right: 0.5rem;
 }
 
-header nav .navbar .ig-links a .imain-logo {
+header nav .navbar .ig-links a img {
   vertical-align: text-bottom;
 }
 
@@ -107,18 +107,20 @@ header .search {
 }
 
 header .search .search-wrap {
+  border: 1px solid red;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
 header .search .search-wrap .logo-wrap {
+  border: 1px solid red;
   max-width: 200px;
 }
 
-header .search .search-wrap .logo-wrap .logo-wrap-img {
+header .search .search-wrap .logo-wrap img {
   /* 圖片調整 */
-  padding-top: 1rem;
+  border: 1px solid red;
   width: 100%;
   vertical-align: text-bottom;
 }
@@ -181,7 +183,7 @@ header .search .search-wrap .search-ticket {
   /* 父層被hover 子層做事情*/
 }
 
-header .search .search-wrap .search-ticket .search-ticket-img {
+header .search .search-wrap .search-ticket img {
   width: 100%;
   vertical-align: bottom;
 }
