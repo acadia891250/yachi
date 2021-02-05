@@ -50,70 +50,108 @@
     </script>
 
     <style>
-        #theForm {
-            border: 1px solid black;
-            width: 400px;
-
-            margin: 50px auto;
-            box-sizing: border-box;
-            text-align: right;
-
+        * {
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
         }
 
-        #theForm h1 {
-            /* border:1px solid rgb(255, 0, 0); */
-            font-size: 25px;
-            text-align: center;
-            margin: 15px auto 0px auto;
-        }
-
-        #theForm div {
-            margin: 7px auto;
-        }
-
-
-
-        fieldset {
-            /* border:1px solid rgb(255, 0, 0); */
-            margin: 5px;
-            height: 400px;
-
-        }
-
-
-        #theForm input {
-
-            width: 200px;
-
-            margin: 10px 60px 0px 0px;
-        }
-
-        #btn {
-            background: rgb(99, 99, 81);
-            width: 70px;
-            color: #fff;
-            border: none;
-            padding: 10px;
+        /* -----------start-----------------*/
+        /* .image {
+			width: 100%;
+			height: 300px;
+			/* border: 1px solid #ccc; */
+        /* } */
+        #Boardwrap {
+            border: 1px solid rgb(34, 34, 201);
             border-radius: 10px;
-            cursor: pointer;
-            transition: all 1000ms ease-in-out;
-            margin: 10px 70px 0px 0px;
+            margin: -40px 200px auto 200px;
+            padding: 2px;
+            display: flex;
+        }
+
+        #Board {
+            /* border: 1px solid red; */
+            width: 40%;
+            height: 300px;
+            margin: 0px auto;
+
+            overflow: hidden;
+            position: relative;
+        }
+
+        #Board img {
+            max-width: 500px;
+        }
+
+        #Namewrap {
+            /* background:grey; */
+            border: 1px solid grey;
+            border-radius: 3px;
+            width: 300px;
+            height: 50px;
+            margin: 20px auto;
+            padding: 5px;
+            display: flex;
+        }
+
+        #Name {
+            /* border: 1px solid red; */
+            margin: auto;
+            font-size: 28px;
+        }
+
+        #btnwrap {
+            /* border: 1px solid rgb(17, 13, 233); */
+
+            border-radius: 3px;
+            width: 300px;
+            height: 50px;
+            margin: 20px auto;
+            padding: 5px;
+            display: flex;
+        }
+
+
+        .btn {
+            /* border: 1px solid red; */
+
+            margin: auto;
+        }
+
+        .btn button {
+            /* border: 1px solid red; */
+            border-radius: 8px;
+            width: 100px;
+            height: 40px;
+            margin: auto;
+        }
+
+        #Numberwrap {
+             border: 1px solid rgb(17, 13, 233);
+            border-radius: 3px;
+            width: 250px;
+            height: 50px;
+            margin: 20px auto;
+            padding: 5px;
+            display: flex;
+        }
+
+        #Number {
+            border: 1px solid red;
 
         }
 
-        div span {
-            color: red;
-        }
 
-        #btn:hover {
-            background: red;
-        }
+
+
+        /* ----------- End -----------------*/
     </style>
-
 </head>
 
 <body style="background-color: #F3F8F2;">
     <!-- 回到上方的按鈕 -->
+    <!------------------------- Start ------------------------------->
     <a href="#" class="toTop"><i class="fas fa-arrow-up"></i></a>
     <header>
         <nav>
@@ -218,45 +256,41 @@
 
 
     </header>
+    <!------------------------- End ------------------------------->
+    <!------------------------- Start ------------------------------->
+    <content>
+        <div id="Boardwrap">
+            <div id="Board">
+                <ul>
+                    <li><img src="Taiwanese hamburger.jpg"></li>
+                </ul>
+            </div>
+        </div>
 
-    <!-- ------------------imformation start--------------------- -->
-    <form id="theForm">
-        <fieldset>
-            <h1>基本資料</h1>
-            <div>
-                <label>帳號</label>
-                <input type="text" name="account" id="account">
+        <div id="Namewrap">
+            <div id="Name">
+                招牌刈包
             </div>
-            <div>
-                <label>密碼</label>
-                <input type="text" name="password" id="password">
-            </div>
-            <div>
-                <label>再次輸入密碼</label>
-                <input type="text" name="password" id="password">
-            </div>
-            <div>
-                <label>姓名</label>
-                <input type="text" name="name" id="name">
-            </div>
-            <div>
-                <label>生日</label>
-                <input type="date" name="birthday" id="birthday">
-            </div>
-            <div>
-                <label>手機號碼</label>
-                <input type="text" name="phoneNumber" id="phoneNumber">
-            </div>
-            <div>
-                <label>電子信箱</label>
-                <input type="email" name="email" id="email">
-            </div>
+        </div>
 
+        <div id="Numberwrap">
+            <div id="Number">
+                <label>使用張數</label>
+                <input type="number" name="num" id="num">
+            </div>
+        </div>
+        <div id="btnwrap">
+            <div class="btn">
+                <button>收藏</button>
+            </div>
+            <div class="btn">
+                <button>使用</button>
+            </div>
+        </div>
 
-            <div><button id="btn">確認</button><span>*號為必填</span></div>
-        </fieldset>
-    </form>
-    <!-- ------------------imformation end--------------------- -->
+    </content>
+    <!-------------------------  End  ------------------------------->
+
 
 </body>
 

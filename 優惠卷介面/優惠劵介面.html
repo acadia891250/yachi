@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,10 +9,10 @@
     <link rel="stylesheet" href="header.css">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    
+
     <script>
         $(function () {
-            
+
             /* hover事件切換 如果只寫一個方法  
                那鼠標經過和離開都會觸發這個方法 slideToggle
             */
@@ -19,10 +20,10 @@
             //     $(this).children('ul').slideToggle();
             // })
 
-            $('.tab-list a').hover(function(){
+            $('.tab-list a').hover(function () {
                 /* 為匹配的當前元素切換 class css類別 */
                 $(this).toggleClass('liColor');
-                
+
                 /* 拿到當前(this) a 的索引號 */
                 index = $(this).index();
 
@@ -30,29 +31,127 @@
                     其餘siblings() 隱藏起來 */
                 $('.tab-panel').eq(index).stop().fadeIn('slow').show().siblings().hide();
 
-            },function(){
+            }, function () {
                 /* 第二個方法處理滑鼠移開事件 */
                 $(this).removeClass('liColor');
                 $('.tab-panel').hide();
             })
 
-            $('.tab-panel').hover(function(){
+            $('.tab-panel').hover(function () {
                 index = $(this).index();
-                $(this).css('background-color','white').show();
+                $(this).css('background-color', 'white').show();
                 $('.tab-list a').eq(index).addClass('liColor');
-            },function(){
+            }, function () {
                 $(this).hide();
                 $('.tab-list a').eq(index).removeClass('liColor');
             })
 
         });
-
     </script>
+
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+        }
+
+        /* -----------start-----------------*/
+        /* .image {
+			width: 100%;
+			height: 300px;
+			/* border: 1px solid #ccc; */
+        /* } */
+        #Boardwrap {
+            border: 1px solid rgb(34, 34, 201);
+            border-radius: 10px;
+            margin: -40px 200px auto 200px;
+            padding: 2px;
+            display: flex;
+        }
+
+        #Board {
+            /* border: 1px solid red; */
+            width: 40%;
+            height: 300px;
+            margin: 0px auto;
+
+            overflow: hidden;
+            position: relative;
+        }
+
+        #Board img {
+            max-width: 500px;
+        }
+
+        #Namewrap {
+            /* background:grey; */
+            border: 1px solid grey;
+            border-radius: 3px;
+            width: 300px;
+            height: 50px;
+            margin: 20px auto;
+            padding: 5px;
+            display: flex;
+        }
+
+        #Name {
+            /* border: 1px solid red; */
+            margin: auto;
+            font-size: 28px;
+        }
+
+        #btnwrap {
+            /* border: 1px solid rgb(17, 13, 233); */
+
+            border-radius: 3px;
+            width: 300px;
+            height: 50px;
+            margin: 20px auto;
+            padding: 5px;
+            display: flex;
+        }
+
+
+        .btn {
+            /* border: 1px solid red; */
+
+            margin: auto;
+        }
+
+        .btn button {
+            /* border: 1px solid red; */
+            border-radius: 8px;
+            width: 100px;
+            height: 40px;
+            margin: auto;
+        }
+
+        #Numberwrap {
+             border: 1px solid rgb(17, 13, 233);
+            border-radius: 3px;
+            width: 250px;
+            height: 50px;
+            margin: 20px auto;
+            padding: 5px;
+            display: flex;
+        }
+
+        #Number {
+            border: 1px solid red;
+
+        }
+
+
+
+
+        /* ----------- End -----------------*/
+    </style>
 </head>
+
 <body style="background-color: #F3F8F2;">
     <!-- 回到上方的按鈕 -->
- <!------------------------- Start ------------------------------->
-   
+    <!------------------------- Start ------------------------------->
     <a href="#" class="toTop"><i class="fas fa-arrow-up"></i></a>
     <header>
         <nav>
@@ -64,7 +163,7 @@
                     <a href="#"><img src="./img/instagram.png" alt=""></a>
                 </div>
                 <div class="space">
-                    
+
                 </div>
                 <div class="links">
                     <a href="#"><i class="fas fa-user-friends"></i>關於我們</a>
@@ -78,11 +177,11 @@
 
         <div class="search">
             <div class="search-wrap">
-                
+
                 <div class="logo-wrap">
                     <img src="./img/yachiLogo50.png" alt="">
                 </div>
-                
+
                 <form class="search-food" action="https://www.google.com/">
                     <div class="search-input">
                         <input type="search" placeholder="不要來搜尋">
@@ -101,9 +200,11 @@
                 <div class="search-ticket">
                     <img src="./img/yachiLogo50.png">
                     <div class="txt">
-                        <a href="#"><h2>優惠券專區</h2></a>
+                        <a href="#">
+                            <h2>優惠券專區</h2>
+                        </a>
                     </div>
-                    
+
                 </div>
 
                 <div class="member">
@@ -130,7 +231,11 @@
 
                 <div class="tab-content">
                     <div class="tab-panel">
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed cumque porro nam alias explicabo nihil labore quidem laborum repellat dignissimos. Mollitia sequi, sit facilis magni eveniet culpa eligendi debitis! Aliquid?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui rem a provident vel fugit corrupti placeat! Perferendis, eligendi quo repellat consequatur, dignissimos rerum quibusdam veritatis, voluptates error sint enim explicabo.
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed cumque porro nam alias explicabo
+                        nihil labore quidem laborum repellat dignissimos. Mollitia sequi, sit facilis magni eveniet
+                        culpa eligendi debitis! Aliquid?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui
+                        rem a provident vel fugit corrupti placeat! Perferendis, eligendi quo repellat consequatur,
+                        dignissimos rerum quibusdam veritatis, voluptates error sint enim explicabo.
                     </div>
                     <div class="tab-panel">
                         <img src="https://picsum.photos/500/200" alt="">
@@ -148,8 +253,45 @@
 
             </div>
         </div>
+
+
     </header>
- <!-------------------------  End  ------------------------------->
+    <!------------------------- End ------------------------------->
+    <!------------------------- Start ------------------------------->
+    <content>
+        <div id="Boardwrap">
+            <div id="Board">
+                <ul>
+                    <li><img src="Taiwanese hamburger.jpg"></li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="Namewrap">
+            <div id="Name">
+                招牌刈包
+            </div>
+        </div>
+
+        <div id="Numberwrap">
+            <div id="Number">
+                <label>使用張數</label>
+                <input type="number" name="num" id="num">
+            </div>
+        </div>
+        <div id="btnwrap">
+            <div class="btn">
+                <button>收藏</button>
+            </div>
+            <div class="btn">
+                <button>使用</button>
+            </div>
+        </div>
+
+    </content>
+    <!-------------------------  End  ------------------------------->
+
 
 </body>
+
 </html>

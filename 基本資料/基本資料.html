@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,10 +9,10 @@
     <link rel="stylesheet" href="header.css">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    
+
     <script>
         $(function () {
-            
+
             /* hover事件切換 如果只寫一個方法  
                那鼠標經過和離開都會觸發這個方法 slideToggle
             */
@@ -19,10 +20,10 @@
             //     $(this).children('ul').slideToggle();
             // })
 
-            $('.tab-list a').hover(function(){
+            $('.tab-list a').hover(function () {
                 /* 為匹配的當前元素切換 class css類別 */
                 $(this).toggleClass('liColor');
-                
+
                 /* 拿到當前(this) a 的索引號 */
                 index = $(this).index();
 
@@ -30,29 +31,91 @@
                     其餘siblings() 隱藏起來 */
                 $('.tab-panel').eq(index).stop().fadeIn('slow').show().siblings().hide();
 
-            },function(){
+            }, function () {
                 /* 第二個方法處理滑鼠移開事件 */
                 $(this).removeClass('liColor');
                 $('.tab-panel').hide();
             })
 
-            $('.tab-panel').hover(function(){
+            $('.tab-panel').hover(function () {
                 index = $(this).index();
-                $(this).css('background-color','white').show();
+                $(this).css('background-color', 'white').show();
                 $('.tab-list a').eq(index).addClass('liColor');
-            },function(){
+            }, function () {
                 $(this).hide();
                 $('.tab-list a').eq(index).removeClass('liColor');
             })
 
         });
-
     </script>
+
+    <style>
+        #theForm {
+            border: 1px solid black;
+            width: 400px;
+
+            margin: 50px auto;
+            box-sizing: border-box;
+            text-align: right;
+
+        }
+
+        #theForm h1 {
+            /* border:1px solid rgb(255, 0, 0); */
+            font-size: 25px;
+            text-align: center;
+            margin: 15px auto 0px auto;
+        }
+
+        #theForm div {
+            margin: 7px auto;
+        }
+
+
+
+        fieldset {
+            /* border:1px solid rgb(255, 0, 0); */
+            margin: 5px;
+            height: 400px;
+
+        }
+
+
+        #theForm input {
+
+            width: 200px;
+
+            margin: 10px 60px 0px 0px;
+        }
+
+        #btn {
+            background: rgb(99, 99, 81);
+            width: 70px;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 1000ms ease-in-out;
+            margin: 10px 10px 0px 0px;
+
+        }
+
+        div span {
+            /* border: 1px solid red; */
+          margin: 0px 60px 0px 0px;
+            color: red;
+        }
+
+        #btn:hover {
+            background: red;
+        }
+    </style>
+
 </head>
+
 <body style="background-color: #F3F8F2;">
     <!-- 回到上方的按鈕 -->
- <!------------------------- Start ------------------------------->
-   
     <a href="#" class="toTop"><i class="fas fa-arrow-up"></i></a>
     <header>
         <nav>
@@ -64,7 +127,7 @@
                     <a href="#"><img src="./img/instagram.png" alt=""></a>
                 </div>
                 <div class="space">
-                    
+
                 </div>
                 <div class="links">
                     <a href="#"><i class="fas fa-user-friends"></i>關於我們</a>
@@ -78,11 +141,11 @@
 
         <div class="search">
             <div class="search-wrap">
-                
+
                 <div class="logo-wrap">
                     <img src="./img/yachiLogo50.png" alt="">
                 </div>
-                
+
                 <form class="search-food" action="https://www.google.com/">
                     <div class="search-input">
                         <input type="search" placeholder="不要來搜尋">
@@ -101,9 +164,11 @@
                 <div class="search-ticket">
                     <img src="./img/yachiLogo50.png">
                     <div class="txt">
-                        <a href="#"><h2>優惠券專區</h2></a>
+                        <a href="#">
+                            <h2>優惠券專區</h2>
+                        </a>
                     </div>
-                    
+
                 </div>
 
                 <div class="member">
@@ -130,7 +195,11 @@
 
                 <div class="tab-content">
                     <div class="tab-panel">
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed cumque porro nam alias explicabo nihil labore quidem laborum repellat dignissimos. Mollitia sequi, sit facilis magni eveniet culpa eligendi debitis! Aliquid?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui rem a provident vel fugit corrupti placeat! Perferendis, eligendi quo repellat consequatur, dignissimos rerum quibusdam veritatis, voluptates error sint enim explicabo.
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed cumque porro nam alias explicabo
+                        nihil labore quidem laborum repellat dignissimos. Mollitia sequi, sit facilis magni eveniet
+                        culpa eligendi debitis! Aliquid?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui
+                        rem a provident vel fugit corrupti placeat! Perferendis, eligendi quo repellat consequatur,
+                        dignissimos rerum quibusdam veritatis, voluptates error sint enim explicabo.
                     </div>
                     <div class="tab-panel">
                         <img src="https://picsum.photos/500/200" alt="">
@@ -148,8 +217,49 @@
 
             </div>
         </div>
+
+
     </header>
- <!-------------------------  End  ------------------------------->
+
+    <!-- ------------------imformation start--------------------- -->
+    <form id="theForm">
+        <fieldset>
+            <h1>基本資料</h1>
+            <div>
+                <label>帳號</label>
+                <input type="text" name="account" id="account">
+            </div>
+            <div>
+                <label>密碼</label>
+                <input type="text" name="password" id="password">
+            </div>
+            <div>
+                <label>再次輸入密碼</label>
+                <input type="text" name="password" id="password">
+            </div>
+            <div>
+                <label>姓名</label>
+                <input type="text" name="name" id="name">
+            </div>
+            <div>
+                <label>生日</label>
+                <input type="date" name="birthday" id="birthday">
+            </div>
+            <div>
+                <label>手機號碼</label>
+                <input type="text" name="phoneNumber" id="phoneNumber">
+            </div>
+            <div>
+                <label>電子信箱</label>
+                <input type="email" name="email" id="email">
+            </div>
+
+
+            <div id="li"><button id="btn">確認</button><span>*號為必填</span></div>
+        </fieldset>
+    </form>
+    <!-- ------------------imformation end--------------------- -->
 
 </body>
+
 </html>
