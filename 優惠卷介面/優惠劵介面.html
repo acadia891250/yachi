@@ -8,17 +8,19 @@
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="header.css">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <script>
+ 
         $(function () {
 
-            /* hover事件切換 如果只寫一個方法  
-               那鼠標經過和離開都會觸發這個方法 slideToggle
-            */
-            // $('.menu-box').hover(function(){
-            //     $(this).children('ul').slideToggle();
-            // })
+        //     // /* hover事件切換 如果只寫一個方法  
+        //     //    那鼠標經過和離開都會觸發這個方法 slideToggle
+        //     // */
+        //     // // $('.menu-box').hover(function(){
+        //     // //     $(this).children('ul').slideToggle();
+        //     // // })
 
             $('.tab-list a').hover(function () {
                 /* 為匹配的當前元素切換 class css類別 */
@@ -46,6 +48,28 @@
                 $('.tab-list a').eq(index).removeClass('liColor');
             })
 
+
+            const using = document.getElementById('using');
+             using.addEventListener('click',function(e){
+                Swal.fire({ 
+                    title: '確定要使用優惠劵嗎?',
+                    text: "",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: '確定兌換',
+                    cancelButtonText: '取消'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                        Swal.fire(
+                            '兌換成功!',
+                            '',
+                            'success'
+                        )
+                        }
+                    })
+        })
         });
     </script>
 
@@ -63,28 +87,34 @@
 			/* border: 1px solid #ccc; */
         /* } */
         #Boardwrap {
-            border: 1px solid rgb(34, 34, 201);
-            border-radius: 10px;
-            margin: -40px 200px auto 200px;
-            padding: 2px;
+            /* border: 1px solid rgb(34, 34, 201); */
+            border-radius: 5px;
+            width: 500px;
+            height: 300px;
+            margin: 0px auto;
+            padding: 5px;
             display: flex;
+           /* justify-content:right;  */
+			/* align-items:center; */
         }
 
         #Board {
             /* border: 1px solid red; */
-            width: 40%;
+            width: 500px;
             height: 300px;
             margin: 0px auto;
 
             overflow: hidden;
             position: relative;
+            /* justify-content:right; 
+            align-items:center; */
         }
 
         #Board img {
             max-width: 500px;
         }
 
-        #Namewrap {
+        #foodnamewrap {
             /* background:grey; */
             border: 1px solid grey;
             border-radius: 3px;
@@ -95,10 +125,23 @@
             display: flex;
         }
 
-        #Name {
+        #foodname {
             /* border: 1px solid red; */
             margin: auto;
             font-size: 28px;
+        }
+        #Numberwrap {
+             /* border: 1px solid rgb(17, 13, 233); */
+            border-radius: 3px;
+            width: 250px;
+            height: 50px;
+            margin: 20px auto;
+            padding: 5px;
+            display: flex;
+        }
+
+        #Number {
+            /* border: 1px solid red; */
         }
 
         #btnwrap {
@@ -111,11 +154,13 @@
             padding: 5px;
             display: flex;
         }
-
-
+        #btnwrap {
+            /* border: 1px solid red; */
+            margin: -30px auto  ;
+        }
         .btn {
             /* border: 1px solid red; */
-
+            margin: -50px auto 0xp 0xp ;
             margin: auto;
         }
 
@@ -126,26 +171,7 @@
             height: 40px;
             margin: auto;
         }
-
-        #Numberwrap {
-             border: 1px solid rgb(17, 13, 233);
-            border-radius: 3px;
-            width: 250px;
-            height: 50px;
-            margin: 20px auto;
-            padding: 5px;
-            display: flex;
-        }
-
-        #Number {
-            border: 1px solid red;
-
-        }
-
-
-
-
-        /* ----------- End -----------------*/
+ /* ----------- End -----------------*/
     </style>
 </head>
 
@@ -179,7 +205,7 @@
             <div class="search-wrap">
 
                 <div class="logo-wrap">
-                    <img src="./img/yachiLogo50.png" alt="">
+                    <img src="../img/yachiLogo_change.png" alt="">
                 </div>
 
                 <form class="search-food" action="https://www.google.com/">
@@ -198,7 +224,7 @@
                 </form>
 
                 <div class="search-ticket">
-                    <img src="./img/yachiLogo50.png">
+                    <img src="../img/yachiLogo_change.png" alt="">
                     <div class="txt">
                         <a href="#">
                             <h2>優惠券專區</h2>
@@ -262,13 +288,13 @@
         <div id="Boardwrap">
             <div id="Board">
                 <ul>
-                    <li><img src="Taiwanese hamburger.jpg"></li>
+                    <li><img src="../img/Taiwanese hamburger.jpg"></li>
                 </ul>
             </div>
         </div>
 
-        <div id="Namewrap">
-            <div id="Name">
+        <div id="foodnamewrap">
+            <div id="foodname">
                 招牌刈包
             </div>
         </div>
@@ -276,15 +302,15 @@
         <div id="Numberwrap">
             <div id="Number">
                 <label>使用張數</label>
-                <input type="number" name="num" id="num">
+                <input type="number" name="num" id="num" >
             </div>
         </div>
         <div id="btnwrap">
             <div class="btn">
-                <button>收藏</button>
+                <button id="collect">收藏</button>
             </div>
             <div class="btn">
-                <button>使用</button>
+                <button id="using">使用</button>
             </div>
         </div>
 
