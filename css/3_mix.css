@@ -3,6 +3,9 @@
 /* 全域border box  使padding內縮  */
 /* 含偽元素*/
 *, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   text-decoration: none;
@@ -258,7 +261,8 @@ header .search .search-wrap .member a:last-child {
 }
 
 header .search .search-wrap .member a:last-child i {
-  font-size: 2.5rem;
+  font-size: 2.4rem;
+  opacity: 0.5;
 }
 
 header .search .search-wrap .member a:hover {
@@ -485,7 +489,7 @@ aside{
     /* background-color: purple; */
 }
 /* 商品資訊元素共用屬性 */
-.productName h3, .inputCountBox, .selectSizeBox, .cartBtn, .buyBtn, .productName h4{
+.productName h3, .inputCountBox, .selectSizeBox, .cartBtn, .buyBtn, .productName h4,.dropdownList li{
   letter-spacing: 2px;
   color: #444444;
 }
@@ -551,4 +555,112 @@ aside{
   color: #555555;
 }
 
+/* -----------下半部:頁籤-------------------------------------- */
+.tabs_content .tabs_panel{
+  display: none;
+}
+#tab_nav{
+  margin-bottom: 50px;
+}
+#tab_nav a{
+  font-size: 1.1rem;
+  color: #555555;
+}
+#tab_nav .tab_selected{
+  background-color: #C39C9C;
+  color: #ffffff;
+}
+/* 必須讓第一個頁面先出現，其他的tab_panel點到才會出現 */
 
+/* ---------透過jQuery 加入的 動畫(class)------ */
+.animated_tabs{
+  animation-duration: .5s;
+  animation-fill-mode:forwards;   /*forwards 動畫結束後保持最後結束的樣子*/
+}
+.show_panel{ 
+  animation-name: show_panel; 
+}
+@keyframes show_panel{
+  from {
+    opacity: 0;
+    animation-timing-function: ease-in-out;
+  } 
+  to {opacity: 1;} 
+}
+
+/* 頁籤第二頁 (評論內容) */
+.commentBox{
+  margin-bottom: 20px;
+  border: 1px rgba(195,156,156,.5) solid;
+  border-radius: 8px;
+  padding-right: 10px;
+  box-shadow: 2px 2px 2px rgba(195,156,156,.5) ;
+ 
+  /* background-color: purple; */
+}
+.memberInfo{
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+}
+.putLeft{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.putLeft .memberImage{
+  margin: 0 20px;
+
+  max-width: 5%;
+}
+.memberImage img{
+  width: 100%;
+}
+.putLeft .memberId{
+  width: 170px;
+  font-size: 1.2rem;
+  color: #555
+  ;
+}
+.putLeft .nickname{
+  width: 250px;
+  font-size: 1.2rem;
+  color: #555
+}
+.putLeft .comment_score{
+  font-size: 1.1rem;
+  color: #555
+}
+.commentBox .comment_content{
+  width: 78%;
+  margin: 10px auto;
+  margin-bottom: 30px;
+}
+.memberInfo .fa-ellipsis-v{
+  opacity: .7;
+  cursor: pointer;
+}
+
+/* 點選doMore 會出現下拉選單 */
+.doMore{
+  position: relative;
+}
+/* 讓選單可以出現在外面，不會影響到內文排版 */
+.dropdownList{ 
+  display: none;  /*一開始隱藏起來 */ 
+  position: absolute;
+  width: 70px;
+  text-align: center;
+  right: -72px;
+  top: 0;
+  background-color: #ffffff;
+}
+.dropdownList li{
+  font-size: 1.1rem;
+  color: #777777;
+  padding: 7px;
+  border: 1px solid #eeeeee;
+}
+.active {
+  display: block;
+}

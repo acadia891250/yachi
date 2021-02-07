@@ -4,19 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shopping</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/3_mix.css">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/js/3_商品頁面.js"></script>
     <script src="/js/header.js"></script>
 </head>
 <body>
     <!-- ps: input標籤需要透過javascript去限制 input事件的最大值 -->
 
-    <!-- Start:header -->
+    
     <body>
         <!-- 回到上方的按鈕 -->
         <a href="#" class="toTop"><i class="fas fa-arrow-up"></i></a>
+        <!-- Start:header -->
         <header>
             <nav>
                 <div class="navbar">
@@ -119,7 +122,7 @@
     <!-- Start：購物車介面 -->
     <!-- End：購物車介面 -->
     <div id="main">
-        <div class="header_image">
+        <!-- <div class="header_image">
             <img src="images_2/封面圖.jpg">
         </div>
 
@@ -127,8 +130,11 @@
             <div class="new_product">
                 <h1>最新商品</h1>
             </div>
-        </div>
+        </div> -->
 
+        <!-- 撐開header 與 主要商品區域 -->
+        <div style="width: 100%;height: 80px;"></div>
+        
         <!-- 商品部分 -->
         <div class="shoppingArea">
             <!-- leftSide start -->
@@ -169,7 +175,7 @@
 
             <!-- Start:rightSide(商品資訊) -->
             <main>
-                <div class="right_container">
+                <div class="right_container" style="height: 1500px;">
                     <div class="productBox">
                         <!-- Start 上方商品資訊 -->
                         <div class="productUpBox">
@@ -213,6 +219,118 @@
 
                         <!-- Start 下方詳細介紹 -->
                         <div class="productDownBox">
+
+                            <div id="productTab">
+                                <div id="tab_nav">
+                                    <a href="javascript:;" class="tab_selected">商品資訊</a>
+                                    <a href="javascript:;">商品評價</a>
+                                </div>
+                                <div class="tabs_content">
+                                    <div class="tabs_panel product_info" style="display: block;">
+                                        測試1
+                                    </div>
+                                    <div class="tabs_panel product_comment">
+                                        <div class="commentBox">
+
+                                            <div class="memberInfo">
+                                                <div class="putLeft">
+                                                    <div class="memberImage">
+                                                        <img src="/images_2/noPeople.png">
+                                                    </div>
+                                                    <span class="memberId">vickychen0087</span>
+                                                    <span class="nickname">Vicky</span>
+                                                    <div class="comment_score">
+                                                        <i class="far fa-thumbs-up"></i>
+                                                        <i class="far fa-thumbs-up"></i>
+                                                        <i class="far fa-thumbs-up"></i>
+                                                        <i class="far fa-thumbs-up"></i>
+                                                        <i class="far fa-thumbs-up"></i>
+                                                    </div>
+                                                </div>
+                                                
+                                                 <!-- 點擊會出現檢舉或編輯的下拉選單 -->
+                                                 <div class="doMore"><i class="fas fa-ellipsis-v"></i>
+                                                    <!-- 分開管理css 與 jq 的 class屬性值 -->
+                                                    <ul class="dropdownList jq-dropdown">
+                                                        <li>編輯</li>
+                                                        <li>檢舉</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                    
+                                            <div class="comment_content">
+                                                <span>商品超爛!絕對不要買!!!!真的很生氣</span>
+                                            </div>
+
+                                        </div>
+                                        <div class="commentBox">
+
+                                            <div class="memberInfo">
+                                                <div class="putLeft">
+                                                    <div class="memberImage">
+                                                        <img src="/images_2/noPeople.png">
+                                                    </div>
+                                                    <span class="memberId">alicehung6666</span>
+                                                    <span class="nickname">Alice</span>
+                                                    <div class="comment_score">
+                                                        <i class="far fa-thumbs-up"></i>
+                                                        <i class="far fa-thumbs-up"></i>
+                                                        <i class="far fa-thumbs-up"></i>
+                                                        <i class="far fa-thumbs-up"></i>
+                                                        <i class="far fa-thumbs-up"></i>
+                                                    </div>
+                                                </div>
+                                                
+                                                 <!-- 點擊會出現檢舉或編輯的下拉選單 -->
+                                                 <div class="doMore"><i class="fas fa-ellipsis-v"></i>
+                                                    <!-- 分開管理css 與 jq 的 class屬性值 -->
+                                                    <ul class="dropdownList jq-dropdown">
+                                                        <li>編輯</li>
+                                                        <li>檢舉</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                    
+                                            <div class="comment_content">
+                                                <span>好後悔買 浪費錢</span>
+                                            </div>
+
+                                        </div>
+                                        <div class="commentBox">
+
+                                            <div class="memberInfo">
+                                                <div class="putLeft">
+                                                    <div class="memberImage">
+                                                        <img src="/images_2/noPeople.png">
+                                                    </div>
+                                                    <span class="memberId">bobchung9898</span>
+                                                    <span class="nickname">Bob Chung</span>
+                                                    <div class="comment_score">
+                                                        <i class="far fa-thumbs-up"></i>
+                                                        <i class="far fa-thumbs-up"></i>
+                                                        <i class="far fa-thumbs-up"></i>
+                                                        <i class="far fa-thumbs-up"></i>
+                                                        <i class="far fa-thumbs-up"></i>
+                                                    </div>
+                                                </div>
+                                                <!-- 點擊會出現檢舉或編輯的下拉選單 -->
+                                                <div class="doMore"><i class="fas fa-ellipsis-v"></i>
+                                                    <!-- 分開管理css 與 jq 的 class屬性值 -->
+                                                    <ul class="dropdownList jq-dropdown">
+                                                        <li>編輯</li>
+                                                        <li>檢舉</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                    
+                                            <div class="comment_content">
+                                                <span>覺得還不錯阿 還夠用的說</span>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
                         </div>
                          <!-- End 下方詳細介紹 -->
