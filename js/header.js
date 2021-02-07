@@ -36,9 +36,9 @@ $(document).ready(function(){
         })      
     });
 
-
+    
     // 鼠標下滾，header消失(還有bug，當f5 無法判斷header是否top=0)
-    $(window).on('mousewheel DOMMouseScroll',function(e){
+    $(document).on('mousewheel DOMMouseScroll',function(e){
        //判斷鼠標是向下還是向上(藉由e.originalEvent.wheelDelta)，正值向上負值向下
         let delta = (e.originalEvent.wheelDelta &&
                          (e.originalEvent.wheelDelta > 0 ? 1 : -1)) ||  // chrome & ie &其它
@@ -52,6 +52,7 @@ $(document).ready(function(){
                 $('.tab').css({
                     position:'static',
                     backgroundColor:'transparent',
+                    boxShadow:'none',
                 })
                 //因為是針對nav, .search變透明
                 //所以往上滾時，對象也要針對它們，而不是header標籤 
@@ -64,14 +65,14 @@ $(document).ready(function(){
         }else if(delta < 0){
             $('nav, .search').css({
                 opacity:'0',
-                transition:'.1s'
+                transition:'.2s'
             });
             $('.tab').css({
                 width:'100%',
                 position:'absolute', //須為absolute 才能top=0 
                 top:'0',
                 backgroundColor:'rgba(255,255,255,0.9)',
-                
+                boxShadow:'2px 2px 2px 1px rgba(0, 0, 0, 0.1)',
             })
             
         }
