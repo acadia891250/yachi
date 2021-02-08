@@ -15,12 +15,16 @@ $(function () {
         .addClass('show_panel animated_tabs').show().siblings().hide();
 
     });
-});
 
-$(function(){
+
     $('.doMore').on('click',function(e){
         e.preventDefault();
-        $(this).toggleClass('active');
+        $(this).toggleClass('active')
         $('.jq-dropdown').slideToggle();
     })
-})
+
+
+
+
+});
+

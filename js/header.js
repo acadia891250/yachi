@@ -1,8 +1,9 @@
-$(document).ready(function(){
-    $(function () {         
+
+$(function(){       
     /* hover事件切換 如果只寫一個方法  
        那鼠標經過和離開都會觸發這個方法 slideToggle
     */
+   
     // $('.menu-box').hover(function(){
     //     $(this).children('ul').slideToggle();
     // })
@@ -25,6 +26,7 @@ $(document).ready(function(){
         $('.tab-panel').hide();
     })
 
+
     // 當鼠標移到出現的區塊時，區塊仍不會消失
     $('.tab-panel').hover(function(){
         index = $(this).index();
@@ -33,9 +35,8 @@ $(document).ready(function(){
         },function(){
             $(this).hide();
             $('.tab-list a').eq(index).removeClass('liColor');
-        })      
-    });
-
+    })      
+    
     
     // 鼠標下滾，header消失(還有bug，當f5 無法判斷header是否top=0)
     $(document).on('mousewheel DOMMouseScroll',function(e){
@@ -77,4 +78,8 @@ $(document).ready(function(){
             
         }
     })
+
+    // jQ入口函數會自動觸發
+    $('html').scrollTop(0);
+
 })
