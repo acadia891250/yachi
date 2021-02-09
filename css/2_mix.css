@@ -461,8 +461,6 @@ aside{
     border-radius: 5px;
 }
 .product_contianer{
-    display: flex;
-    /* float: left; */
     height: 480px;
     padding-left:34px;
 }
