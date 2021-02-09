@@ -21,11 +21,27 @@ body {
 }
 
 /* 回到上方的按鈕 */
-.toTop {
+/* .toTop {
   position: fixed;
   font-size: 3rem;
   right: 1rem;
   bottom: 1rem;
+} */
+#go-top {
+	position: fixed;  /* 畫面滾動時一直出現 */
+    right: 20px;
+    bottom: 35px;
+    width: 40px;
+    height: 40px;
+    background:rgba(123,136,111,0.3);
+    color:#fff;
+    text-align: center;  /* 左右置中 */
+    line-height: 40px;   /* 上下置中 */
+    text-decoration: none;
+    border-radius: 50%;
+}
+#go-top:hover{
+    background:rgba(123,136,111,1);
 }
 
 header {
@@ -147,7 +163,9 @@ header .search .search-wrap .search-food {
 }
 
 header .search .search-wrap .search-food .search-input {
-  border: 2px solid black;
+  border: 2px solid #aaa;
+  border-radius: 100px;   
+  padding-left: 0px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -155,7 +173,8 @@ header .search .search-wrap .search-food .search-input {
 }
 
 header .search .search-wrap .search-food .search-input input, header .search .search-wrap .search-food .search-input button {
-  background-color: white;
+  background-color: transparent;
+  color: #aaad;
   border: none;
   height: 2rem;
 }
@@ -255,10 +274,13 @@ header .search .search-wrap .member a:first-child {
 
 header .search .search-wrap .member a:last-child {
   display: block;
+  padding: 0;
 }
 
 header .search .search-wrap .member a:last-child i {
-  font-size: 2.5rem;
+  
+  font-size: 1.8rem;
+  color: #555;
 }
 
 header .search .search-wrap .member a:hover {
