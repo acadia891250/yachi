@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/4_shopping_cart.css">
+    <title>shopping cart</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="/js/jquery-3.5.1.js"></script>
+    <script src="/js/jquery-ui.js"></script>
+    <script src="/js/enscroll-0.6.2.min.js"></script>
+</head>
+<body>
+    <div class="cart_container">
+        <input type="checkbox" name="" id="side_menu_switch">
+        <div class="side_cart">
+            <div class="carCancelBtn">
+                <i class="fa fa-arrow-left"></i>
+            </div>
+            <div class="title">
+                購物清單
+                <span class="shopNum">4</span> <!-- 存放購物數量-->
+            </div>
+            <ul id="item_box">
+                <li id="car_productId" class="carItem">      <!-- id 可以存放產品編號-->
+                    <div class="pic">
+                        <a href="javascript:;">
+                            <img src="/images_2/1_product.jpg">
+                        </a>
+                    </div>
+                    <div class="text_box">
+                        <div class="name">
+                            <a href="javascript:;">超好用收納購物袋</a>
+                        </div>
+                        <div class="size">S</div>
+                        <div class="count">
+                            <select name="" id="car_productId">
+                                <option value="1" selected>1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                            </select>
+                        </div>
+                        <div class="price">NT$ 199</div>
+                    </div>
+                    <div class="cancelBtn">
+                        <i class="fa fa-trash"></i>
+                    </div>
+                </li>  
+                
+            </ul>
+            <!-- 卷軸部分 -->
+            <div class="scrollArea">
+                <div class="enscroll track3">
+                    <a href class="controller handle3">
+                        <div class="top"></div>
+                        <div class="bottom"></div>
+                    </a>
+                </div>
+            </div>
+            <!-- 卷軸部分結束 -->
+            <div class="buyBtn">
+                <a href="javascript">前往結帳</a>
+            </div>
+            <label for="side_menu_switch">
+                <i class="fas fa-cart-plus"></i>
+            </label>
+
+        </div>
+    </div>
+
+
+
+    <script>
+
+       $(document).ready(function(){
+            cartListHeight();   
+            //resize之後會重新計算ul高度，能使卷軸滾動
+            $(window).resize(function(){
+                cartListHeight();  
+            })
+       })
+
+
+        function cartListHeight(){
+            let box_height = $(window).height();
+            let buyBtn_height = $('.buyBtn a').outerHeight(true);
+            let title_height = $('.title').outerHeight(true);
+            //計算ul的高度(扣掉標頭以及底下按鈕)
+            box_height -= buyBtn_height;
+            box_height -= title_height
+            console.log(box_height);
+
+            //enscroll.js 套件使用方法(別問我我也不懂)
+            $('#item_box').enscroll('destroy');
+            $('#item_box').css({height:box_height})
+            $('#item_box').enscroll({
+                showOnHover:true,
+                addPaddingToPane:false,
+                verticalTrackClass:'track3',
+                verticalHandleClass:'handle3',
+            });
+
+        }
+    
+        
+    </script>
+</body>
+</html>
