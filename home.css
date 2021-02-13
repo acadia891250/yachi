@@ -1,0 +1,135 @@
+
+		* {
+			margin: 0px;
+			padding: 0px;
+			list-style: none;
+			/* -----------start-----------------*/
+		}
+		.image {
+			width: 100%;
+			height: 830px;
+			/* border: 1px solid #ccc; */
+		}
+		#sliderBoardwrap {
+
+			border: 1px solid rgb(34, 34, 201);
+			border-radius: 10px;
+			margin: -100px auto 0px 0px ;
+			/* padding: 10px; */
+			display: flex;
+			
+		}
+		#sliderBoard{  /*div*/
+			/* border: 1px solid red; */
+			width: 100%;
+			height: 900px;
+			margin:  auto;
+		
+			overflow: hidden;
+		}
+		#content{		/*ul*/
+			position: relative;
+		}
+		#content li{	/*li*/
+			float: left;
+		}
+		
+		/* button */
+		#contentButton{
+			/* border: 1px solid red; */
+			width: 100%;
+			height: 50px;
+			text-align: center;
+		}
+		#contentButton li{
+			width: 25px;
+			height: 25px;
+			border-radius: 50%;
+			background: #ccc;
+			margin: 5px;
+		
+			display: inline-block;
+		}
+		#contentButton li.clickMe{
+			background: #666;
+		}
+		#content-left {
+			margin:auto 0px;
+			/* border: 1px solid red; */
+		}
+		#content-right {
+			margin:auto 0px;
+			/* border: 1px solid red; */
+		}
+
+/* --------------------------------End-------------------------------*/
+/* -------------------------------start------------------------------------*/
+		#footer-shop-wrap {
+			/* border: 1px solid rgb(34, 34, 201); */
+			border-radius: 10px;
+			margin: 30px 120px;
+			padding: 0px 80px ;
+			/* margin-top: 10px; */
+			text-align: left;
+			/* display:flex;
+		  justify-content:center;
+		   align-items:center; */
+		}
+		/* #foooter-shop-recommend {
+		right: 100px;
+	} */
+		#footer-shop {
+			/* border: 1px solid red; */
+			border-radius: 10px;
+			height: auto;
+			margin: 5px auto;
+			display: flex;
+		
+		}
+		#footer-shop-content img {
+			/* max-width: 300px; */
+			width: 350px;
+			height: 250px;
+			/* border: 1px solid rgb(17, 175, 109); */
+			/* border-radius: 10px; */
+			margin: auto 12px ;
+			/* padding: 10px; */
+			display: flex;
+		}
+
+		#footer-shop-content ul li {
+			float: left;
+			/* border: 1px solid rgb(2, 5, 233); */
+			
+			margin: auto;
+		}
+		#footer-shop-content ul li div {
+			/* float: left;	 */
+			border: 1px solid rgb(31, 71, 7);
+			/* text-align: center; */
+			padding: 5px;
+			margin: auto 12px ;
+			/* display: flex; */
+			max-width: 350px;
+			/* margin: auto; */
+		}
+		.Night-Market-title {
+			border: 1px solid rgb(238, 11, 11);
+			font-size:25px;
+		}
+		.opening_time {
+			border: 1px solid rgb(238, 11, 11);
+			text-align: center;
+		}
+/* --------------------------------End-------------------------------*/
+/* -------------------------------start------------------------------------*/
+		.voucher {
+			width: 95%;
+		}
+		.discount {
+			text-align:left;
+			font-size:20px;
+		}
+		.voucher-name {
+			font-size:25px;
+		}
