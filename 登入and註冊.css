@@ -302,10 +302,7 @@ body .container .over-container .over .over-item .over-btn:focus {
   outline: none;
 }
 
-body .container .over-container .over .over-left {
-  /* 是為了增加動畫效果所設置的 */
-  /* 加強從左邊進來的效果 */
-}
+
 
 body .container .over-container .over .over-right {
   right: 0;
