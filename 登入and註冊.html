@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="登入and註冊.css">
+    <!-- <script src="https://kit.fontawesome.com/a076d05399.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+        $(function () {
+
+            // 右邊註冊按鈕事件
+            $('#register-now').click(function(){
+
+                $('#container').addClass('toRightAction');
+
+            });
+
+            // 登入按鈕事件
+            $('#login-now').click(function(){
+
+                $('#container').removeClass('toRightAction');
+
+            });
+
+        });
+
+    </script>
+  </head>
+  <body>
+
+    <div class="container" id="container">
+
+      <div class="form-container register-container">
+
+        <form action="" method="">
+
+          <h2>註冊</h2>
+
+         <div class="input-div">
+             <label for="">帳號</label>
+             <input type="text" name="account" required/>
+         </div>
+
+         <div class="input-div">
+            <label for="">密碼</label>
+            <input type="password" name="password" required/>
+         </div>
+
+         <div class="input-div">
+          <label>確認密碼</label>
+          <input type="text" name="password-again" required>
+         </div>
+
+         <div class="input-div">
+          <label>姓名</label>
+          <input type="text" name="name" id="name" required>
+         </div>
+
+         <div class="input-div input-date" >
+            <label>生日</label>
+            <input type="date" name="birthday" id="birthday">
+         </div>
+
+        <div class="input-div">
+            <label>手機號碼</label>
+            <input type="text" name="phone" id="phoneNumber">
+        </div>
+
+        <div class="input-div">
+            <label>e-mail</label>
+            <input type="email" name="email" id="email">
+        </div>
+
+        <button type="submit" class="btn">註冊</button>
+
+        </form>
+
+      </div>
+
+      <div class="form-container login-container">
+
+        <form action="" method="">
+          
+          <h2>登入</h2>
+
+          <div class="social-container">
+            <a href="#" class="social"
+              ><img src="./img/facebook.png" alt=""
+            /></a>
+            <a href="#" class="social"><img src="./img/instagram.png" /></a>
+            <a href="#" class="social"><img src="./img/search.png" /></a>
+          </div>
+
+          <span>選擇其他登錄方式或使用你的帳號</span>
+          
+          <div class="input-div">
+             <label for="">帳號</label>
+             <input type="text" name="account"/>
+          </div>
+
+          <div class="input-div">
+            <label for="">密碼</label>
+            <input type="password" name="password"/>
+         </div>
+  
+          <a href="#">忘記密碼 ?</a>
+
+          <button type="submit" class="btn">登入</button>
+
+        </form>
+      </div>
+
+
+
+      <div class="over-container">
+
+        <div class="over">
+
+          <div class="over-item over-left">
+
+            <div class="img-box">
+              <img src="./img/yachiLogo50.png" alt="">
+            </div>
+
+            <h2>已有帳號?</h2>
+            <p>請使用你的帳號進行登入</p>
+            <button class="over-btn" id="login-now">登入</button>
+          </div>
+
+          <div class="over-item over-right">
+
+            <div class="img-box">
+              <img src="./img/yachiLogo50.png" alt="">
+            </div>
+
+            <h2>沒有帳號?</h2>
+            <p>立即註冊加入我們</p>
+            <button class="btn over-btn" id="register-now">註冊</button>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+
+
+  </body>
+</html>

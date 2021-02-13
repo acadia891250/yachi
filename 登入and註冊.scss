@@ -1,0 +1,326 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "微軟正黑體";
+    background-color: #ccc;
+    /* 垂直置中*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* 佔滿整個 view */
+    /* 可以垂直置中 */
+    height: 100vh;
+
+    // flex-direction: column;
+    // overflow: hidden;
+
+    .container{
+    background-color: white;
+    // border: 1px solid red;
+    border-radius: 10px;
+     /* 水平陰影, 垂直陰影 , 第三個參數。此值越大，模糊越大，陰影變得越來越大 */
+    box-shadow: 25px 25px 25px rgba(0, 0, 0, 0.25);
+    position: relative;
+    // overflow: hidden;
+    width: 900px;
+    height: 500px;
+
+        .form-container{
+            // border: 1px solid red;
+            position: absolute;
+            top: 0;
+            height: 100%;
+            transition: all 0.6s ease-in-out;
+
+
+            form{
+                // border: 1px solid red;
+                background-color: white;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                /*對齊Y軸中間*/
+                justify-content: center;
+                /*對齊X軸中間*/
+                align-items: center;
+
+                h2{
+                    // border: 1px solid red;
+                    font-size: 2.5rem;
+                    font-weight: bold;
+                    padding: 10px 0;
+                    // margin: 0 auto;
+                }
+                .social-container{
+                    // border: 1px solid red;
+                    margin: 5px 0;
+
+                    a{
+                        // border: 1px solid red;
+                        border-radius: 50%;
+                        // 作用類似於 inline-block + flex
+                        display: inline-flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 2rem;
+                        height: 2rem;
+
+                    }
+                }
+
+                span{
+                    font-size: 0.8rem;
+                    margin-bottom: 0.5rem;
+
+                }
+
+                .input-div{
+                    // border: 1px solid red;
+                    display: flex;
+
+                    position: relative;
+                    margin-right: 50px;
+
+                    label{
+                    // border: 1px solid red;
+                    width: 5rem;
+                    // 作用類似於 inline-block + flex
+                    display:inline-flex;
+                     /*靠右對齊*/
+                    justify-content: flex-end;
+                    /* 對齊Y軸置中*/
+                    align-items: center;
+
+                    }
+                    input{
+
+                        border: 1px solid #ccc;
+                        background-color: #fff;
+                        border-radius: 20px;
+                        padding: 5px;
+                        margin: 5px 10px;
+
+                        &:focus{
+                            outline: none;
+                        }
+
+                    }
+
+                }
+                .input-date{
+                    position: relative;
+                    right: 9.5px;
+                }
+                a{
+                    // border: 1px solid red;
+
+                    font-size: 0.875rem;
+                    padding: 5px;
+                    text-decoration: none;
+                }
+
+                .btn{
+
+                    border-radius: 20px;
+                    border: 1px solid rgb(228, 97, 97);
+                    background-color: rgb(228, 97, 97);
+                    color: #fff;
+                    font-size: 1rem;
+                    font-weight: bold;
+                    padding: 8px 45px;
+                    letter-spacing: 1px;
+                    transition: transform 1ms ease-in;
+                    margin-top: 10px;
+                
+                    &:active{
+                        /* 縮放效果 */
+                        transform: scale(0.95);
+                    }
+                
+                    &:focus{
+                        outline: none;
+                    }
+                
+                }
+
+            }
+
+              /* 註冊頁面另外處理 */
+            &.register-container{
+                // border: 1px solid red;
+                left: 0;
+                width: 50%;
+            /* 使隱藏在登入面頁的下面 */
+                opacity: 0;
+                z-index: 1;
+            }
+
+
+            /* 登入頁面另外處理 */
+            &.login-container{
+            // border: 1px solid red; 
+            left: 0;
+            width: 50%;
+            z-index: 1;
+
+            }
+
+        }
+
+        /* 覆蓋頁面處理 */
+        .over-container{
+        background-color: rgb(228, 97, 97);
+        position: relative;
+        top: 0;
+        /* 距離父元素 .container 左邊50%*/
+        left: 50%;
+        /* 寬度和 register-container 平分*/
+        width: 50%;
+        height: 100%;
+
+        /* 打開可以看到2個item2的樣子 */
+        /* 覆蓋掉 -->已有帳號?<-- 超出的頁面 */
+        /* */
+        overflow: hidden; 
+        transition: transform 0.5s ease-in-out;
+        /* 權重佔比 */
+        z-index: 50;
+
+            .over{
+                color: #fff;
+                position: absolute;
+                height: 100%;
+
+                // 打開父元素的 overflow: hidden 看效果; 
+                /* 這樣剛好可以佔滿整個父元素 .over-container */
+                width: 200%;
+                /* 父元素原本 left: 50%;*/
+                left: -100%;
+
+                /* x軸的移動 */
+                transform: translateX(0px);
+                transition: transform 0.6s ease-in-out;
+
+                .over-item{
+                // border: 1px solid rgb(248, 252, 10);
+                position: absolute;
+                top: 0 ;
+                /* 垂直居中的效果 */
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+
+                height: 100%;
+                //  /* 2個item 寬度各佔50%*/
+                width: 50%;
+                
+                transform: translateX(0);
+                transition: transform 0.6s ease-in-out;
+        
+                    .img-box{
+                        width: 250px;
+                        img{
+                            width: 100%;
+                        }
+                    }
+
+                    h2{
+                        font-size: 1.5rem;
+                        font-weight: bold;
+                        margin: 0 auto;
+
+                    }
+                    p{
+
+                        font-size: 0.8rem;
+                        line-height: 1rem;
+                        /*字體間隔*/
+                        letter-spacing: 0.1rem; 
+                        margin: 20px 0;
+                    }
+                    .over-btn{
+                        
+                        background: white;
+                        border-radius: 20px;
+                        border: 1px solid rgb(228, 97, 97);
+                       
+                        font-size: 1rem;
+                        font-weight: bold;
+                        padding: 8px 45px;
+                        letter-spacing: 1px;
+                        transition: transform 1ms ease-in;
+                    
+                        &:active{
+                            /* 縮放效果 */
+                            transform: scale(0.95);
+                        }
+                    
+                        &:focus{
+                            outline: none;
+                        }
+                    }
+                    
+                }
+
+                /* 左邊的 --已有帳號?-- */
+                .over-left{
+
+                    /* 是為了增加動畫效果所設置的 */
+                    /* 加強從左邊進來的效果 */
+                    // transform: translateX(-20%);
+
+                }
+
+                /* 右邊的 --沒有帳號?-- */
+                .over-right{
+                    right: 0;
+                    // transform: translateX(0);
+
+                }
+
+            }
+
+        }
+
+    }
+
+
+     /* animation 動畫實現切換效果 */
+    /* 左邊的登入頁面切換至右側 */
+    /* '#container' 增加 .toRightAction類 */
+    /* .toRightAction 下面的 .login-container 水平X軸移動 translateX(100%)*/
+    .container.toRightAction .login-container{
+        transform: translateX(100%);
+    }
+
+    /* 右邊的 "沒有帳號?" 切換至左邊 */
+    .container.toRightAction .over-container{
+        transform: translateX(-100%);
+    }
+
+    /* 註冊頁覆蓋登入頁  */
+    .container.toRightAction .register-container{
+        opacity: 1;
+        z-index: 5;
+        transform: translateX(100%);
+    }
+
+    /* over覆蓋頁回到右邊*/
+    .container.toRightAction .over{
+        transform: translateX(50%);
+    }
+    
+    .container.toRightAction .over-left{
+        transform: translateX(0);
+    }
+
+    
+    /* 原本是 transform: translateX(-20%) */
+    /* 這樣會有左邊滑動的效果*/
+    .container.toRightAction .over-right{
+        transform: translateX(20%);
+    }
+}
