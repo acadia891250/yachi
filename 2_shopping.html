@@ -5,11 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shopping</title>
     <link rel="stylesheet" href="css/normalize.css">
-    <!-- <link rel="stylesheet" href="css/header.css"> -->
-    <!-- <link rel="stylesheet" href="css/2_shopping.css"> -->
-    <link rel="stylesheet" href="css/2_mix.css">
     <link rel="stylesheet" href="css/4_shopping_cart.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="css/2_mix.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
     <script src="/js/jquery-3.5.1.js"></script>
     <script src="/js/jquery-ui.js"></script>
     <script src="/js/enscroll-0.6.2.min.js"></script>
@@ -17,10 +15,11 @@
 </head>
 <body>
         <!-- ps: 需要優化的地方： 2/10 
-        1. 會用bootstrap 優化商品排列
-        2. 點選商品分類 上方中括號的字會變成點選的商品分類名稱
-        3. 點擊加入購物車，購物車界面會彈跳出來(數量與金額會跟著增加)
-    -->
+            1. 會用bootstrap 優化商品排列(未)
+            2. 點選商品分類 上方中括號的字會變成點選的商品分類名稱
+            3. 點擊加入購物車，購物車界面會彈跳出來(數量與金額會跟著增加)
+            4. 購物車選單出現時，會回到最上方，需改善此問題(已解決) 
+        -->
 
 
 
@@ -270,7 +269,7 @@
             </ul>
             <!-- 卷軸部分 -->
             <div class="scrollArea">
-                <div class="enscroll track3">
+                <div class="enscroll-track track3">
                     <a href class="controller handle3">
                         <div class="top"></div>
                         <div class="bottom"></div>
@@ -279,12 +278,11 @@
             </div>
             <!-- 卷軸部分結束 -->
             <div class="buyBtn">
-                <a href="javascript">前往結帳</a>
+                <a href="javascript:;">前往結帳</a>
             </div>
             <label for="side_menu_switch">
                 <i class="fas fa-cart-plus"></i>
             </label>
-
         </div>
     </div>
     <!-- End：購物車介面 -->
@@ -373,10 +371,10 @@
                             <div class="cartBtn">
                                 加入購物車
                             </div>
-                            <div class="clearfix"></div>
+                            <!-- <div class="clearfix"></div> -->
                         </div>
                     </div>
-                    <div class="product_contianer">
+                    <!-- <div class="product_contianer">
                         <div class="product_items">
                             <div class="product_image image2">
                                 <img src="images_2/商品照片2.jpg">
@@ -663,7 +661,7 @@
                             </div>
                             <div class="clearfix"></div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </main>
             <!-- End:rightSide -->
