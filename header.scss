@@ -7,7 +7,7 @@
 
 body{
     height: 1500px;
-    margin-top: 13rem;
+    // margin-top: 13rem;
     font-family:"微軟正黑體";
    
 }
@@ -22,14 +22,14 @@ body{
 
 header{
     // border: 1px solid red;
-    background: #ccc;
+    background: white;
     width: 100%;
     /* 使頁首定在body上方 */
-    position: fixed;
-    z-index: 100;
-    top: 0;
-    left: 0;
-    right: 0;
+    // position: fixed;
+    // z-index: 100;
+    // top: 0;
+    // left: 0;
+    // right: 0;
     nav{
         background-color: black;
         .navbar{
