@@ -236,7 +236,19 @@ header{
                     border: 2px solid #ccc;
                     padding: 0 1rem;
                     display: none;
+                    height: 300px;
                     
+                }
+                .member-panel{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    div{
+                        border: 1px solid red;
+                        padding: 20px;
+                    }
+                   
                 }
 
             }
