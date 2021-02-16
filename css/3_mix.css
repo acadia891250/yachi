@@ -20,6 +20,7 @@ body {
 
 }
 
+
 /* 回到上方的按鈕 */
 /* .toTop {
   position: fixed;
@@ -598,6 +599,11 @@ aside{
 .show_panel{ 
   animation-name: show_panel; 
 }
+.product_comment{
+  background-color: rgba(196, 156, 156,0.3);
+  border-radius: 6px;
+  padding: 30px;
+}
 @keyframes show_panel{
   from {
     opacity: 0;
@@ -605,6 +611,24 @@ aside{
   } 
   to {opacity: 1;} 
 }
+
+/* 頁籤第二頁(留言框) */
+#flexbox1 {
+  /* background-color: #b3b7bb; */
+  /* background-color: rgba(195,156,156,.4); */
+  border-radius: 8px;
+  padding: 10px;
+}
+#flexbox1 span {
+  color: #c82333;
+}
+
+.flexitem {
+  margin: 5px 0;
+}
+
+
+
 
 /* 頁籤第二頁 (評論內容) */
 .commentBox{
@@ -663,9 +687,9 @@ aside{
 .doMore{
   position: relative;
 }
-/* 讓選單可以出現在外面，不會影響到內文排版 */
+/* 讓選單可以出現在外面，不會影響到內文排版 
 .dropdownList{ 
-  display: none;  /*一開始隱藏起來 */ 
+  /*display: none;  一開始隱藏起來
   position: absolute;
   width: 70px;
   text-align: center;
@@ -682,3 +706,4 @@ aside{
 .active {
   display: block;
 }
+*/
