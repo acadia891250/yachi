@@ -1,42 +1,5 @@
 
 $(function(){       
-    /* hover事件切換 如果只寫一個方法  
-       那鼠標經過和離開都會觸發這個方法 slideToggle
-    */
-   
-    // $('.menu-box').hover(function(){
-    //     $(this).children('ul').slideToggle();
-    // })
-
-    $('.tab-list a').hover(function(){
-        /* 為匹配的當前元素切換 class css類別 */
-        $(this).toggleClass('liColor');
-        
-        /* 拿到當前(this) a 的索引號 */
-        index = $(this).index();
-
-        /* 讓上面和下面相應的索引號 eq() 顯示內容 
-            其餘siblings() 隱藏起來 */
-            // stop()  沒有加好像效果一樣???
-        $('.tab-panel').eq(index).stop().fadeIn('slow').show().siblings().hide();
-
-    },function(){
-        /* 第二個方法處理滑鼠移開事件 */
-        $(this).removeClass('liColor');
-        $('.tab-panel').hide();
-    })
-
-
-    // 當鼠標移到出現的區塊時，區塊仍不會消失
-    $('.tab-panel').hover(function(){
-        index = $(this).index();
-        $(this).css('background-color','white').show();
-        $('.tab-list a').eq(index).addClass('liColor');
-        },function(){
-            $(this).hide();
-            $('.tab-list a').eq(index).removeClass('liColor');
-    })      
-    
     
     // 鼠標下滾，header消失(還有bug，當f5 無法判斷header是否top=0)
     // $(document).on('mousewheel DOMMouseScroll',function(e){
@@ -85,7 +48,8 @@ $(function(){
 
     //可以把css包成class 寫在css檔裡面，利用addClass 與 removerClass 有效縮減程式碼
     //考慮之後還會更改，目前先暫時寫在這邊 2/10 
-    //使用此方式，不會出現上述程式的問題(重整後卷軸不在上方卻還是跑出全部hearder)
+    //使用此方式，還是會出現上述程式的問題(重整後卷軸不在上方卻還是跑出全部hearder)
+
     $(window).scroll(function(){
         //卷軸在頂部時scroll會=0 ，故只要判斷是否為0即可，做出header一捲動就變化的效果
         let scroll = $(window).scrollTop();
@@ -118,6 +82,42 @@ $(function(){
     })
 
 
+     /* hover事件切換 如果只寫一個方法  
+       那鼠標經過和離開都會觸發這個方法 slideToggle
+    */
+   
+    // $('.menu-box').hover(function(){
+    //     $(this).children('ul').slideToggle();
+    // })
 
+    $('.tab-list a').hover(function(){
+        /* 為匹配的當前元素切換 class css類別 */
+        $(this).toggleClass('liColor');
+        
+        /* 拿到當前(this) a 的索引號 */
+        index = $(this).index();
+
+        /* 讓上面和下面相應的索引號 eq() 顯示內容 
+            其餘siblings() 隱藏起來 */
+            // stop()  沒有加好像效果一樣???
+        $('.tab-panel').eq(index).stop().fadeIn('slow').show().siblings().hide();
+
+    },function(){
+        /* 第二個方法處理滑鼠移開事件 */
+        $(this).removeClass('liColor');
+        $('.tab-panel').hide();
+    })
+
+
+    // 當鼠標移到出現的區塊時，區塊仍不會消失
+    $('.tab-panel').hover(function(){
+        index = $(this).index();
+        $(this).css('background-color','white').show();
+        $('.tab-list a').eq(index).addClass('liColor');
+        },function(){
+            $(this).hide();
+            $('.tab-list a').eq(index).removeClass('liColor');
+    })      
+    
 
 })

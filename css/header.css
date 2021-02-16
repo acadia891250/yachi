@@ -9,28 +9,43 @@
 }
 
 body {
-    height: 1500px;
-    margin-top: 100rem;
+    /* height: 1500px; */
+    margin-top: 13rem;
     font-family: "微軟正黑體";
-    /* background-image: url(../images_2/background_shop.png);
+    background-image: url(../images_2/background_shop.png);
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
-    font-family: ‘Noto Sans TC’, sans-serif;
-    margin: 0 auto; */
+    
 
 }
 
 /* 回到上方的按鈕 */
-.toTop {
+/* .toTop {
   position: fixed;
   font-size: 3rem;
   right: 1rem;
   bottom: 1rem;
+} */
+#go-top {
+	position: fixed;  /* 畫面滾動時一直出現 */
+    right: 20px;
+    bottom: 35px;
+    width: 40px;
+    height: 40px;
+    background:rgba(123,136,111,0.3);
+    color:#fff;
+    text-align: center;  /* 左右置中 */
+    line-height: 40px;   /* 上下置中 */
+    text-decoration: none;
+    border-radius: 50%;
+}
+#go-top:hover{
+    background:rgba(123,136,111,1);
 }
 
 header {
-  background: #ccc;
+  /* background: #ccc; */
   width: 100%;
   /* 使頁首定在body上方 */
   position: fixed;
@@ -126,8 +141,9 @@ header .search .search-wrap .logo-wrap {
 }
 
 header .search .search-wrap .logo-wrap img {
-  width: 100%;
+  width: 90%;
   vertical-align: bottom;
+  cursor: pointer;
 }
 
 header .search .search-wrap .search-food {
@@ -147,14 +163,18 @@ header .search .search-wrap .search-food {
 }
 
 header .search .search-wrap .search-food .search-input {
-  border: 2px solid black;
+  border: 2px solid #aaa;
+  border-radius: 100px;   
+  padding-left: 0px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  margin-bottom: 0.5rem;
 }
 
 header .search .search-wrap .search-food .search-input input, header .search .search-wrap .search-food .search-input button {
-  background-color: white;
+  background-color: transparent;
+  color: #aaad;
   border: none;
   height: 2rem;
 }
@@ -191,11 +211,14 @@ header .search .search-wrap .search-ticket {
 header .search .search-wrap .search-ticket img {
   width: 100%;
   vertical-align: bottom;
+  opacity: 0.2;
+  
+  
 }
 
 header .search .search-wrap .search-ticket .txt {
-  background-color: rgba(0, 0, 0, 0.5);
-  font-size: 1rem;
+  /* background-color: rgba(0, 0, 0, 0.5); */
+  font-size: 0.8rem;
   position: absolute;
   top: 0;
   right: 0;
@@ -216,13 +239,13 @@ header .search .search-wrap .search-ticket .txt {
 }
 
 header .search .search-wrap .search-ticket .txt h2 {
-  color: white;
+  color: #555555;
 }
-
-header .search .search-wrap .search-ticket:hover .txt {
+/* 鼠標一上去出現優惠券專區背景 */
+/* header .search .search-wrap .search-ticket:hover .txt {
   background-color: #ccc;
   opacity: 0.7;
-}
+} */
 
 header .search .search-wrap .search-ticket:hover .txt h2 {
   color: black;
@@ -251,19 +274,22 @@ header .search .search-wrap .member a:first-child {
 
 header .search .search-wrap .member a:last-child {
   display: block;
+  padding: 0;
 }
 
 header .search .search-wrap .member a:last-child i {
-  font-size: 4rem;
+  
+  font-size: 1.8rem;
+  color: #555;
 }
 
 header .search .search-wrap .member a:hover {
   color: orange;
 }
-
-header .tab {
-  background-color: black;
-}
+/*夜市簡介 背景 */
+/* header .tab {
+  background-color: black; 
+} */
 
 header .tab .tab-warp {
   position: relative;
@@ -284,7 +310,7 @@ header .tab .tab-warp .tab-list {
 header .tab .tab-warp .tab-list a {
   font-size: 1rem;
   text-align: center;
-  color: white;
+  color: #444444;
   width: 11rem;
   padding: 1rem 0rem;
 }
@@ -293,7 +319,7 @@ header .tab .tab-warp .tab-content {
   background-color: white;
   position: absolute;
   /* 調整左邊 border線 與導覽列同X軸 */
-  left: 21%;
+  left: 15%;
   /* 控制右邊 border線 */
   width: 55rem;
 }
@@ -327,4 +353,3 @@ header .tab .tab-warp .tab-content .tab-panel {
     padding: 0 1em;
   }
 }
-
