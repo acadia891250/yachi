@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/7_checkoutShop.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+    <script src="/js/jquery-3.5.1.js"></script>
+    <script src="/js/jquery-ui.js"></script>
+    <script src="js/header.js"></script>
+    <title>Checkout Shop</title>
+</head>
+<body>
+    <!-- 1. 要考慮點到的是第幾個
+         2. 點到之後出現是必須相依於點到的那一個
+         3. 明細之間必須有間隔 -->
+
+     <!-- Start:header -->
+    
+        <!-- 回到上方的按鈕 -->
+        <!-- <a href="#" class="toTop"><i class="fas fa-arrow-up"></i></a> -->
+        <a href="#" id="go-top"><i class="fas fa-arrow-up"></i></a>
+
+        <header>
+            <nav>
+                <div class="navbar">
+                    <div class="ig-links">
+                        <a href="#">快速登入</a>
+                        <a href="#"><img src="./images_2/facebook.png" alt=""></a>
+                        <a href="#"><img src="./images_2/search.png" alt=""></a>
+                        <a href="#"><img src="./images_2/instagram.png" alt=""></a>
+                    </div>
+                    <div class="space">
+                        
+                    </div>
+                    <div class="links">
+                        <a href="#"><i class="fas fa-user-friends"></i>關於我們</a>
+                        <a href="#"><i class="fas fa-info-circle"></i>最新消息</a>
+                        <a href="#"><i class="far fa-question-circle"></i>幫助中心</a>
+                        <a href="#"><i class="fas fa-comment-dots"></i>意見回應</a>
+                    </div>
+                </div>
+            </nav>
+    
+    
+            <div class="search">
+                <div class="search-wrap">
+                    
+                    <div class="logo-wrap">
+                        <img src="./images_2/yachiLogo50.png" alt="">
+                    </div>
+                    
+                    <form class="search-food" action="https://www.google.com/">
+                        <div class="search-input">
+                            <input type="search" placeholder="不要來搜尋">
+                            <button><i class="fas fa-search"></i></button>
+    
+                        </div>
+                        <div class="food-trending">
+                            <a href="#">大腸包大腸</a>
+                            <a href="#">測試中</a>
+                            <a href="#">優惠券</a>
+                            <a href="#">關鍵字</a>
+                            <a href="#">測試</a>
+                        </div>
+                    </form>
+    
+                    <div class="search-ticket">
+                        <img src="images_2/yachiLogo50.png">
+                        <div class="txt">
+                            <a href="#"><h2>優惠券專區</h2></a>
+                        </div>
+                        
+                    </div>
+    
+                    <div class="member">
+                        <a href="#">免費註冊</a>
+                        <a href="#">登入</a>
+                        <a href="#"><i class="fas fa-shopping-cart"></i></a>
+                    </div>
+    
+                </div>
+            </div>
+    
+    
+    
+            <div class="tab">
+                <div class="tab-warp">
+    
+                    <div class="tab-list">
+                        <a href="#">夜市簡介</a>
+                        <a href="#">優質商家</a>
+                        <a href="#">美食推薦</a>
+                        <a href="#">購物中心</a>
+                        <a href="#">會員中心</a>
+                    </div>
+    
+                    <div class="tab-content">
+                        <div class="tab-panel">
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed cumque porro nam alias explicabo nihil labore quidem laborum repellat dignissimos. Mollitia sequi, sit facilis magni eveniet culpa eligendi debitis! Aliquid?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui rem a provident vel fugit corrupti placeat! Perferendis, eligendi quo repellat consequatur, dignissimos rerum quibusdam veritatis, voluptates error sint enim explicabo.
+                        </div>
+                        <div class="tab-panel">
+                            <img src="https://picsum.photos/500/200" alt="">
+                        </div>
+                        <div class="tab-panel">
+                            <img src="https://picsum.photos/600/200" alt="">
+                        </div>
+                        <div class="tab-panel">
+                            待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充待補充
+                        </div>
+                        <div class="tab-panel">
+                            <img src="https://picsum.photos/450/200" alt="">
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+    
+    
+        </header>
+    <!-- End:header -->
+    <div class="container">
+        <!-- 功能選單開始 -->
+        <div class="row">
+            <aside class="col-4">
+                <div class="function ">
+                    <!-- <h3>管理員</h3> -->
+                    <div class="item">
+                        <img src="https://picsum.photos/250/250" id="headImg">
+                    </div>
+
+                    <label for="file">
+                        <i class="fas fa-image">
+                            編輯頭貼
+                            <input type="file" id="file" accept=".jpeg,.png" style="display: none;">
+                        </i>
+                    </label>
+
+                    <div class="item">
+                        <a href="#">
+                            <button><span>管理員首頁</span></button>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="#">
+                            <button><span>商品維護</span></button>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="#">
+                            <button><span>平台優惠活動</span></button>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="#">
+                            <button><span>平台優惠券</span></button>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="#">
+                            <button><span>廣告資訊</span></button>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="#">
+                            <button><span>客服回應</span></button>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="#">
+                            <button  style="background:rgb(170, 192, 207);"><span>審核商家</span></button>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="#">
+                            <button><span>公告</span></button>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="#">
+                            <button><span>申訴單</span></button>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="#">
+                            <button><span>基本資料</span></button>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="#">
+                            <button><span>登出</span></button>
+                        </a>
+                    </div>
+                </div>
+
+                
+            
+            
+            </aside>
+
+            <div class="col-8">
+                <!-- 標頭 -->
+                <div class="row py-3 mb-4 border-bottom" id="shopTitle">
+                    <div class="col-4 row1_item" >
+                        <div class="d-flex justify-content-start">
+                            <span>商家名稱</span>
+                        </div>
+                    </div>
+
+                    <div class="col-4 row1_item border-right-0 border-left-0" >
+                        <div class="d-flex justify-content-start">
+                            <span>申請日期</span>
+                        </div>
+                    </div>
+
+                    <div class="col-4 row1_item" >
+                        <div class="d-flex justify-content-start">
+                            <span>簡介</span>
+                        </div>
+                    </div>
+                </div>
+            
+
+                <!-- 商家紀錄 -->
+                <div class="row shopList">
+                    <div class="col-4 row1_item border-top-0" >
+                        <div class="d-flex justify-content-start">
+                            <span>方家雞肉飯</span>
+                        </div>
+                    </div>
+
+                    <div class="col-4 row1_item border-right-0 border-left-0 border-top-0" >
+                        <div class="d-flex justify-content-start">
+                            <span>2021/01/01</span>
+                        </div>
+                    </div>
+
+                    <div class="col-4 row1_item border-top-0" >
+                        <div class="d-flex justify-content-start">
+                            <span class="d-inline-block text-truncate" style="max-width: 150px;">
+                                歸納我喜歡的火雞肉飯，最大關鍵是：肉優、飯Q、雞油香，最重要的就是油蔥酥呀！本文整理近年來在嘉義走跳吃過的火雞肉飯食記，分享給口味
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- 商家詳細資料 -->
+                <div class="row shopDetail">
+
+                    <div class="col-6 row2_item mt-2 mb-0">
+                        商家名稱 :
+                    </div>
+
+                    <div class="col-6 row2_item mt-2 mb-0">
+                        商家電話 :
+                    </div>
+
+                    <div class="col-6 row2_item my-2">
+                        商家地址 :
+                    </div>
+
+                    <div class="col-6 row2_item my-2">
+                        商家營業時間 :
+                    </div>
+
+                    <div class="col-3 row2_item my-1">
+                        <img src="https://picsum.photos/160/80" alt="picture">
+                    </div>
+
+                    <div class="col-3 row2_item my-1">
+                        <img src="https://picsum.photos/160/80" alt="picture">
+                    </div>
+
+                    <div class="col-3 row2_item my-1">
+                        <img src="https://picsum.photos/160/80" alt="picture">
+                    </div>
+
+                    <div class="col-3 row2_item my-1">
+                        <div class="row">
+
+                            <div class="col-12 mb-2 d-flex justify-content-end">
+                                <div>
+                                    <button type="button" class="btn btn-primary">確認</button>
+                                </div>
+                            </div>
+
+                            <div class="col-12 mb-2 d-flex justify-content-end">
+                                <div>
+                                    <button type="button" class="btn btn-secondary">返回</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+        <!-- 功能選單結束 -->
+    </div>
+    <script>
+        $(function () {
+      
+        });
+    </script>
+
+
+
+</body>
+</html>
