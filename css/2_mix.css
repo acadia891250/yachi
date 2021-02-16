@@ -454,13 +454,15 @@ aside{
     padding: 30px 0;
     margin-left: 20px;
 }
-.items a{
+.items span{
+  font-size: 1.2rem;
     color: #333333;
     text-decoration: none;
     letter-spacing: 6px;
-    transition: .5s;
+    transition: .1s;
+    cursor: pointer;
 }
-.items a:hover{
+.items span:hover{
     border-radius: 5px;
     background: #ffffff;
     opacity: 0.6;
@@ -468,14 +470,12 @@ aside{
 .hr{
     width: 80%;
     margin: 0 auto;
-    border-top: 1px solid rgba(255,255,255,.6);
+    border: 1px solid rgba(255,255,255,.6);
 }
 
 /* 右半邊區塊  使用頁面： 2_shopping.html  3_商品頁面 */   
 .right_container{
     position: absolute;
-    display: flex;
-    flex-wrap: wrap;
     right: 0;
     width: 73%;
     padding-top: 30px;
@@ -483,21 +483,24 @@ aside{
     border-radius: 5px;
 }
 .product_contianer{
-    height: 480px;
-    padding-left:34px;
+  display: flex;
+  justify-content: center;
+  height: 480px;
 }
 .product_image{
     width: 200px;
-    /* height: 150px; */
+    /* height: 50px; */
 
 }
 .product_image img{
 	display:block ;
 	width:100% ;  /* 寬度跟容器一樣 */
-	height:auto ;  /* 因每個瀏覽器可能都不太一樣，所以高度也需要設定 */
+	height: 270px; ;  /* 因每個瀏覽器可能都不太一樣，所以高度也需要設定 */
 }
 .product_items{
     position: relative;
+    display: flex;
+    flex-direction: column;
 }
 .product_items img:hover{
     transition: .3s ease;
@@ -520,6 +523,9 @@ aside{
 }
 .product_items div.product_image:nth-child(2) a:hover{
     opacity: 0;
+}
+.itemBody{
+  width: fit-content;
 }
 .product_name{
     height: 40px;
