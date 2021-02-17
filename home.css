@@ -6,12 +6,20 @@
 }
 
 .text-shadow {
-  text-shadow: 2px 2px 8px rgb(0, 0, 0);
+  text-shadow: 2px 2px 8px rgb(233, 224, 224);
 }
-.login-bg {
-  background: url(./img/yachiLogo_change.png);
-  height: 700px;
-  padding: 100px;
+.login-bg-first {
+background: black;
+/* opacity:0.7; */
+}
+.login-bg-second {
+  
+  background: url(./Night_Market/nightMarket-bg.jpg);
+  height: 600px;
+  padding: 50px 0px 0px 0px ;
+  opacity:0.9;
+  margin-top: -50px;
+  /* color: rgba(red, green, blue, 0.5) ; */
 }
 
 .main {
@@ -22,6 +30,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  
 }
 
 
@@ -32,9 +41,22 @@ div h5 {
   font-size: 1.3rem;
 }
 
-.jobs-voucher-bg{
-  background: url(./img/soybean\ pudding.jpg);
+.night-market-bg-first {
+  background: black;
+  /* opacity:0.7; */
+  }
+.night-market-bg-second{
+  /* background:  #F3F8F2; */
+  opacity:0.9;
+  background: url(./Night_Market/nightMarket-bg.jpg);
+  
 }
+/* 
+.voucher-bg{
+   background: url(./Night_Market/bg-2.jpg);
+  
+} */
+
 
 .jobs{
   height: 8 00px;
