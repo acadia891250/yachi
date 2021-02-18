@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>管理員首頁</title>
+    <title>公告</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/header.css">
@@ -88,45 +88,104 @@
             opacity: 1;
         }
 
-        /* status */
-        .status {
+        /* announcement */
+        .announcement {
             width: 700px;
-            height: 150px;
-            border: 2px solid #aaa;
-            border-radius: 20px;
+            /* border: 2px solid #aaa; */
+            /* border-radius: 20px; */
             margin-left: 100px;
             margin-bottom: 2rem;
         }
-        .status-nav {
-            /* border: 1px solid #fff; */
-            /* justify-content: flex-end; */
-            display: flex;
+        .announcement fieldset{
+         height: 250px;
+         border-radius: 20px;
+         margin-bottom: 2rem;
+         border: 2px solid #333;
         }
-        .status-nav a {
-            /* border: 1px solid #333; */
-            padding-right: 10px;
-            margin-top: 5px;
-            transition: .5s;
+        .announcement legend {
+            font-size: 30px;
+            width: 200px;
         }
-        .status-nav a:hover {
-            color: red;
+        .announcement a {
+            color: #333;
+        }
+        .announcement-mid {
+            font-size: 20px;
+            margin-bottom: 2rem;
+            padding-left: 4px; 
+        }
+        .announcement label{
+            font-size: 20px;
             font-weight: bold;
         }
-        .status-nav .space{
-           flex-grow: 1;
-           /* flex: 1; */
+        .announcement-mid input{
+            width: 500px;
+            height: 30px;
         }
-        .status hr {
-            margin: 1px;
+        .announcement-functionbar table{
+            margin: auto;
+            padding-left: 10px;
+            border-collapse: separate;
+            border-spacing: 0;
         }
-        .status h3 {
-            border: 1px solid #fff;
-            margin: 5px;
-            padding-left: 20px;
+        .announcement-functionbar tr{
+            border: 1px solid #333;
         }
-        .status a {
-            color: #333;
-            padding-left: 20px;
+        .announcement-functionbar td{
+            font-family: cursive;
+            border: 1px solid #ccc;
+            padding: 3px 30px;
+            background-color: #333;
+            color: #FFF;
+        }
+        /*第一欄第一列：左上*/
+        tr:first-child td:first-child{
+            border-top-left-radius: 10px;
+        }
+        /*第一欄最後列：左下*/
+        tr:last-child td:first-child{
+            border-bottom-left-radius: 10px;
+        }
+        /*最後欄第一列：右上*/
+        tr:first-child td:last-child{
+            border-top-right-radius: 10px;
+        }
+        /*最後欄第一列：右下*/
+        tr:last-child td:last-child{
+            border-bottom-right-radius: 10px;
+        }
+        textarea,input:focus {  /* 點擊時去除瀏覽器預設文本邊框 */
+            outline: none;
+        }
+        textarea {
+            padding-left: 5px;
+            /* margin-top: 2.5rem; */
+            margin-left: 9rem;
+            margin-top: 3px;
+            border: 2px solid;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+        .announcement-photo:hover {
+            color: red;
+            transition: .3s;
+            cursor: pointer;
+        }
+        .announcement-button {
+            width: 100px;
+            height: 50px;
+            font-size: 30px;
+            font-weight: bolder;
+            margin-top: 50px;
+            margin-left: 550px;
+            border-radius: 5px;
+        }
+        .announcement-button:hover {
+            background:rgb(170, 192, 207);
+            transition: .3s;
+            color: red;
+            cursor: pointer;
+            border-radius: 50%;
         }
     </style>
 
@@ -283,14 +342,13 @@
                     <label for="file">
                         <i class="fas fa-image">
                             編輯頭貼
-                            <input type="file" id="file" accept=".jpeg,.png" style="display: none;"
-                            >
+                            <input type="file" id="file" accept=".jpeg,.png" style="display: none;">
                         </i>
                     </label>
 
                     <div class="item">
                         <a href="administrator.html">
-                            <button style="background:rgb(170, 192, 207);"><span>管理員首頁</span></button>
+                            <button><span>管理員首頁</span></button>
                         </a>
                     </div>
                     <div class="item">
@@ -300,7 +358,7 @@
                     </div>
                     <div class="item">
                         <a href="admin_activity.html">
-                            <button ><span>平台優惠活動</span></button>
+                            <button><span>平台優惠活動</span></button>
                         </a>
                     </div>
                     <div class="item">
@@ -325,7 +383,7 @@
                     </div>
                     <div class="item">
                         <a href="admin_announcement.html">
-                            <button><span>公告</span></button>
+                            <button style="background:rgb(170, 192, 207);"><span>公告</span></button>
                         </a>
                     </div>
                     <div class="item">
@@ -346,88 +404,64 @@
                 </div>
             </aside>
             <main class="col-8">
-                <div class="status">
-                    <div class="status-nav">
-                        <h3>平台優惠活動</h3>
-                        <div class="space"></div>
-                        <a href="#">readmore...</a>
-                    </div>
-                    <hr>
+                <div class="announcement">
                     <div>
-                        <a href="#">2020/08/09-2020/09/01 中元節活動，集點換旺旺</a><br>
-                        <a href="#">2020/09/15-2020/10/01 慶中秋，月餅買十送一優惠券</a><br>
-                        <a href="#">2020/11/11 1111購物節，集優惠券換老婆餅</a><br>
-                        <a href="#">2020/10/28 慶萬聖節，帳號轉職魔法師</a><br>
+                        <fieldset>
+                            <legend align="center">近期公告</legend>
+                            <a href="#">2020/07/05 饒河夜市 胡椒餅 成為Yachi店家</a><br><br>
+                            <a href="#">2020/08/09 中原活動開始</a><br><br>
+                            <a href="#">2020/08/29 遼寧夜市 客家湯圓 成為Yachi店家</a><br><br>
+                            <a href="#">2020/10/01 師大夜市 我家牛排 已下架</a><br><br>
+
+                        </fieldset>
                     </div>
-                </div>
-                <div class="status">
-                    <div class="status-nav">
-                        <h3>廣告資訊</h3>
-                        <div class="space"></div>
-                        <a href="#">readmore...</a>
-                    </div>
-                    <hr>
                     <div>
-                        <a href="#">2020/08/09-2020/09/01 鎮瀾宮媽祖廟 水餃買十送十</a><br>
-                        <a href="#">2020/08/09-2020/09/01 鎮瀾宮媽祖廟 消波塊買十送十</a><br>
-                        <a href="#">2020/11/11-2020/12/12 鄭太吉有限公司 慶記買十送十</a><br>
-                        <a href="#">2020/12/25 蕭家班有限公司 慶記買十送十</a><br>
-                    </div>
-                </div>
-                <div class="status">
-                    <div class="status-nav">
-                        <h3>客服回應</h3>
-                        <div class="space"></div>
-                        <a href="#">readmore...</a>
-                    </div>
-                    <hr>
-                    <div>
-                        <a href="#">2020/08/09 23:59 sjw說:請問中元節活動什麼意思？消費亡者？好笑嗎？低級當有趣</a><br>
-                        <a href="#">2020/09/15 23:59 sjw說:請問中秋節活動什麼意思？消費嫦娥？你把吳剛放在哪裡？低級當有趣</a><br>
-                        <a href="#">2020/11/11 08:59 菜雞說:請問台積電可以買嗎？</a><br>
-                        <a href="#">2021/03/31 10:00 總監說:看得出來有準備拉</a><br>
-                    </div>
-                </div>
-                <div class="status">
-                    <div class="status-nav">
-                        <h3>審核商家</h3>
-                        <div class="space"></div>
-                        <a href="#">readmore...</a>
-                    </div>
-                    <hr>
-                    <div>
-                        <a href="#">2020/07/05 頤宮中餐廳Le Palais 申請店家</a><br>
-                        <a href="#">2020/09/13 教父牛排 申請店家</a><br>
-                        <a href="#">2020/10/10 鮨野村 申請店家</a><br>
-                        <a href="#">2020/10/25 大腕燒肉專門店 申請店家</a><br>
-                    </div>
-                </div>
-                <div class="status">
-                    <div class="status-nav">
-                        <h3>公告</h3>
-                        <div class="space"></div>
-                        <a href="#">readmore...</a>
-                    </div>
-                    <hr>
-                    <div>
-                        <a href="#">2020/07/05 饒河夜市 胡椒餅 成為Yachi店家</a><br>
-                        <a href="#">2020/08/09 中原活動開始</a><br>
-                        <a href="#">2020/08/29 遼寧夜市 客家湯圓 成為Yachi店家</a><br>
-                        <a href="#">2020/10/01 師大夜市 我家牛排 已下架</a><br>
-                    </div>
-                </div>
-                <div class="status">
-                    <div class="status-nav">
-                        <h3>申訴單</h3>
-                        <div class="space"></div>
-                        <a href="#">readmore...</a>
-                    </div>
-                    <hr>
-                    <div>
-                        <a href="#">2020/07/05 06:00 sjw用戶檢舉 yachi 性別欄無LGBTQ+可選擇</a><br>
-                        <a href="#">2020/07/07 8:00 karen用戶檢舉 岡山羊肉爐教壞我家小孩</a><br>
-                        <a href="#">2020/07/08 06:00 sjw用戶檢舉 川普 BLM</a><br>
-                        <a href="#">2020/07/08 06:00 sjw用戶檢舉 拜登 老人失智</a><br>
+                        <fieldset style="height: 850px;">
+                            <legend align="center">建立公告</legend>
+                            <div class="announcement-mid">
+                                <label for="">公告名稱 :</label>
+                                <input type="text" placeholder="請輸入公告名稱" maxlength="30" style="margin-left: 2.8rem";>
+                            </div>
+                            <div class="announcement-mid">
+                                <label for="">公告日期 :</label>
+                                <input type="date" value="1" step="1" min="0" style="width: 180px; margin-left: 2.8rem";> 
+                                <label for="" style="margin-left: 0.5rem"> ~ </label>
+                                <input type="date" value="1" step="1" min="0" style="width: 180px; margin-left: 0.5rem";>
+                            </div>
+                            <div class="announcement-mid" style="display: flex; margin-bottom: 0px;">
+                                <label for="">公告內文 :</label>
+                                <div class='announcement-functionbar'>
+                                    <table style="margin-left: 2.5rem;">
+                                    <tr>
+                                        <td><a href="#" style="color: #fff;"><b>B</b></a></td>
+                                        <td><a href="#" style="color: #fff;"><I>I</I></a></td>
+                                        <td style="text-decoration: underline;"><a href="#" style="color: #fff;">U</a></td>
+                                    </tr> 
+                                    </table>
+                                </div>
+                            </div>
+                                <div>
+                                    <textarea style="resize: none; width: 500px; height: 200px;"></textarea>
+                                </div>
+                            <div class="announcement-img">
+                                <label for="">優惠活動圖片 :</label>
+                                <div style="display: flex;">
+                                    <label for="file">
+                                        <i class="fas fa-image announcement-photo" style="margin-top: 2rem;">
+                                            ☛選擇圖片<input type="file" id="file" accept=".jpeg,.png" style="display: none;">
+                                        </i>
+                                    </label>
+                                    <div class="item">
+                                        <img src="https://picsum.photos/500/250" id="headImg" style="margin-left: 25px; margin-top: -35px;">
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <a href="#">
+                                    <button class="announcement-button">儲存</button>
+                                </a>
+                            </div>
+                        </fieldset>
                     </div>
                 </div>
             </main>
