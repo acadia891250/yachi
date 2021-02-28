@@ -91,18 +91,30 @@ $(function(){
     // })
 
     $('.tab-list a').hover(function(){
-        /* 為匹配的當前元素切換 class css類別 */
+        /* 為匹配的當前元素切換 class css類別 (背景顏色)*/
         $(this).toggleClass('liColor');
         
         /* 拿到當前(this) a 的索引號 */
         index = $(this).index();
 
+        // 取得元素在網頁的位置(x與y座標)
+        let offestX = $(this).offset().left;
+        // console.log("x = " + offestX);
+        // let offestY = $(this).offset().top;
+        // console.log("y = " + offestY);
+
         /* 讓上面和下面相應的索引號 eq() 顯示內容 
             其餘siblings() 隱藏起來 */
             // stop()  沒有加好像效果一樣???
+        // $('.tab-panel').eq(index).stop().fadeIn('slow').show().siblings().hide();
         $('.tab-panel').eq(index).stop().fadeIn('slow').show().siblings().hide();
+        // 讓context可以在摸到的元素正下方
+        $('.tab-content').css({
+            left:`${offestX}px`,
+        })
 
-    },function(){
+    }
+    ,function(){
         /* 第二個方法處理滑鼠移開事件 */
         $(this).removeClass('liColor');
         $('.tab-panel').hide();
