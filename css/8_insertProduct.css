@@ -457,3 +457,10 @@ aside .function{
 input{
     margin-top: 10px;
 }
+.explain_text{
+  text-align: center;
+  margin-top: 10px;
+}
+.explain_text span{
+  color: #444;
+}
