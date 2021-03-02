@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html>
+<head>
+ 	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="header.css">
+    </head>
+    <script src="jquery-3.5.1.js"></script>
+    <script src="jquery-ui.js"></script>
+    <script src="header.js"></script>
+    <link rel="stylesheet" href="member_order.css">
+	<title>member_update</title>
+	
+	<script>
+        $(function () {
+             // change這個event只有代表改變，並不代表有檔案
+         $('#file').change(function() { 
+                // this代表<input id="file">  
+                // files.length == 1 是長度為一的陣列
+                let file = this.files[0]; 
+                let reader = new FileReader();
+                // new FileReader(); 用途是用來讀取檔案，標準的API
+                // 如果要FileReader去讀檔案，必須給他一個檔案Object。
+                // 它拿到檔案Object後會驅動onload事件
+                // 給它URL的方式就是用 readAsDataURL( /*裡面放檔案Object*/ )
+                // 所以我們才會放入 reader.readAsDataURL(input.files[0]);
+                // onload事件讀出來的會是一個接近二進位檔案，所以可以直接給<img>
+                // 所以這邊直接改變img 的 src 就可以了
+                reader.readAsDataURL(file); 
+
+                reader.onload = function(){     //成功讀取文件
+                    $('#headImg').attr({
+                        
+                        // src = this.result 
+                        // 或者是 src = e.target () 
+                        // 只是function(e) 加上e 事件物件處理函數
+                        src:this.result , 
+                        width:`200px`,
+                        height:`200px`
+                    });
+					$('#headImgg').attr({
+                        
+                        // src = this.result 
+                        // 或者是 src = e.target () 
+                        // 只是function(e) 加上e 事件物件處理函數
+                        src:this.result , 
+                        width:`200px`,
+                        height:`200px`
+                    });
+                }
+            });
+
+            $('#tabs-nav a').click(function(){ 
+                // 當點擊tabs-nav的元素a時  替當前(this)的a超連結增加.change類  
+                // 其餘兄弟類 siblings() remove .change類
+                $(this).addClass('change').siblings().removeClass('change');
+
+                // 點擊的同時 拿到當前 a 超連結的索引號
+                let index = $(this).index();     //  index有6個
+
+                // 讓下面對應的索引號  .tabs-content 的子元素.tabs-panel[index] 渲染出來  
+                // 其他 子元素 兄弟類 siblings() 隱藏起來   
+                // 用addClass 增加動畫
+                $('.tabs-content .tabs-panel').eq(index)
+                .addClass('fadeIn animated-tabs').show().siblings().hide();
+
+
+            });
+
+             // 每三秒執行一次
+             setInterval(function(){
+                $('#news li:first-child').slideUp(function(){
+
+                    $(this).appendTo($('#news')).slideDown();
+                });
+
+            },3000);
+
+            // 點擊移除商品
+            $('.remove-product').click(function(){
+                $(this).closest('.product-item').remove(); 
+
+            });
+
+
+
+
+        });    
+
+    </script>
+	
+</head>
+<body>
+	<!-- Start:header -->
+	<!-- 回到上方的按鈕 -->
+	<!-- <a href="#" class="toTop"><i class="fas fa-arrow-up"></i></a> -->
+
+	<a href="#" id="go-top"><i class="fas fa-arrow-up"></i></a>
+	
+	<header>
+		<nav>
+			<div class="navbar">
+				<div class="ig-links">
+					<a href="#">快速登入</a> 
+					 <a href="#"><img src="../img/facebook.png" alt=""></a>
+                     <a href="#"><img src="../img/instagram.png" alt=""></a>
+                     <a href="#"><img src="../img/search.png" alt=""></a>
+				</div>
+				<div class="space"></div>
+				<div class="links">
+					<a href="#"><i class="fas fa-user-friends"></i>關於我們</a> <a href="#"><i
+						class="fas fa-info-circle"></i>最新消息</a> <a href="#"><i
+						class="far fa-question-circle"></i>幫助中心</a> <a href="#"><i
+						class="fas fa-comment-dots"></i>意見回應</a>
+				</div>
+			</div>
+		</nav>
+
+
+		<div class="search">
+			<div class="search-wrap">
+
+				<div class="logo-wrap">
+					<a href="/index"><img src="../img/yachiLogo50.png" alt=""></a>
+				</div>
+
+				<form class="search-food" action="https://www.google.com/">
+					<div class="search-input">
+						<input type="search" placeholder="不要來搜尋">
+						<button>
+							<i class="fas fa-search"></i>
+						</button>
+
+					</div>
+					<div class="food-trending">
+						<a href="#">大腸包大腸</a> <a href="#">測試中</a> <a href="#">優惠券</a> <a
+							href="#">關鍵字</a> <a href="#">測試</a>
+					</div>
+				</form>
+
+				<div class="search-ticket">
+					    <img src="../img/yachiLogo50.png">
+					<div class="txt">
+						<a href="#"><h2>優惠券專區</h2></a>
+					</div>
+
+				</div>
+
+				<div class="member">
+					
+					<a href="#"><font>你好 ! </font></a>
+				    <a href="#"><font>胖虎</font></a>
+				
+				
+			    
+			    
+                    <a href="#"><i class="fas fa-shopping-cart"></i></a>
+
+				</div>
+
+			</div>
+		</div>
+
+
+
+		<div class="tab">
+			<div class="tab-warp">
+
+				<div class="tab-list">
+					<a href="#">夜市簡介</a> <a href="#">優質商家</a> <a href="#">美食推薦</a> <a
+						href=" /">購物中心</a> <a href="#">會員中心</a>
+				</div>
+
+				<div class="tab-content">
+				
+					<div class="tab-panel">
+					  <a href="#">寧夏夜市</a><br>
+                      <a href="#">艋舺夜市</a><br>
+                      <a href="#">士林夜市</a><br>
+                      <a href="#">公館夜市</a><br>
+                      <a href="#">饒河夜市</a><br>
+                      <a href="#">延三夜市</a><br>
+                      <a href="#">南機場夜市</a><br>
+                      <a href="#">臨江街觀光夜市</a><br>
+					</div>
+					
+					<div class="tab-panel">
+
+						<a href="/welcome">方家雞肉飯</a><br>
+						<a href="/welcome">測試1超好吃店家</a><br>
+						<a href="/welcome">測試2世界第一好吃</a><br>
+						<a href="/welcome">測試3</a><br>
+						
+					</div>
+					<div class="tab-panel">
+						  <a href="#">方家雞肉飯</a><br>
+                          <a href="#">方家雞肉飯2</a><br>
+                          <a href="#">方家雞肉飯3</a><br>
+                          <a href="#">方家雞肉飯4</a><br>
+                          <a href="#">方家雞肉飯5</a><br>
+                          <a href="#">方家雞肉飯5</a><br>
+                          <a href="#">方家雞肉飯5</a><br>
+                          <a href="#">方家雞肉飯5方家雞肉飯5</a><br>
+					</div>
+					<div class="tab-panel">
+						<a href="/">購物商城</a><br> <a
+							href="update/price">點我更新價格(+50元)</a><br>
+						<a href="products/add">上架產品</a><br>
+					</div>
+					<div class="tab-panel">
+						 <a href="/administrator">管理員首頁</a><br>
+						 <a href="/products/add">商品維護</a><br>
+						 <a href="/admin_coupon">平台優惠券</a><br>
+						 <a href="/admin_chatroom">客服回應</a><br>
+						 <a href="/admin_announcement">公告</a><br>
+						 <a href="/admin_adinfo">廣告資訊</a><br>
+						 <a href="/admin_activity">平台優惠活動</a><br>
+						 
+						 
+                            <a href="/member/update/1">修改會員資料</a>
+                         
+                         
+							<a href="/doLogout" onclick="return window.confirm('確定登出嗎?');"><font>登 出</font></a>
+						 
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</header>
+	<!-- End:header -->
+	
+
+	<div class="main-member">
+        <aside>
+            <div class="function">
+                <h3>會員中心</h3>
+				<div class="item">
+		            <img src='/_00_init/getMemberImage?memberId=1'
+		                  id="headImgg" height='200px' width='200px'>					
+	            </div>
+
+<!-- 	                <label for="file"> -->
+<!-- 	                    <i class="fas fa-image">編輯照片 -->
+<!-- 	                    <input type="file" id="file" name="fileField" accept=".jpeg,.png"  -->
+<!-- 	                    style="display: none;"></i> -->
+<!-- 	                </label> -->
+
+                <div class="item">
+                    <a href="#">
+                        <button><span>基本資料</span></button>
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="#">
+                        <button><span>訂單查詢</span></button>
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="#">
+                        <button><span>我的優惠券</span></button>
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="#">
+                        <button><span>喜愛商家</span></button>
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="#">
+                        <button><span>通知</span></button>
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="#">
+                        <button><span>申請商家</span></button>
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="#">
+                        <button><span>新增信用卡</span></button>
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="#">
+                        <button><span>登出</span></button>
+                    </a>
+                </div>
+            </div>
+        </aside>
+
+
+
+        <main> 
+
+            <form action="" method="">
+
+                <div id="hcg_tabs">
+    
+                    <div id="tabs-nav">
+                       <a href="#" class="change">購物車</a>
+                       <a href="#">待付款</a>
+                       <a href="#">待出貨</a>
+                       <a href="#">待收貨</a>
+                       <a href="#">訂單詳情</a>
+                       <!-- <a href="#">給予評價</a> -->
+                    </div>
+                   
+                    <div class="tabs-content">
+    
+                        <!-- 先讓第一個內容顯示出來 display:block -->
+                      <div class="tabs-panel" style="display:block"> 
+
+                        <table>
+
+                            <thead class="product-item">
+                                <tr class="img-tr">
+                                    <td colspan="2" rowspan="4" class="img-td">
+                                        <img src="../img/cat.png">
+                                    </td>
+                                    <td colspan="6">商品名稱</td> 
+                                </tr>
+                                <tr>
+                                    <td colspan="4" rowspan="3">簡介</td>
+                                    <td style="text-align: center;">移除商品</td>
+                                    <td style="text-align: right;">
+                                        <button class="remove-product">移除</button>
+                                    </td>
+                                                                       
+                                </tr>
+                                <tr>
+                                    <td style="text-align: center;">數量</td>
+                                    <td style="text-align: right;">x2</td>
+                                </tr>
+                                <tr>
+        
+                                    <td style="text-align: center;">金額</td>
+                                    <td style="text-align: right;">$300</td>
+                                </tr> 
+                            </thead>
+
+                            <thead class="product-item">
+                                <tr class="img-tr">
+                                    <td colspan="2" rowspan="4" class="img-td">
+                                        <img src="../img/cat.png">
+                                    </td>
+                                    <td colspan="6">商品名稱</td> 
+                                </tr>
+                                <tr>
+                                    <td colspan="4" rowspan="3">簡介</td>
+                                    <td style="text-align: center;">移除商品</td>
+                                    <td style="text-align: right;">
+                                        <button class="remove-product">移除</button>
+                                    </td>
+                                                                       
+                                </tr>
+                                <tr>
+                                    <td style="text-align: center;">數量</td>
+                                    <td style="text-align: right;">x2</td>
+                                </tr>
+                                <tr>
+        
+                                    <td style="text-align: center;">金額</td>
+                                    <td style="text-align: right;">$300</td>
+                                </tr> 
+                            </thead>
+      
+                        </table>
+                        
+                        <div class="btCancel">
+                            
+                            <a href="#"><button><i class="fas fa-cart-arrow-down"></i>再買一次</button></a>
+                            <a href="#"><button><i class="fas fa-window-close"></i>取消訂單</button></a>
+                            
+                        </div>
+                    
+                      </div>
+                   
+                      <div class="tabs-panel">
+                       測試2
+                      </div>
+                   
+                      <div class="tabs-panel">
+                       測試3
+                      </div>
+                   
+                      <div class="tabs-panel">
+                       測試4
+                      </div>
+                   
+                      <div class="tabs-panel">
+
+                        <table class="order-info">
+                            <thead>
+                                <tr class="order-nav">
+                                    <th>訂購日期</th>
+                                    <th>訂單編號</th>
+                                    <th>付款方式</th>
+                                    <th>處理進度</th>
+                                    <th>應付金額</th>
+                                    <th>客服問與答</th>
+                                    <th>發票</th>
+                                    <th>評價</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                
+                                <tr>
+                                    <td colspan="10" class="alignC">
+                                        <span style="color: Red; font-weight: bold;">查無紀錄</span>
+                                    </td>
+                                </tr>
+                                
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th class="alignR" colspan="10">
+                                        <div class="pager">
+                                            
+                                            <h2>共0筆訂單</h2>
+                                        </div>
+                                    </th>
+                                </tr>
+                            </tfoot>
+
+                        </table>
+
+                      </div>
+                
+                   
+                    </div>
+                  
+                </div>
+            </form>
+
+        </main>
+
+    </div>
+
+</body>
+</html>
