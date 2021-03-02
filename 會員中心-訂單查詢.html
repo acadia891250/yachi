@@ -3,26 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="../reset.css">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="./會員中心-訂單查詢.js"></script>
-    
     <style>
-
+        
         html{
             padding: 0 150px;   /*左右與body各寬100px 留白*/
         }
        
         /* Google fonts：Noto Sans TC (Chinese Traditional) 黑體（思源黑體） */
         @import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
-
+        *{
+            box-sizing: border-box;
+        }
         body { 
             font-family: ‘Noto Sans TC’, sans-serif;
             
         }
         
-   
 
         header{
             display: flex;
@@ -143,8 +142,6 @@
             display: flex;
         }
 
-
-
         aside{
             border: 1px solid #ccc;
             width: 500px;
@@ -255,6 +252,41 @@
             background-color: orange;
             color: white;
         }
+
+        /* 圖片適應td */
+        .img-tr{
+            display: table-row;
+            height: 100px;
+        }
+        .img-td{
+            display: table-cell;
+            /* width: 100px; */
+            /* align-items: center; */
+            /* text-align: center; */
+            vertical-align: middle;
+            /* table-layout: fixed; */
+   
+        }
+        .img-td img{
+            width: 100%;
+            height: 150px;
+            display:block;
+        }
+
+        /* 訂單處理CSS*/
+        .order-info{
+
+            text-align: center;
+        }
+        .order-nav{
+        }
+        .order-nav th{
+            border: 1px solid red;
+            width: 100%;
+        }
+       
+
+
         /************ CSS Animation ***********/
 
         .animated-tabs{
@@ -391,6 +423,12 @@
 
             },3000);
 
+            // 點擊移除商品
+            $('.remove-product').click(function(){
+                $(this).closest('.product-item').remove(); 
+
+            });
+            
 
 
 
@@ -564,63 +602,77 @@
                        <a href="#">待出貨</a>
                        <a href="#">待收貨</a>
                        <a href="#">訂單詳情</a>
-                       <a href="#">給予評價</a>
+                       <!-- <a href="#">給予評價</a> -->
                     </div>
                    
                     <div class="tabs-content">
     
                         <!-- 先讓第一個內容顯示出來 display:block -->
                       <div class="tabs-panel" style="display:block"> 
+
                         <table>
-                            <tr>
-                                <td colspan="2" rowspan="4" class="imgTD">
-                                
-                                </td>
-                                <td colspan="6">商品名稱</td>
-                                
-                            </tr>
-                            <tr>
-    
-                                <td colspan="4" rowspan="3">簡介</td>
-                                <td style="text-align: center;">運費</td>
-                                <td style="text-align: right;">$0</td>
-                                
-                            </tr>
-                            <tr>
-                                <td style="text-align: center;">數量</td>
-                                <td style="text-align: right;">x2</td>
-                            </tr>
-                            <tr>
-    
-                                <td style="text-align: center;">金額</td>
-                                <td style="text-align: right;">$300</td>
-                            </tr>
-                            <tr>
-                                <td colspan="6">商品小計</td>
-                                <td style="text-align: right;"colspan="2" >$600</td>
-                               
-                            </tr>
-                            <tr>
-                                <td colspan="6">折扣小計</td>
-                                <td style="text-align: right;"colspan="2">-$50</td>
-                            </tr>
-                            <tr>
-                                <td colspan="6">訂單金額</td>
-                                <td style="text-align: right;"colspan="2">$550</td>
-                                
-                            </tr>
-                            <tr>
-                                <td colspan="6">訂單編號</td>
-                                <td style="text-align: right;"colspan="2">AAA5487</td>
-                                
-                            </tr>
+
+                            <thead class="product-item">
+                                <tr class="img-tr">
+                                    <td colspan="2" rowspan="4" class="img-td">
+                                        <img src="../img/cat.png">
+                                    </td>
+                                    <td colspan="6">商品名稱</td> 
+                                </tr>
+                                <tr>
+                                    <td colspan="4" rowspan="3">簡介</td>
+                                    <td style="text-align: center;">移除商品</td>
+                                    <td style="text-align: right;">
+                                        <button class="remove-product">移除</button>
+                                    </td>
+                                                                       
+                                </tr>
+                                <tr>
+                                    <td style="text-align: center;">數量</td>
+                                    <td style="text-align: right;">x2</td>
+                                </tr>
+                                <tr>
+        
+                                    <td style="text-align: center;">金額</td>
+                                    <td style="text-align: right;">$300</td>
+                                </tr> 
+                            </thead>
+
+                            <thead class="product-item">
+                                <tr class="img-tr">
+                                    <td colspan="2" rowspan="4" class="img-td">
+                                        <img src="../img/cat.png">
+                                    </td>
+                                    <td colspan="6">商品名稱</td> 
+                                </tr>
+                                <tr>
+                                    <td colspan="4" rowspan="3">簡介</td>
+                                    <td style="text-align: center;">移除商品</td>
+                                    <td style="text-align: right;">
+                                        <button class="remove-product">移除</button>
+                                    </td>
+                                                                       
+                                </tr>
+                                <tr>
+                                    <td style="text-align: center;">數量</td>
+                                    <td style="text-align: right;">x2</td>
+                                </tr>
+                                <tr>
+        
+                                    <td style="text-align: center;">金額</td>
+                                    <td style="text-align: right;">$300</td>
+                                </tr> 
+                            </thead>
+      
                         </table>
-                            <div class="btCancel">
-                                
-                                <a href="#"><button><i class="fas fa-cart-arrow-down"></i>再買一次</button></a>
-                                <a href="#"><button><i class="fas fa-window-close"></i>取消訂單</button></a>
-                                
-                            </div>
+                        
+                        <div class="btCancel">
+                            
+                            <a href="#"><button><i class="fas fa-cart-arrow-down"></i>再買一次</button></a>
+                            <a href="#"><button><i class="fas fa-window-close"></i>取消訂單</button></a>
+                            
+                        </div>
+                    
                       </div>
                    
                       <div class="tabs-panel">
@@ -636,12 +688,44 @@
                       </div>
                    
                       <div class="tabs-panel">
-                        測試5  
+
+                        <table class="order-info">
+                            <thead>
+                                <tr class="order-nav">
+                                    <th>訂購日期</th>
+                                    <th>訂單編號</th>
+                                    <th>付款方式</th>
+                                    <th>處理進度</th>
+                                    <th>應付金額</th>
+                                    <th>客服問與答</th>
+                                    <th>發票</th>
+                                    <th>評價</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                
+                                <tr>
+                                    <td colspan="10" class="alignC">
+                                        <span style="color: Red; font-weight: bold;">查無紀錄</span>
+                                    </td>
+                                </tr>
+                                
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th class="alignR" colspan="10">
+                                        <div class="pager">
+                                            
+                                            <h2>共0筆訂單</h2>
+                                        </div>
+                                    </th>
+                                </tr>
+                            </tfoot>
+
+                        </table>
+
                       </div>
                 
-                      <div class="tabs-panel">
-                        測試6
-                      </div>
                    
                     </div>
                   
