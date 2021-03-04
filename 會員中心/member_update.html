@@ -53,6 +53,16 @@
                 }
             });
 
+
+            // 跑馬燈每三秒執行一次
+            setInterval(function(){
+            $('#news li:first-child').slideUp(function(){
+
+                $(this).appendTo($('#news')).slideDown();
+            });
+
+            },3000);
+
         });    
 
     </script>
@@ -197,7 +207,17 @@
 		</div>
 	</header>
 	<!-- End:header -->
-	
+
+	<!-- 跑馬燈 -->
+     <div id="Marquee">
+        <h3>最新優惠消息:</h3>
+        <ul id="news">
+            <li>東西很貴不要買 !</li>
+            <li>還沒做完</li>
+            <li>目前網路商店全館免運</li>
+        </ul>
+    </div>
+    <!-- 跑馬燈結束 -->
 
 	<div class="main-member">
         <aside>

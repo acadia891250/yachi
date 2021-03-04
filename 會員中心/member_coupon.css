@@ -217,28 +217,28 @@ tr,td{
 
 /* 跑馬燈開始 */
 #Marquee{
-    /* border: 1px solid red; */
-    display: flex;
-    padding-left: 160px;
-    align-items: center;   
+  /* border: 1px solid red; */
+  display: flex;
+  padding-left: 160px;
+  align-items: center;   
 }
 #Marquee h3{
-    /* border: 1px solid red; */
-    font-size: 1rem;
-    padding: 5px;
+  /* border: 1px solid red; */
+  font-size: 1rem;
+  padding: 5px;
 }
 #Marquee ul{
-    /* border: 1px solid red; */
-    list-style:none;
-    height:30px;
-    overflow:hidden;
-    /* display: flex; */
-    /* flex-direction: column;*/
-    
+  /* border: 1px solid red; */
+  list-style:none;
+  height:30px;
+  overflow:hidden;
+  /* display: flex; */
+  /* flex-direction: column;*/
+  
 }
 #Marquee ul li:first-child{
-    /* border: 1px solid red; */
-    margin: 7px 0;
+  /* border: 1px solid red; */
+  margin: 7px 0;
 
 }
 /* 跑馬燈結束 */
