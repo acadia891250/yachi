@@ -244,45 +244,28 @@ tr,td{
 /* 跑馬燈結束 */
 
 
-/* 我的優惠券開始 */
-.coupon-container{
+/* 喜愛的商家開始 */
+.shop-container{
 
   /* border: 1px solid red; */
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  
-}
-.coupon-shop{
-  
-}
-
-.coupon-shop img{
-  height: 100%;
-  width: 100%;
-}
-
-/* .coupon-img{
-  padding: 10px;
-}
-.coupon-img h2{
-  padding: 5px;
-}
-.coupon-img img{
-  width: 100%;
-  vertical-align: text-bottom;
-}
-.coupon-shop{
-  border: 1px solid red;
-  display: flex;
-  justify-content: center;
   align-items: center;
-  text-align: center;
+  flex-wrap: wrap;
+  
+  
 }
-.coupon-shop {
+.shop-item{
   border: 1px solid red;
-  flex-grow: 1;
-  width: 100%;
+  width: 50%;
   height: 250px;
-} */
+  text-align: center;
+
+}
+.shop-item h2{
+  font-size: 20px;
+  font-weight: bold;
+}
+
+
+
 
