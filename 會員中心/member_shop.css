@@ -255,11 +255,10 @@ tr,td{
   
 }
 .shop-item{
-  border: 1px solid red;
+  border: 1px solid black;
   width: 50%;
   height: 250px;
   text-align: center;
-
 }
 .shop-item h2{
   font-size: 20px;
