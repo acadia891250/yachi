@@ -398,7 +398,6 @@ header .tab .tab-warp .tab-content .tab-panel a:hover{
 
 /* 商家註冊頁面開始 */
 
-
 input, textarea, select, button {
   color: #333;
   font-size: 13px; 
@@ -462,8 +461,8 @@ a:hover {
 }
 .form-wrapper i {
   position: absolute;
-  bottom: 9px;
-  right: 0; 
+  top: 20px;
+  right: 150px;
 }
 
 .form-control {
@@ -505,7 +504,7 @@ button i {
   margin-left: 10px;
 }
  
-
+/* 商家註冊頁面結束 */
 
 
 
