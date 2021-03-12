@@ -45,7 +45,7 @@
 
             // 點擊移除商品
             $('.remove-product').click(function(){
-                $(this).closest('.product-item').remove(); 
+                $(this).closest('.coupon-shop').remove(); 
 
             });
 
@@ -286,23 +286,39 @@
                         
                         <div class="coupon-container">
                             
-                            <div class="coupon-shop"> 
-                                    
-                                <img src="../img/coupon_01.jpg" alt="">                   
-                             
-                            </div>
-                            <div class="coupon-shop"> 
-                                    
-                                <img src="../img/coupon_02.png" alt="">                   
-                             
-                            </div>
-                    
-                            <div class="coupon-shop"> 
-                                    
-                                <img src="../img/coupon_03.jpg" alt="">                   
-                             
-                            </div>
-                          
+                            <form action="">
+                                <div class="coupon-shop"> 
+                                        
+                                    <img src="../img/coupon_01.jpg" alt="">
+
+                                    <button class="remove-product" onclick="return window.confirm('確定移除嗎?')" 
+                                    type="submit"><i class="fas fa-window-close"></i></button>
+                                                                                
+                                </div>
+                            </form>
+
+                            <form action="">
+                                <div class="coupon-shop"> 
+                                        
+                                    <img src="../img/coupon_02.png" alt="">
+
+                                    <button class="remove-product" onclick="return window.confirm('確定移除嗎?')" 
+                                    type="submit"><i class="fas fa-window-close"></i></button>
+                                                                                
+                                </div>
+                            </form>
+
+                            <form action="">
+                                <div class="coupon-shop"> 
+                                        
+                                    <img src="../img/coupon_03.jpg" alt="">
+
+                                    <button class="remove-product" onclick="return window.confirm('確定移除嗎?')" 
+                                    type="submit"><i class="fas fa-window-close"></i></button>
+                                                                                
+                                </div>
+                            </form>
+
 
 
                         </div>

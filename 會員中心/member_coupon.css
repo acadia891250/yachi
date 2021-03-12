@@ -254,7 +254,7 @@ tr,td{
   
 }
 .coupon-shop{
-  
+  position: relative;
 }
 
 .coupon-shop img{
@@ -262,27 +262,15 @@ tr,td{
   width: 100%;
 }
 
-/* .coupon-img{
-  padding: 10px;
-}
-.coupon-img h2{
-  padding: 5px;
-}
-.coupon-img img{
-  width: 100%;
-  vertical-align: text-bottom;
-}
-.coupon-shop{
-  border: 1px solid red;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-.coupon-shop {
-  border: 1px solid red;
-  flex-grow: 1;
-  width: 100%;
-  height: 250px;
-} */
+.remove-product{
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 30px;
+  border: none;
+  background-color: transparent;
 
+}
+.remove-product:focus{
+  outline:none;
+}
