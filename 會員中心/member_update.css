@@ -113,12 +113,22 @@
   display: -ms-flexbox;
   display: flex;
   margin: 20px auto;
+
+  /* border: 1px solid red; */
+  align-items: center;
+  justify-content: center;
+}
+.editPhoto{
+  text-align: center;
 }
 
+
 .main-member main .info div h3 {
-  width: 100px;
+  width: 150px;
   font-weight: bold;
   padding: 5px 10px;
+  /* border: 1px solid red; */
+  text-align: right;
 }
 
 .main-member main .info div label {
@@ -126,11 +136,23 @@
 }
 
 .main-member main .info div button {
-  background-color: #ccc;
+  background-color: #FFF;
   font-size: 50px;
   border: none;
 }
+.info div button:focus{
+  outline: none;
+}
 
+.info input{
+  border: 1px solid #ccc;
+  padding: 5px;
+  border-radius: 10px;
+
+}
+.info input:focus{
+  outline: none;
+}
 
 /* 跑馬燈開始 */
 #Marquee{
