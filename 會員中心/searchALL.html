@@ -33,6 +33,7 @@
 
        });
 
+
 	   var splide = new Splide( '#splide' );
 
 		splide.on( 'autoplay:playing', function ( rate ) {
@@ -194,18 +195,18 @@
             <div id="main_tabs">
 
                 <div id="tabs-nav">
-                   <a href="#" class="change">依夜市</a>
+                   <a href="#">依夜市</a>
                    <a href="#">依優惠券</a>
-                   <a href="#">依商城商品</a>
-                   <a href="#">依商品價格</a>
+                   <a href="#"  class="change" >依商城商品</a>
+                   <a href="#">依商品類型</a>
                    <a href="#">依商家</a>
-                   <a href="#">待補充</a>
+                   <a href="#">待商家類型</a>
                 </div>
                
                 <div class="tabs-content">
 
                     <!-- 先讓第一個內容顯示出來 display:block -->
-                  <div class="tabs-panel" style="display:block">
+                  <div class="tabs-panel" >
 
 					<div class="keyword">
 						<p>你所搜尋的XX關鍵字&nbsp;&nbsp;&nbsp;&nbsp;總共XX筆資料</p>
@@ -228,7 +229,7 @@
 				  
                   <div class="tabs-panel">
 
-					<div class="keyword">
+					<div class="keyword" >
 						<p>你所搜尋的XX關鍵字&nbsp;&nbsp;&nbsp;&nbsp;總共XX筆資料</p>
 					</div>
 					
@@ -281,8 +282,22 @@
 
                   </div>
                
-                  <div class="tabs-panel">
+                  <div class="tabs-panel" style="display:block">
 
+					<div class="product-price">
+						<input type="button" value="價格低">
+						<input type="button" value="價格高">
+						<form action="" >
+
+							<strong>搜尋價格<strong>
+							<input type="text" name="" id="" placeholder="最低價">
+							<a>～</a>
+							<input type="text" name="" id="" placeholder="最高價">
+							<input type="submit" value="搜尋" class="search-submit">
+
+						</form>
+					</div>
+					
 					<div class="keyword">
 						<p>你所搜尋的XX關鍵字&nbsp;&nbsp;&nbsp;&nbsp;總共XX筆資料</p>
 					</div>
@@ -352,7 +367,9 @@
 
 				  
                   <div class="tabs-panel">
-                   測試4
+                   
+
+
                   </div>
                
                   <div class="tabs-panel">

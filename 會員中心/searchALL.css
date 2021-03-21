@@ -409,7 +409,7 @@ header .tab .tab-warp .tab-content .tab-panel a:hover{
 /* 依夜市搜尋開始*/
 
 .keyword{
-  border: 1px solid red;
+  /* border: 1px solid red; */
 
   font-weight: bolder;
   font-size: 15px;
@@ -482,6 +482,40 @@ header .tab .tab-warp .tab-content .tab-panel a:hover{
 /* 依優惠券搜尋結束*/
 
 /* 搜尋產品頁面開始 */
+
+.product-price{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin: 10px auto;
+}
+
+.product-price input{
+  border: 1px solid #ccc; 
+  background-color: #fff;
+  font-size: 1rem;
+  font-weight:lighter;
+  width: 10rem;
+  height: 2rem;
+}
+
+.product-price strong{
+  padding: 0 20px;
+}
+.search-submit{
+  margin-left: -5px;
+  vertical-align: bottom;
+}
+
+
+.product-price input:hover{
+  background-color: #ccc;
+}
+
+.product-price input:focus{
+  outline: none;
+}
+
 .product-container{
   border: 1px solid red;
   display: flex;
