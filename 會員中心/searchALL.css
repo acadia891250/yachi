@@ -370,7 +370,8 @@ header .tab .tab-warp .tab-content .tab-panel a:hover{
 /* 搜尋頁面開始 */
 
 .nav-first{
-  border: 1px solid red;
+  /* border: 1px solid red; */
+  /* border-bottom: 1px solid #ccc; */
   display: flex;
   padding: 5px 50px;
   font-weight: bolder;
@@ -394,7 +395,9 @@ header .tab .tab-warp .tab-content .tab-panel a:hover{
 }
 
 #tabs-nav{
-  border: 1px solid red;
+  /* border: 1px solid red; */
+  border-bottom: 1px solid #ccc;
+
   display: flex;
   justify-content: center;
   
@@ -471,7 +474,7 @@ header .tab .tab-warp .tab-content .tab-panel a:hover{
 /* 依優惠券搜尋開始*/
 .coupon{
   border: 1px solid red;
-  background-color: #ccc;
+  background-color: rgba(204, 186, 186, 0.253);
   margin: 0px 25px 25px 25px;  /*上右下左*/
   display: flex;
 
@@ -524,7 +527,7 @@ header .tab .tab-warp .tab-content .tab-panel a:hover{
   height: 2rem;
 }
 
-.product-price a{
+.product-price form a{
   padding: 0 0.8rem;
 }
 .search-submit{
@@ -556,7 +559,7 @@ header .tab .tab-warp .tab-content .tab-panel a:hover{
   
   /* flex-grow: 1; */
   width: 252.4px;
-  height: 350px;
+  height: 370px;
   text-align: center;
   margin-bottom: 25px;
 
