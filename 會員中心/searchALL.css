@@ -416,6 +416,31 @@ header .tab .tab-warp .tab-content .tab-panel a:hover{
   line-height: 50px;
   text-align: center;
 }
+.keyword-form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.keyword-form a{
+  padding: 0 10px;
+  font-size: 1rem;
+
+  font-weight:lighter;
+
+}
+.keyword-form input{
+  border: 1px solid #ccc; 
+  background-color: #fff;
+  font-size: 1rem;
+  font-weight:lighter;
+
+}
+.keyword-form input:hover{
+  background-color: #ccc;
+}
+.keyword-form input:focus{
+  outline: none;
+}
 
 
 .findNight{
@@ -499,8 +524,8 @@ header .tab .tab-warp .tab-content .tab-panel a:hover{
   height: 2rem;
 }
 
-.product-price strong{
-  padding: 0 20px;
+.product-price a{
+  padding: 0 0.8rem;
 }
 .search-submit{
   margin-left: -5px;
@@ -530,7 +555,7 @@ header .tab .tab-warp .tab-content .tab-panel a:hover{
   border: 1px solid #ccc;
   
   /* flex-grow: 1; */
-  width: 350px;
+  width: 252.4px;
   height: 350px;
   text-align: center;
   margin-bottom: 25px;
@@ -556,8 +581,49 @@ header .tab .tab-warp .tab-content .tab-panel a:hover{
 
 }
 
+/* 依商品類型開始 */
+#product-type{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#product-type a{
+  border-radius: 5px;
+  width: 5rem;
+  height: 2rem;
+  text-align: center;
+  line-height: 2rem;
+}
 
 
+/* 依商品類型結束 */
+
+
+
+/* 依商家開始 */
+
+/* 依商家結束 */
+
+
+
+/* 依商家類型開始 */
+
+#shop-type{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#shop-type a{
+  border-radius: 5px;
+  width: 6rem;
+  height: 2rem;
+  text-align: center;
+  line-height: 2rem;
+}
+
+/* 依商家類型結束 */
 
 
 
@@ -574,6 +640,30 @@ header .tab .tab-warp .tab-content .tab-panel a:hover{
   background-color: orange;
   color: white;
 }
+
+/* product-type 專用class */
+.type-content .type-panel{
+  display: none;
+}
+
+#product-type .change{
+  background-color: #ccc;
+  color: white;
+}
+
+
+/* shoptype 專用class */
+.shoptype-content .shoptype-panel{
+  display: none;
+}
+
+#shop-type .change{
+  background-color: #ccc;
+  color: white;
+}
+
+
+
 
 /************ CSS Animation ***********/
 

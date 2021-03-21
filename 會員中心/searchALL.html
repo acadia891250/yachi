@@ -31,7 +31,31 @@
            $('.tabs-content .tabs-panel').eq(index)
            .addClass('fadeIn animated-tabs').show().siblings().hide();
 
+
        });
+
+	   // product-type 專用js 
+	   $('#product-type a').click(function(){
+
+			$(this).addClass('change').siblings().removeClass('change');
+
+			let index = $(this).index();
+
+			$('.type-content .type-panel').eq(index).addClass('fadeIn animated-tabs').show().siblings().hide();
+
+	   })
+
+	   // shoptype 專用class 
+	   $('#shop-type a').click(function(){
+
+			$(this).addClass('change').siblings().removeClass('change');
+
+			let index = $(this).index();
+
+			$('.shoptype-content .shoptype-panel').eq(index).addClass('fadeIn animated-tabs').show().siblings().hide();
+
+		})
+
 
 
 	   var splide = new Splide( '#splide' );
@@ -190,25 +214,31 @@
 	</div>
 
 	<main>
-        <form action="" method="">
 
-            <div id="main_tabs">
+		<div id="main_tabs">
 
-                <div id="tabs-nav">
-                   <a href="#">依夜市</a>
-                   <a href="#">依優惠券</a>
-                   <a href="#"  class="change" >依商城商品</a>
-                   <a href="#">依商品類型</a>
-                   <a href="#">依商家</a>
-                   <a href="#">待商家類型</a>
-                </div>
-               
-                <div class="tabs-content">
+			<div id="tabs-nav">
+				<a href="#">依夜市</a>
+				<a href="#">依優惠券</a>
+				<a href="#" class="change">依商城商品</a>
+				<a href="#">依商品類型</a>
+				<a href="#">依商家</a>
+				<a href="#">依商家類型</a>
+			</div>
+			
+			<div class="tabs-content">
+
+				<div class="tabs-content">
 
                     <!-- 先讓第一個內容顯示出來 display:block -->
-                  <div class="tabs-panel" >
-
+                  <div class="tabs-panel" > 
+					
 					<div class="keyword">
+						<form action="" class="keyword-form">
+							<a>搜尋夜市</a>
+							<input type="text" name="" id="">
+							<input type="submit" value="搜尋">
+						</form>
 						<p>你所搜尋的XX關鍵字&nbsp;&nbsp;&nbsp;&nbsp;總共XX筆資料</p>
 					</div>
 
@@ -223,16 +253,18 @@
 						<a href="#" class="findNight-item">更多介紹 ...</a>
 
 					</div>
-					
-					  
-                  </div>
-				  
-                  <div class="tabs-panel">
 
+                  </div>
+               
+                  <div class="tabs-panel">
 					<div class="keyword" >
+						<form action="" class="keyword-form">
+							<a>搜尋優惠券</a>
+							<input type="text" name="" id="">
+							<input type="submit" value="搜尋">
+						</form>
 						<p>你所搜尋的XX關鍵字&nbsp;&nbsp;&nbsp;&nbsp;總共XX筆資料</p>
 					</div>
-					
 					<div class="coupon">
 						<!-- <a>中的連結為大圖的url位置，img的src為小縮圖的 url位置 -->
 						<a data-fancybox="gallery" href="../img/coupon_01.jpg"><img src="../img/coupon_01.jpg"></a>
@@ -266,14 +298,10 @@
 								<h3>你家牛排</h3>
 
 							</div>
-							
-
 						</div>
-
 					</div>
 
 					<div class="coupon">
-						<!-- <a>中的連結為大圖的url位置，img的src為小縮圖的 url位置 -->
 						<a data-fancybox="gallery" href="../img/coupon_01.jpg"><img src="../img/coupon_01.jpg"></a>
 						
 						
@@ -283,22 +311,22 @@
                   </div>
                
                   <div class="tabs-panel" style="display:block">
-
 					<div class="product-price">
 						<input type="button" value="價格低">
 						<input type="button" value="價格高">
-						<form action="" >
 
-							<strong>搜尋價格<strong>
+						<form action="">
+							<a>搜尋價格</a>
 							<input type="text" name="" id="" placeholder="最低價">
 							<a>～</a>
 							<input type="text" name="" id="" placeholder="最高價">
 							<input type="submit" value="搜尋" class="search-submit">
-
 						</form>
+						
 					</div>
-					
+
 					<div class="keyword">
+						
 						<p>你所搜尋的XX關鍵字&nbsp;&nbsp;&nbsp;&nbsp;總共XX筆資料</p>
 					</div>
 
@@ -354,36 +382,113 @@
 
 						</div>
 
-						
+						<div class="product">
 
+							<a data-fancybox="gallery" href="https://picsum.photos/500/500"><img src="https://picsum.photos/200/200"></a>
+
+							<div class="name">【Nintendo 任天堂】預計4月中出貨★Switch 魔物獵人特仕主機狩獵組合(電力加強版台灣公司貨)</div>
+							<div class="info">很危險的遊戲</div>
+							<div class="price">$8888</div>
+
+						</div>
+
+						<div class="product">
+
+							<a data-fancybox="gallery" href="https://picsum.photos/500/500"><img src="https://picsum.photos/200/200"></a>
+
+							<div class="name">【Nintendo 任天堂】預計4月中出貨★Switch 魔物獵人特仕主機狩獵組合(電力加強版台灣公司貨)</div>
+							<div class="info">很危險的遊戲</div>
+							<div class="price">$8888</div>
+
+						</div>
 						
 					</div>
-                   
-					
-
                   </div>
                
 
-
-				  
                   <div class="tabs-panel">
-                   
+                
+					<div id="product-type">
+						<a href="#" class="change">零食</a>
+						<a href="#">玩具</a>
+						<a href="#">文具</a>
+						<a href="#">折價券</a>
+						<a href="#">衣服</a>
+						<a href="#">文創商品</a>
+						<a href="#">雜貨</a>
+						<a href="#">飲料</a>
+						<a href="#">食品</a>
+					</div>
 
+					<div class="type-content">
+						
+						<div class="type-panel" style="display:block">
+							測試1
+						</div>
+						<div class="type-panel">測試2</div>
+						<div class="type-panel">測試3</div>
+						<div class="type-panel">測試4</div>
+						<div class="type-panel">測試5</div>
+						<div class="type-panel">測試6</div>
+						<div class="type-panel">測試7</div>
+						<div class="type-panel">測試8</div>
+						<div class="type-panel">測試9</div>
+
+					</div>
 
                   </div>
                
                   <div class="tabs-panel">
-                    測試5  
+					<div class="keyword">
+						<form action="" class="keyword-form">
+							<a>搜尋夜市</a>
+							<input type="text" name="" id="">
+							<input type="submit" value="搜尋">
+						</form>
+						<p>你所搜尋的XX關鍵字&nbsp;&nbsp;&nbsp;&nbsp;總共XX筆資料</p>
+					</div>
+                	依商家
                   </div>
             
                   <div class="tabs-panel">
-                    測試6
+
+                    <div id="shop-type">
+						<a href="#" class="change">中式料理</a>
+						<a href="#">西式料理</a>
+						<a href="#">日式料理</a>
+						<a href="#">飲料</a>
+						<a href="#">衣服</a>
+						<a href="#">飾品</a>
+						<a href="#">手機周邊</a>
+						<a href="#">日常生活用品</a>
+						<a href="#">遊戲</a>
+					</div>	
+
+					<div class="shoptype-content">
+						
+						<div class="shoptype-panel" style="display:block">
+							測試1
+						</div>
+						<div class="shoptype-panel">測試2</div>
+						<div class="shoptype-panel">測試3</div>
+						<div class="shoptype-panel">測試4</div>
+						<div class="shoptype-panel">測試5</div>
+						<div class="shoptype-panel">測試6</div>
+						<div class="shoptype-panel">測試7</div>
+						<div class="shoptype-panel">測試8</div>
+						<div class="shoptype-panel">測試9</div>
+
+					</div>
                   </div>
                
                 </div>
-              
-            </div>
-        </form>
+
+
+
+
+			</div>
+			
+		</div>
     </main>
 
 	
