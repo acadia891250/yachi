@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/reset.css">
+    <!-- Jarallax -->
+<script src="https://unpkg.com/jarallax@1/dist/jarallax.min.js"></script>
+
+<!-- Include it if you want to use Video parallax -->
+<script src="https://unpkg.com/jarallax@1/dist/jarallax-video.min.js"></script>
+    <title>Document</title>
+
+    <style>
+        
+    .jarallax {
+    /* width: 700px; */
+    height: 500px;
+    position: relative;
+    z-index: 0;
+}
+.jarallax > .jarallax-img {
+    position: absolute;
+    object-fit: cover;
+    /* support for plugin https://github.com/bfred-it/object-fit-images */
+    font-family: 'object-fit: cover;';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+    </style>
+</head>
+<body>
+
+<!-- Background YouTube Parallax -->
+<div class="jarallax" data-jarallax-video="https://www.youtube.com/watch?v=ab0TSkLe-E0">
+    Your content here...
+</div>
+
+<!-- Background Vimeo Parallax -->
+<div class="jarallax" data-jarallax-video="https://vimeo.com/110138539">
+    Your content here...
+</div>
+
+<!-- Background Self-Hosted Video Parallax -->
+<div class="jarallax" data-jarallax-video="mp4:./video/local-video.mp4,webm:./video/local-video.webm,ogv:./video/local-video.ogv">
+    Your content here...
+</div>
+</body>
+</html>
